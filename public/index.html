@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K3JCF44');</script>
+        <!-- End Google Tag Manager -->
+        <title>Appblocks</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Appblocks">
+        <meta name="keywords" content="Appblocks, Neoito">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="/assets/css/styles.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script> -->
+    </head>
+    <body class="dark:bg-[#0A0A0A]">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3JCF44"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <header id="nav-header" class="w-full fixed top-0 left-0 z-50 border-b border-ab-gray-medium bg-white">
+  <div
+    class="max-w-7xl w-full mx-auto px-4 md:px-6 flex flex-wrap items-center justify-between md-lt:py-4 md:min-h-[80px] py-2 relative">
+    <a href="/" class="focus:outline-none flexa-medium flex items-center space-x-2"><img class="max-w-[48px]" src="../../assets/images/logo.svg" alt="Logo"><img class="md-lt:hidden" src="../../assets/images/logo-txt.svg" alt="Logo Text"></a>
+    <button onclick="showmenu(this)" type="button"
+      class="inline-flex items-center justify-center p-2 ml-3 md:hidden focus:outline-none h-9"
+      aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <span class="hamburger-icon"></span>
+    </button>
+    <div id="navbar-responsive"
+      class="nav-menu-wrapper w-full md-lt:basis-full top-[72px] left-0 md:flex items-center md:w-auto md:space-x-4 md-lt:overflow-hidden">
+      <ul
+        class="flex flex-col md:py-2 my-3 md:flex-row items-center md-lt:space-y-5 md:space-x-4 md:my-0 text-base flexa-medium">
+        <li>
+          <a href="https://docs.appblocks.com/" target="_blank" class="block hover:underline underline-offset-1 text-ab-black">Documentation </a>
+        </li>
+        <li>
+          <a href="https://discord.gg/b7YSVvHp2x" target="_blank" class="flex items-center justify-center py-2.5 px-6 bg-primary rounded-full text-white hover:opacity-90">
+            <img class="mr-2.5" src="../../assets/images/icons/discord-icon.svg" alt="Discord"/>Join Discord
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/appblocks-hub" target="_blank" class="flex items-center justify-center py-2.5 px-6 bg-secondary rounded-full text-white hover:opacity-90">Start Developing</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<script>
+  function showmenu() {
+    document.getElementById("nav-header").classList.toggle("expanded-nav");
+  }
+</script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+<script>
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function handleEmailValidation() {
+        let input = document.getElementById("email_input").value;
+        if (validateEmail(input)) {
+            document.getElementById("email_input").classList.remove("border-red-500");
+        }
+    }
+
+    function resetInput() {
+        let msgContainer = document.getElementById("succes-msg");
+        msgContainer.classList.remove("hidden");
+        document.getElementById("loader").classList.add("hidden");
+        setTimeout(function () {
+            msgContainer.classList.add("hidden");
+        }, 5000);
+    }
+    var submitBtnClick = 0;
+
+    function submitForm() {
+        if (submitBtnClick === 0) {
+            submitBtnClick = 1;
+            let input = document.getElementById("email_input").value;
+            if (validateEmail(input)) {
+                document
+                    .getElementById("email_input")
+                    .classList.remove("border-red-500");
+                document
+                    .getElementById("email_input")
+                    .classList.add("border-ab-gray-medium");
+                document.getElementById("loader").classList.remove("hidden");
+                const data = JSON.stringify({
+                    email: input,
+                });
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://lead-mail.appblocks.com/add-lead", true);
+
+                //Send the proper header information along with the request
+                xhr.setRequestHeader("Content-Type", "application/json");
+
+                xhr.onreadystatechange = () => {
+                    // Call a function when the state changes.
+                    if (
+                        (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) ||
+                        true
+                    ) {
+                        resetInput();
+                    }
+                    if (xhr.readyState === 4) {
+                        document.getElementById("email_input").value = "";
+                        submitBtnClick = 0;
+                    }
+                };
+                xhr.send(data);
+            } else {
+                submitBtnClick = 0;
+                document
+                    .getElementById("email_input")
+                    .classList.remove("border-ab-gray-medium");
+                document.getElementById("email_input").classList.add("border-red-500");
+            }
+        }
+    }
+</script>
+<!-- <section id="scroll-section-1" class="w-full h-screen float-left banner-bg pt-[80px]">
+    <div class="w-full h-full flex justify-center items-center">
+
+    </div>
+</section> -->
+<div class="inner-page-wrapper w-full min-h-screen float-left flex flex-col pt-[80px]">
+    <section class="float-left flex md:min-h-[calc(100vh-80px)] w-full justify-center">
+        <div class="clearfix mx-auto flex w-full max-w-7xl items-center px-4 md:px-6">
+            <div class="bg-banner float-left flex w-full justify-center py-8 md:min-h-[80%] md:items-center">
+                <div class="float-left grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
+                    <div class="relative float-left w-full max-w-[480px] py-6 md-lt:mx-auto">
+                        <div
+                            class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[62px] md-lt:text-center">
+                            Open SDK for <br />
+                            <span class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Quickly</span>
+                            <span
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Affordably</span>
+                            <span
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Collaboratively</span>
+                            <span
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Efficiently</span>
+                            <br />building applications
+                        </div>
+                        <p
+                            class="flexa-medium mt-5 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
+                            Appblocks combines composable architecture and efficient coding to
+                            build applications
+                            <br /><b class="text-secondary">3X</b> faster at
+                            <b class="text-secondary">0.1X</b>
+                            development cost.
+                        </p>
+                        <div class="relative float-left mt-5 flex w-full">
+                            <input type="text" onkeyup="handleEmailValidation()" id="email_input" placeholder="Email ID"
+                                class="zirkon-regular h-11 flex-grow overflow-hidden rounded-l-md border border-ab-gray-medium border-r-transparent bg-white px-4 focus:outline-none md:h-[52px] md-lt:text-sm" />
+                            <button type="button" onclick="submitForm()"
+                                class="flexa-medium flex flex-shrink-0 items-center justify-center rounded-tr-md rounded-br-md bg-primary px-3.5 text-sm text-white hover:opacity-90 focus:outline-none md:text-lg">
+                                Request Demo
+                                <img class="ml-2 hidden max-w-[16px]" id="loader" src="../../assets/images/loading.gif"
+                                    alt="Loader" />
+                            </button>
+                        </div>
+                        <div class="float-left flex w-full">
+                            <!-- <img class="max-w-[32px] mt-4 hidden" id="loader" src="../../assets/images/loading.gif"
+                                alt="Loader" /> -->
+                            <p id="succes-msg"
+                                class="zirkon-medium mt-4 w-full text-center text-primary md:text-left hidden">
+                                Thank you for contacting us<br />
+                                We will get back to you as soon as possible
+                            </p>
+                        </div>
+                        <!-- <div class="w-full float-left mt-5">
+                            <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                        </div> -->
+                    </div>
+                    <!-- <div class="w-full float-left">
+                        <div class="w-full float-left h-[550px] bg-ab-gray-light">
+                            <img class="w-full h-full object-cover" src="assets/images/icons/blocks-right-img.jpeg"
+                                alt="" />
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-24" id="discover-section">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left text-center">
+                <h4 class="flexa-bold text-2xl md:text-[48px] md:leading-[58px] text-ab-black mb-5">Stay ahead with
+                    <span class="primary-gradient-text">Appblocks</span></h4>
+                <p class="mb-5 text-base md:text-lg zirkon-medium text-ab-black/80 leading-tight">Simplify app
+                    development with the
+                    widest range of
+                    tools and <br />services custom-built for and by
+                    efficient coders.</p>
+            </div>
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5 md:order-1 order-2">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Discover
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Find blocks of
+                        reusable code
+                        suited for your specific business use case from an ever-increasing Blocks Marketplace.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative pb-5 pr-10 mt-10 md:order-2 order-1">
+                    <div class="w-full float-left grid grid-cols-2 items-start gap-7 md:gap-14 discover-box-wrapper">
+                        <div class="w-full float-left">
+                            <div
+                                class="w-full h-32 md:h-64 float-left rounded-md primary-gradient-box mt-6 md:mt-11 d-slide-box">
+                            </div>
+                            <div
+                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                            </div>
+                        </div>
+                        <div class="w-full float-left pt-11">
+                            <div
+                                class="w-full h-32 md:h-64 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                            </div>
+                            <div
+                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28" id="section-integrate">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left relative md:pb-5 md:pr-10">
+                    <div class="w-full float-left h-[340px] md:max-w-[510px] bg-[#222322] rounded-t-xl flex relative">
+                        <div class="w-7 h-full bg-[#4D4D4D] rounded-t-xl flex-shrink-0"></div>
+                        <div class="flex-grow overflow-hidden px-6 py-10">
+                            <div class="flexa-medium text-lg text-white/50 leading-tight">
+                                <p class="float-left relative max-w-full truncate typing-1"></p>
+                                <span class="cursor-blink" aria-hidden="true">_</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-10 right-0 lg:-right-10 xl:-right-20 z-10">
+                            <div class="w-60 h-60 float-left rounded-md primary-gradient-box slide-box-animation"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="w-full float-left md:max-w-[480px] py-5 md:justify-self-end">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Intergrate
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">With GitHub
+                        integration,
+                        automatically test and deploy every commit, pull request, and fork. Now that’s more time for
+                        you.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28" id="section-collaborate">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5 md:order-1 order-2">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Collaborate
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Invite your
+                        friends and
+                        teammates to work alongside you on complex apps with seamless standardized access management.
+                    </p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative md:order-2 order-1">
+                    <div
+                        class="collaborate-box transition-all duration-300 w-full float-left min-h-[380px] bg-[#F9F9F9] flex flex-col justify-center relative p-10 rounded-md">
+                        <div class="absolute left-1/2 md:left-0 top-0 md:top-6 transform-gpu -translate-x-1/2">
+                            <div class="flex float-left items-center -space-x-4 c-cicle-wrapper">
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-1">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-boys-1.svg" alt="Avatar-1" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-2">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-girls-1.svg" alt="Avatar-2" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-3">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-boys-2.svg" alt="Avatar-3" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-4">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-girls-2.svg" alt="Avatar-4" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-5">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-boys-3.svg" alt="Avatar-5" />
+                                </span>
+                                <!-- <span
+                                    class="w-10 h-10 float-left border-4 rounded-full bg-[#125645] border-transparent c-circle-5"></span> -->
+                            </div>
+                        </div>
+                        <!-- bg-[#DEC8C8] -->
+                        <div class="w-3/5 h-6 bg-white float-left"></div>
+                        <div class="w-full float-left flex flex-col mt-8">
+                            <div class="w-32 h-6 bg-[#B798FF] float-left relative top-3 left-10 c-up-arrow-wrapper">
+                                <svg class="absolute bottom-full right-0 c-up-arrow mb-1" width="22" height="19"
+                                    viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0575 0.0574951L21.4498 18.0575H0.665191L11.0575 0.0574951Z"
+                                        fill="#B798FF" />
+                                </svg>
+                            </div>
+                            <div class="w-full h-3 bg-white float-left"></div>
+                        </div>
+                        <div class="w-4/5 h-3 bg-white float-left mt-3"></div>
+                        <div class="w-32 h-6 bg-[#FFA7CB] self-end mt-10 relative c-right-arrow-wrapper">
+                            <svg class="absolute bottom-full mb-0.5 left-0 -ml-6 fill-[#FFA7CB] c-right-arrow"
+                                width="22" height="19" viewBox="0 0 22 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0575 0.0574951L21.4498 18.0575H0.665191L11.0575 0.0574951Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28" id="section-deploy">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5 order-2 md:order-1">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Deploy
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Develop/edit apps
+                        on the fly
+                        with built-in app versioning and rollbacking, added with zero downtime independent Blocks
+                        deployment.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative md:pb-5 md:pr-10 order-1 md:order-2">
+                    <div class="w-full float-left h-[340px] md:max-w-[510px] bg-[#222322] rounded-t-xl flex relative">
+                        <div class="w-7 h-full bg-[#4D4D4D] rounded-t-xl flex-shrink-0"></div>
+                        <div class="flex-grow overflow-hidden px-6 py-10">
+                            <div class="flexa-medium text-lg text-white/50 leading-tight">
+                                <p class="float-left relative max-w-full truncate typing-2"></p>
+                                <span class="cursor-blink" aria-hidden="true">_</span>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-6 md:-bottom-3 md:-right-3 transform-gpu md:rotate-[-5deg] z-10 md-lt:left-1/2 md-lt:-translate-x-1/2">
+                            <div class="float-left relative">
+                                <button type="button"
+                                    class="shadow-pop-br transition-all transform-gpu ease-in-out duration-300 bg-secondary flexa-bold text-lg md:text-2xl text-white px-4 w-[180px] h-[52px] md:h-[60px] rounded md:rounded-full float-left">
+                                    Deploy
+                                </button>
+                                <!-- <svg class="deploy-ion absolute top-0 right-0 -mt-14 -mr-14" width="92" height="98"
+                                    viewBox="0 0 92 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="12.1862" y="46.3228" width="44" height="13" rx="6.5"
+                                        transform="rotate(-62.5467 12.1862 46.3228)" fill="#FBA27C" />
+                                    <rect x="41.158" y="65.9333" width="44" height="13" rx="6.5"
+                                        transform="rotate(-10.0054 41.158 65.9333)" fill="#FBA27C" />
+                                    <rect x="26.1282" y="56.6357" width="22" height="13" rx="6.5"
+                                        transform="rotate(-42.8076 26.1282 56.6357)" fill="#FBA27C" />
+                                </svg> -->
+                                <svg class="deploy-ion absolute top-0 right-0 -mt-12 -mr-12 pointer-events-none"
+                                    width="71" height="76" viewBox="0 0 71 76" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="11.3965" y="38.0081" width="36" height="8" rx="4"
+                                        transform="rotate(-68.0002 11.3965 38.0081)" fill="#FBA27C" />
+                                    <rect x="30.1605" y="50.5076" width="36" height="8" rx="4"
+                                        transform="rotate(-4.55248 30.1605 50.5076)" fill="#FBA27C" />
+                                    <rect x="20" y="44.3394" width="16" height="8" rx="4"
+                                        transform="rotate(-40.2578 20 44.3394)" fill="#FBA27C" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left relative md:pb-5 md:pr-10">
+                    <div
+                        class="w-full float-left h-[340px] md:max-w-[510px] bg-[#F1F1F1] rounded-md flex relative md-lt:flex items-center justify-center">
+                        <div class="w-full h-full flex items-end float-left overflow-hidden md-lt:hidden">
+                            <svg class="chart-1" width="486" height="245" viewBox="0 0 486 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M90.8893 155.881C52.4391 153.157 0.402161 195.855 0.402161 195.855V335.762H482.598V155.881C482.598 155.881 445.543 180.944 420.262 176.684C379.908 169.883 402.731 99.3062 363.557 87.355C335.182 78.6982 316.756 113.383 289.157 102.447C261.386 91.4433 270.846 53.8186 244.516 39.6315C184.969 7.5457 233.912 197.193 166.496 195.855C133.205 195.194 124.105 158.235 90.8893 155.881Z"
+        fill="url(#paint0_linear_115_299)" />
+    <path
+        d="M0.402161 195.855C0.402161 195.855 52.4391 153.157 90.8893 155.881C124.105 158.235 133.205 195.194 166.496 195.855C233.912 197.193 184.969 7.54571 244.516 39.6315C270.846 53.8186 261.386 91.4433 289.157 102.447C316.756 113.383 335.182 78.6982 363.557 87.355C402.731 99.3062 379.908 169.883 420.262 176.684C445.543 180.944 482.598 155.881 482.598 155.881"
+        stroke="url(#paint1_linear_115_299)" stroke-width="5" stroke-linecap="round" />
+    <path
+        d="M0 108.158C0 108.158 40.1769 137.793 67.5637 135.486C101.778 132.604 103.635 83.3699 137.943 82.0524C178.696 80.4874 178.14 161.139 217.571 150.578C239.716 144.647 239.109 117.42 261.005 110.605C298.962 98.7917 309.303 167.99 348.677 162.815C381.202 158.541 380.837 107.828 413.425 104.079C441.317 100.87 450.827 119.986 483 128.96"
+        stroke="url(#paint2_linear_115_299)" stroke-width="5" stroke-linecap="round" />
+    <g filter="url(#filter0_d_115_299)">
+        <ellipse cx="240.495" cy="36.3683" rx="16.0866" ry="16.3157" fill="url(#paint3_linear_115_299)" />
+        <path class="point-chart-animation"
+            d="M252.581 36.3683C252.581 43.2236 247.117 48.6841 240.495 48.6841C233.872 48.6841 228.408 43.2236 228.408 36.3683C228.408 29.513 233.872 24.0526 240.495 24.0526C247.117 24.0526 252.581 29.513 252.581 36.3683Z"
+            stroke="white" stroke-width="8" />
+    </g>
+    <defs>
+        <filter id="filter0_d_115_299" x="199.408" y="0.0526123" width="82.1732" height="82.6315"
+            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+            <feOffset dy="5" />
+            <feGaussianBlur stdDeviation="12.5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_115_299" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_115_299" result="shape" />
+        </filter>
+        <linearGradient id="paint0_linear_115_299" x1="241.5" y1="35.9746" x2="241.5" y2="335.762"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF9364" stop-opacity="0.3" />
+            <stop offset="1" stop-color="#F25F33" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_115_299" x1="241.5" y1="35.9746" x2="241.5" y2="195.862"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF9364" />
+            <stop offset="1" stop-color="#F25F33" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_115_299" x1="241.5" y1="82.0299" x2="241.5" y2="163.092"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B09FFF" />
+            <stop offset="1" stop-color="#8D79F6" />
+        </linearGradient>
+        <linearGradient id="paint3_linear_115_299" x1="240.495" y1="20.0526" x2="240.495" y2="52.6841"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF9364" />
+            <stop offset="1" stop-color="#F25F33" />
+        </linearGradient>
+    </defs>
+</svg>
+                        </div>
+                        <div class="md-lt:w-full md:absolute -bottom-10 -right-20 z-10 md-lt:flex justify-center">
+                            <div
+                                class="md:w-60 md:h-60 float-left rounded-md bg-[#F1F1F1] flex justify-center items-center">
+                                <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.8" class="chart-2-rotation">
+        <path
+            d="M80.0002 148C98.035 148 115.331 140.836 128.084 128.083C140.836 115.331 148 98.0347 148 80L80.0002 80V148Z"
+            fill="url(#paint0_linear_2184_6460)" />
+        <path
+            d="M12.0002 80C12.0002 98.0347 19.1645 115.331 31.917 128.083C44.6694 140.836 61.9655 148 80.0002 148L80.0002 80L12.0002 80Z"
+            fill="url(#paint1_linear_2184_6460)" />
+        <path
+            d="M80 12C71.0701 12 62.2277 13.7589 53.9775 17.1762C45.7274 20.5935 38.2311 25.6024 31.9167 31.9167C25.6024 38.2311 20.5935 45.7274 17.1762 53.9775C13.7589 62.2277 12 71.0701 12 80L80 80V12Z"
+            fill="url(#paint2_linear_2184_6460)" />
+        <path class="chart-2-highlight"
+            d="M150 80C155.523 80 160.064 75.5057 159.376 70.0259C158.486 62.9473 156.652 56.0043 153.91 49.3853C149.89 39.6793 143.997 30.8601 136.569 23.4315C129.14 16.0028 120.321 10.11 110.615 6.08964C103.996 3.34798 97.0527 1.51368 89.9741 0.624193C84.4943 -0.0643769 80 4.47715 80 10V70C80 75.5229 84.4771 80 90 80H150Z"
+            fill="url(#paint3_linear_2184_6460)" />
+        <g filter="url(#filter0_d_2184_6460)">
+            <circle class="chart-circle" cx="80" cy="80" r="44" fill="white" />
+        </g>
+    </g>
+    <defs>
+        <filter id="filter0_d_2184_6460" x="26" y="30" width="108" height="108" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2184_6460" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2184_6460" result="shape" />
+        </filter>
+        <linearGradient id="paint0_linear_2184_6460" x1="80.0002" y1="12" x2="80.0002" y2="148"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B09FFF" />
+            <stop offset="1" stop-color="#8D79F6" />
+        </linearGradient>
+
+        <linearGradient id="paint1_linear_2184_6460" x1="80.0002" y1="12" x2="80.0002" y2="148"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFD572" />
+            <stop offset="1" stop-color="#FEBD38" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_2184_6460" x1="80" y1="12" x2="80" y2="148" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#99FFA3" />
+            <stop offset="1" stop-color="#68EE76" />
+        </linearGradient>
+        <linearGradient id="paint3_linear_2184_6460" x1="80" y1="0" x2="80" y2="160" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF9364" />
+            <stop offset="1" stop-color="#F25F33" />
+        </linearGradient>
+    </defs>
+</svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full float-left md:max-w-[480px] py-5 md:justify-self-end">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Measure
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Get real-time
+                        data on Block
+                        performance, log reports, and every mission-critical information with ease.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-24">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left">
+                <p class="flexa-bold text-[28px] leading-[34px] md:text-[48px] md:leading-[58px] text-ab-black">Build
+                    better software
+                    <br />with <span class="primary-gradient-text">appblocks</span></p>
+                <div
+                    class="w-full float-left grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8 md:mt-12 md-lt:hidden">
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-1.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Standardized libraries
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Experience predefined standard data models with synced data for easy access development using Blocks.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-2.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Modular
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Explore the full range of composable app development with easy-to-use blocks to build infinitely scalable products.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-3.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Reusable
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Ensure maximum flexibility with reusable blocks, both public and private that can be managed and shared across teams.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-4.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Easy integration
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">With GitHub integration, simplify app development process with automatic testing and deployment of commits, pull requests, and forks.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-5.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Maintenability
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Easy to update and bug fix. The AppBlocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-6.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Seamless deployment
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Users can either develop on-premise or utilize cloud-first development, preventing unneeded technology lock-ins.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-7.svg" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Collaboration
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">With Shield, get common logins for your apps, including social ones, making it easy for teams to work together on app development.
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="#">Learn More</a>
+                    </div>
+                    
+                    <div
+                        class="w-full float-left flex flex-col items-start justify-center space-y-4 bg-primary rounded p-6 group">
+                        <h4 class="text-2xl text-white flexa-medium ">Is appblocks right
+                            for you?</h4>
+                        <a
+                            class="float-left bg-secondary rounded-full text-white flexa-bold text-xl px-8 py-2.5 cursor-pointer mt-2">Find
+                            out</a>
+                    </div>
+                </div>
+                <div class="w-full float-left swiper feature-swiper md:hidden mt-8">
+                    <div class="swiper-wrapper">
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-1.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Standardized libraries
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Experience predefined standard data models with synced data for easy access development using Blocks.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-2.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Modular
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Explore the full range of composable app development with easy-to-use blocks to build infinitely scalable products.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-3.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Reusable
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Ensure maximum flexibility with reusable blocks, both public and private that can be managed and shared across teams.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-4.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Easy integration
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">With GitHub integration, simplify app development process with automatic testing and deployment of commits, pull requests, and forks.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-5.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Maintenability
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Easy to update and bug fix. The AppBlocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-6.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Seamless deployment
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Users can either develop on-premise or utilize cloud-first development, preventing unneeded technology lock-ins.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="./assets/images/icons/feature-icon-7.svg" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                Collaboration
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">With Shield, get common logins for your apps, including social ones, making it easy for teams to work together on app development.
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="#">Learn More</a>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-64 float-left flex flex-col items-start justify-center space-y-4 bg-primary rounded p-6 group">
+                            <h4 class="text-2xl text-white flexa-medium ">Is appblocks right
+                                for you?</h4>
+                            <a
+                                class="float-left bg-secondary rounded-full text-white flexa-bold text-xl px-8 py-2.5 cursor-pointer mt-2">Find
+                                out</a>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5">
+                    <p class="flexa-bold text-[28px] leading-[34px] md:text-[48px] md:leading-[58px] text-ab-black">Got
+                        a specific
+                        need? <br />there’s a
+                        <span class="primary-gradient-text">block</span> for that</p>
+                    <p class="w-full float-left mt-6 zirkon-medium text-sm md:text-lg leading-tight text-ab-black/70">No
+                        matter
+                        your business
+                        need, there is a Block to unblock your development roadblocks. If not, build your own
+                        hassle-free with AppBlocks.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a
+                            class="inline-flex items-center justify-center zirkon-medium text-base md:text-xl pb-2.5 pt-3 px-6 bg-secondary rounded-full text-white hover:opacity-90 cursor-pointer">Learn
+                            more about blocks</a>
+                    </div>
+                    <div class="w-full float-left mt-4 md:mt-8">
+                        <a
+                            class="text-primary text-base flexa-medium cursor-pointer primary-gradient-text border-b border-transparent hover:border-secondary">Start
+                            Developing</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative text-center flex justify-center">
+                    <svg width="450" height="421" viewBox="0 0 450 421" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g class="blox-animation-2">
+        <path d="M150 263.33V175.67L75 131.84L0 175.67V263.48L75 307.15L150 263.33Z" fill="white" />
+        <path d="M150 175.67V263.32L75 307.15V219.5L150 175.67Z" fill="url(#paint0_radial_2439_8948)" />
+        <path d="M0 175.67V263.32L75 307.15V219.5L0 175.67Z" fill="black" fill-opacity="0.05" />
+        <path d="M75 131.84L0 175.67L75 219.5L150 175.67L75 131.84Z" fill="url(#paint1_radial_2439_8948)" />
+        <path
+            d="M75 132.74L148.47 175.68L75 218.61L1.53 175.67L75 132.74ZM75 131.84L0 175.67L75 219.5L150 175.67L75 131.84Z"
+            fill="url(#paint2_linear_2439_8948)" />
+        <path d="M0.77 177.01L74.23 219.94V305.81L0.77 262.88V177.01ZM0 175.67V263.48L75 307.16V219.5L0 175.67Z"
+            fill="url(#paint3_linear_2439_8948)" />
+        <path d="M149.23 177.01V262.88L75.77 305.81V219.94L149.23 177.01ZM150 175.67L75 219.5V307.15L150 263.32V175.67Z"
+            fill="url(#paint4_linear_2439_8948)" />
+    </g>
+    <g class="blox-animation-1 z-10">
+        <path d="M301 131.49V43.83L226 0L151 43.83V131.64L226 175.31L301 131.49Z" fill="white" />
+        <path d="M301 43.83V131.48L226 175.31V87.66L301 43.83Z" fill="url(#paint5_radial_2439_8948)" />
+        <path d="M151 43.83V131.48L226 175.31V87.66L151 43.83Z" fill="black" fill-opacity="0.05" />
+        <path d="M226 0L151 43.83L226 87.66L301 43.83L226 0Z" fill="url(#paint6_radial_2439_8948)" />
+        <path
+            d="M226 0.900009L299.47 43.84L226 86.77L152.53 43.83L226 0.900009ZM226 0L151 43.83L226 87.66L301 43.83L226 0Z"
+            fill="url(#paint7_linear_2439_8948)" />
+        <path d="M151.77 45.17L225.23 88.1V173.97L151.77 131.04V45.17ZM151 43.83V131.64L226 175.32V87.66L151 43.83Z"
+            fill="url(#paint8_linear_2439_8948)" />
+        <path d="M300.23 45.17V131.04L226.77 173.97V88.1L300.23 45.17ZM301 43.83L226 87.66V175.31L301 131.48V43.83Z"
+            fill="url(#paint9_linear_2439_8948)" />
+    </g>
+    <g class="blox-animation-3">
+        <path d="M450 255.49V167.83L375 124L300 167.83V255.64L375 299.31L450 255.49Z" fill="white" />
+        <path d="M450 167.83V255.48L375 299.31V211.66L450 167.83Z" fill="url(#paint10_radial_2439_8948)" />
+        <path d="M300 167.83V255.48L375 299.31V211.66L300 167.83Z" fill="black" fill-opacity="0.05" />
+        <path d="M375 124L300 167.83L375 211.66L450 167.83L375 124Z" fill="url(#paint11_radial_2439_8948)" />
+        <path
+            d="M375 124.9L448.47 167.84L375 210.77L301.53 167.83L375 124.9ZM375 124L300 167.83L375 211.66L450 167.83L375 124Z"
+            fill="url(#paint12_linear_2439_8948)" />
+        <path
+            d="M300.77 169.17L374.23 212.1V297.97L300.77 255.04V169.17ZM300 167.83V255.64L375 299.32V211.66L300 167.83Z"
+            fill="url(#paint13_linear_2439_8948)" />
+        <path
+            d="M449.23 169.17V255.04L375.77 297.97V212.1L449.23 169.17ZM450 167.83L375 211.66V299.31L450 255.48V167.83Z"
+            fill="url(#paint14_linear_2439_8948)" />
+    </g>
+    <g class="blox-animation-4">
+        <path d="M301 376.49V288.83L226 245L151 288.83V376.64L226 420.31L301 376.49Z" fill="white" />
+        <path d="M301 288.83V376.48L226 420.31V332.66L301 288.83Z" fill="url(#paint15_radial_2439_8948)" />
+        <path d="M151 288.83V376.48L226 420.31V332.66L151 288.83Z" fill="black" fill-opacity="0.05" />
+        <path d="M226 245L151 288.83L226 332.66L301 288.83L226 245Z" fill="url(#paint16_radial_2439_8948)" />
+        <path
+            d="M226 245.9L299.47 288.84L226 331.77L152.53 288.83L226 245.9ZM226 245L151 288.83L226 332.66L301 288.83L226 245Z"
+            fill="url(#paint17_linear_2439_8948)" />
+        <path
+            d="M151.77 290.17L225.23 333.1V418.97L151.77 376.04V290.17ZM151 288.83V376.64L226 420.32V332.66L151 288.83Z"
+            fill="url(#paint18_linear_2439_8948)" />
+        <path
+            d="M300.23 290.17V376.04L226.77 418.97V333.1L300.23 290.17ZM301 288.83L226 332.66V420.31L301 376.48V288.83Z"
+            fill="url(#paint19_linear_2439_8948)" />
+    </g>
+    <defs>
+        <radialGradient id="paint0_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(147.5 177) rotate(117.091) scale(146.021 250.587)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.547761" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="1" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <radialGradient id="paint1_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(150 176) rotate(-180) scale(150 150)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.584077" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="0.918084" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <linearGradient id="paint2_linear_2439_8948" x1="56.0786" y1="186.574" x2="216.93" y2="93.8935"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint3_linear_2439_8948" x1="18.5346" y1="263.485" x2="168.361" y2="89.1137"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint4_linear_2439_8948" x1="111.61" y1="242.979" x2="165.737" y2="147.745"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <radialGradient id="paint5_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(298.5 45.1598) rotate(117.091) scale(146.021 250.587)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.547761" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="1" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <radialGradient id="paint6_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(301 44.1599) rotate(-180) scale(150 150)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.584077" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="0.918084" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <linearGradient id="paint7_linear_2439_8948" x1="207.079" y1="54.7343" x2="367.93" y2="-37.9466"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint8_linear_2439_8948" x1="169.535" y1="131.645" x2="319.361" y2="-42.7263"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint9_linear_2439_8948" x1="262.61" y1="111.139" x2="316.737" y2="15.9054"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <radialGradient id="paint10_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(447.5 169.16) rotate(117.091) scale(146.021 250.587)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.547761" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="1" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <radialGradient id="paint11_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(450 168.16) rotate(-180) scale(150 150)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.584077" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="0.918084" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <linearGradient id="paint12_linear_2439_8948" x1="356.079" y1="178.734" x2="516.93" y2="86.0534"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint13_linear_2439_8948" x1="318.535" y1="255.645" x2="468.361" y2="81.2737"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint14_linear_2439_8948" x1="411.61" y1="235.139" x2="465.737" y2="139.905"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <radialGradient id="paint15_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(298.5 290.16) rotate(117.091) scale(146.021 250.587)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.547761" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="1" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <radialGradient id="paint16_radial_2439_8948" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(301 289.16) rotate(-180) scale(150 150)">
+            <stop stop-color="#121212" stop-opacity="0.5" />
+            <stop offset="0.584077" stop-color="#121212" stop-opacity="0.1" />
+            <stop offset="0.918084" stop-color="#121212" stop-opacity="0.05" />
+        </radialGradient>
+        <linearGradient id="paint17_linear_2439_8948" x1="207.079" y1="299.734" x2="367.93" y2="207.053"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint18_linear_2439_8948" x1="169.535" y1="376.645" x2="319.361" y2="202.274"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <linearGradient id="paint19_linear_2439_8948" x1="262.61" y1="356.139" x2="316.737" y2="260.905"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+        </linearGradient>
+    </defs>
+</svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left flex flex-col space-y-16 items-center">
+                <p
+                    class="flexa-bold text-[28px] leading-[34px] md:text-5xl text-ab-black md:leading-tight text-center mb-2">
+                    Our Customers
+                    are crazy, and
+                    <br />We
+                    <span>❤️</span>
+                    Them for It!</p>
+                <div class="w-full float-left grid grid-cols-1 md:grid-cols-3 gap-8 md-lt:hidden">
+                    
+                    <div
+                        class="w-full flex flex-col justify-between items-start border-2 border-[#5E5EDD]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                        <div class="w-full float-left flex flex-col items-start">
+                            
+                            <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                src="./assets/images/icons/customer-1.svg"></img>
+                            
+                            <div class="flex flex-col space-y-0.5">
+                                <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                    Johny Costo</h4>
+                                <span
+                                    class="text-base text-ab-black/50 flexa-medium underline truncate">CEO Costco</span>
+                            </div>
+                            <p
+                                class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                For my agency, Appblocks has been a game changer. With the click of a button, I can create a complete landing page. I receive 5 different variations of content so that I can choose the one that I like best. Moreover, the content rewriting feature is top-notch.</p>
+                        </div>
+                        <div
+                            class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                            <span class="zirkon-medium text-base leading-tight pt-1">4.5</span><img
+                                src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                        </div>
+                    </div>
+                    
+                    <div
+                        class="w-full flex flex-col justify-between items-start border-2 border-[#D453B673]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                        <div class="w-full float-left flex flex-col items-start">
+                            
+                            <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                src="./assets/images/icons/customer-2.svg"></img>
+                            
+                            <div class="flex flex-col space-y-0.5">
+                                <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                    Johny Costo</h4>
+                                <span
+                                    class="text-base text-ab-black/50 flexa-medium underline truncate">CEO Costco</span>
+                            </div>
+                            <p
+                                class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                For my agency, Appblocks has been a game changer. With the click of a button, I can create a complete landing page. I receive 5 different variations of content so that I can choose the one that I like best. Moreover, the content rewriting feature is top-notch.</p>
+                        </div>
+                        <div
+                            class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                            <span class="zirkon-medium text-base leading-tight pt-1">4.5</span><img
+                                src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                        </div>
+                    </div>
+                    
+                    <div
+                        class="w-full flex flex-col justify-between items-start border-2 border-[#F7D24C73]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                        <div class="w-full float-left flex flex-col items-start">
+                            
+                            <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                src="./assets/images/icons/customer-3.svg"></img>
+                            
+                            <div class="flex flex-col space-y-0.5">
+                                <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                    Johny Costo</h4>
+                                <span
+                                    class="text-base text-ab-black/50 flexa-medium underline truncate">CEO Costco</span>
+                            </div>
+                            <p
+                                class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                For my agency, Appblocks has been a game changer. With the click of a button, I can create a complete landing page. I receive 5 different variations of content so that I can choose the one that I like best. Moreover, the content rewriting feature is top-notch.</p>
+                        </div>
+                        <div
+                            class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                            <span class="zirkon-medium text-base leading-tight pt-1">4.5</span><img
+                                src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="w-full float-left swiper customer-swiper md:hidden">
+                    <div class="swiper-wrapper">
+                        
+                        <div
+                            class="swiper-slide !w-80 flex flex-col justify-between items-start border-2 border-[#5E5EDD]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                            <div class="w-full float-left flex flex-col items-start">
+                                
+                                <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                    src="./assets/images/icons/customer-1.svg"></img>
+                                
+                                <div class="flex flex-col space-y-0.5">
+                                    <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                        Johny Costo</h4>
+                                    <span
+                                        class="text-base text-ab-black/50 flexa-medium underline truncate">CEO Costco</span>
+                                </div>
+                                <p
+                                    class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                    For my agency, Appblocks has been a game changer. With the click of a button, I can create a complete landing page. I receive 5 different variations of content so that I can choose the one that I like best. Moreover, the content rewriting feature is top-notch.</p>
+                            </div>
+                            <div
+                                class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                                <span class="zirkon-medium text-base leading-tight pt-1">4.5</span><img
+                                    src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                            </div>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-80 flex flex-col justify-between items-start border-2 border-[#D453B673]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                            <div class="w-full float-left flex flex-col items-start">
+                                
+                                <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                    src="./assets/images/icons/customer-2.svg"></img>
+                                
+                                <div class="flex flex-col space-y-0.5">
+                                    <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                        Johny Costo</h4>
+                                    <span
+                                        class="text-base text-ab-black/50 flexa-medium underline truncate">CEO Costco</span>
+                                </div>
+                                <p
+                                    class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                    For my agency, Appblocks has been a game changer. With the click of a button, I can create a complete landing page. I receive 5 different variations of content so that I can choose the one that I like best. Moreover, the content rewriting feature is top-notch.</p>
+                            </div>
+                            <div
+                                class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                                <span class="zirkon-medium text-base leading-tight pt-1">4.5</span><img
+                                    src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                            </div>
+                        </div>
+                        
+                        <div
+                            class="swiper-slide !w-80 flex flex-col justify-between items-start border-2 border-[#F7D24C73]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                            <div class="w-full float-left flex flex-col items-start">
+                                
+                                <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                    src="./assets/images/icons/customer-3.svg"></img>
+                                
+                                <div class="flex flex-col space-y-0.5">
+                                    <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                        Johny Costo</h4>
+                                    <span
+                                        class="text-base text-ab-black/50 flexa-medium underline truncate">CEO Costco</span>
+                                </div>
+                                <p
+                                    class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                    For my agency, Appblocks has been a game changer. With the click of a button, I can create a complete landing page. I receive 5 different variations of content so that I can choose the one that I like best. Moreover, the content rewriting feature is top-notch.</p>
+                            </div>
+                            <div
+                                class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                                <span class="zirkon-medium text-base leading-tight pt-1">4.5</span><img
+                                    src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8">
+    <div class="w-full float-left bg-primary">
+        <div
+            class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix bg-[url(../images/icons/block-bg.svg)] bg-no-repeat bg-bottom">
+            <div class="w-full float-left py-28 flex flex-col space-y-14 items-center">
+                <p class="flexa-bold text-2xl md:text-4xl text-white leading-snug text-center">Discover — game
+                    changing
+                    <br />software
+                    with Appblocks</p>
+                <a href="https://github.com/appblocks-hub" target="_blank"
+                    class="flex items-center justify-center zirkon-medium text-base md:text-xl py-2.5 px-6 bg-secondary rounded-full text-white hover:opacity-90">Start
+                    Developing</a>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="./assets/js/index.js"></script>
+        <footer class="w-full float-left">
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-16 clearfix">
+        <div class="w-full grid grid-cols-1 gap-y-5 py-12">
+            <div class="flex justify-center flex-wrap">
+                <a class="cursor-pointer text-ab-black/60 hover:underline mx-3 my-1" target="_blank"
+                    href="https://discord.gg/74QGSVxF">About Us</a>
+                <a class="cursor-pointer text-ab-black/60 hover:underline mx-3 my-1"
+                    href="/pages/privacy-policy/">Privacy policy</a>
+                <a class="cursor-pointer text-ab-black/60 hover:underline mx-3 my-1"
+                    href="/pages/terms-conditions-authors/">Terms of use for Authors</a>
+                <a class="cursor-pointer text-ab-black/60 hover:underline mx-3 my-1"
+                    href="/pages/terms-conditions-customers/">Terms of use for Customers</a>
+                <a class="cursor-pointer text-ab-black/60 hover:underline mx-3 my-1" href="/pages/refund/">Refund
+                    policies</a>
+            </div>
+            <div class="flex justify-center flex-wrap text-ab-black/60">
+                <a class="cursor-pointer mx-2 my-1 group" target="_blank"
+                    href="https://www.linkedin.com/company/89235117/admin/">
+                    <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                        <path class="group-hover:fill-primary transition-all" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 1.5A1.5 1.5 0 011.5 0h12A1.5 1.5 0 0115 1.5v12a1.5 1.5 0 01-1.5 1.5h-12A1.5 1.5 0 010 13.5v-12zM5 5H4V4h1v1zm-1 6V6h1v5H4zm4.5-4A1.5 1.5 0 007 8.5V11H6V6h1v.5a2.5 2.5 0 014 2V11h-1V8.5A1.5 1.5 0 008.5 7z"
+                            fill="currentColor"></path>
+                    </svg>
+                </a>
+                <a class="cursor-pointer mx-2 my-1 group" target="_blank"
+                    href="https://www.facebook.com/profile.php?id=100086034980312">
+                    <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                        <path class="group-hover:fill-primary transition-all"
+                            d="M0 7.5a7.5 7.5 0 118 7.484V9h2V8H8V6.5A1.5 1.5 0 019.5 5h.5V4h-.5A2.5 2.5 0 007 6.5V8H5v1h2v5.984A7.5 7.5 0 010 7.5z"
+                            fill="currentColor"></path>
+                    </svg>
+                </a>
+                <a class="cursor-pointer mx-2 my-1 group" target="_blank" href="https://twitter.com/Appblocksapp">
+                    <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                        <path class="group-hover:fill-primary transition-all"
+                            d="M14.977 1.467a.5.5 0 00-.87-.301 2.559 2.559 0 01-1.226.763A3.441 3.441 0 0010.526 1a3.539 3.539 0 00-3.537 3.541v.44C3.998 4.75 2.4 2.477 1.967 1.325a.5.5 0 00-.916-.048C.004 3.373-.157 5.407.604 7.139 1.27 8.656 2.61 9.864 4.51 10.665 3.647 11.276 2.194 12 .5 12a.5.5 0 00-.278.916C1.847 14 3.55 14 5.132 14h.048c4.861 0 8.8-3.946 8.8-8.812v-.479c.363-.37.646-.747.82-1.236.193-.546.232-1.178.177-2.006z"
+                            fill="currentColor"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-center text-sm my-1 text-ab-black/60">Copyright © 2022 Appblocks.</p>
+        </div>
+    </div>
+</footer>
+    </body>
+</html>
