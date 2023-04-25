@@ -1,0 +1,35 @@
+[
+    {
+        "banner":
+        [
+            { 
+                "title": "Help and Support",
+                "desc": "Worem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+        ]
+        ,
+        "questions":
+        [
+            { 
+                "question": "Why should my organisation use Appblocks?",
+                "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
+                "more_link": "https://docs.appblocks.com/"
+            },
+            { 
+                "question": "Why should my organisation use Appblocks?",
+                "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                "more_link": "https://docs.appblocks.com/"
+            },
+            { 
+                "question": "Why should my organisation use Appblocks?",
+                "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
+                "more_link": "https://docs.appblocks.com/"
+            },
+            { 
+                "question": "Why should my organisation use Appblocks?",
+                "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                "more_link": "https://docs.appblocks.com/"
+            }
+        ]
+    }
+]

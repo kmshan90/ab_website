@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'gt_zirkon_regular';
+    src: url('../fonts/gt-zirkon-regular-webfont.eot');
+    src: url('../fonts/gt-zirkon-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gt-zirkon-regular-webfont.woff2') format('woff2'),
+         url('../fonts/gt-zirkon-regular-webfont.woff') format('woff'),
+         url('../fonts/gt-zirkon-regular-webfont.ttf') format('truetype'),
+         url('../fonts/gt-zirkon-regular-webfont.svg#gt_zirkon_trialrg') format('svg');
+}
+@font-face {
+    font-family: 'gt_zirkon_medium';
+    src: url('../fonts/gt-zirkon-medium-webfont.eot');
+    src: url('../fonts/gt-zirkon-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gt-zirkon-medium-webfont.woff2') format('woff2'),
+         url('../fonts/gt-zirkon-medium-webfont.woff') format('woff'),
+         url('../fonts/gt-zirkon-medium-webfont.ttf') format('truetype'),
+         url('../fonts/gt-zirkon-medium-webfont.svg#gt_zirkon_trialmd') format('svg');
+}
+
+@font-face {
+    font-family: 'gt_flexa_bold';
+    src: url('../fonts/gt-flexa-bold-webfont.eot');
+    src: url('../fonts/gt-flexa-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gt-flexa-bold-webfont.woff2') format('woff2'),
+         url('../fonts/gt-flexa-bold-webfont.woff') format('woff'),
+         url('../fonts/gt-flexa-bold-webfont.ttf') format('truetype'),
+         url('../fonts/gt-flexa-bold-webfont.svg#gt_flexa_trialbd') format('svg');
+}
+@font-face {
+    font-family: 'gt_flexa_regular';
+    src: url('../fonts/gt-flexa-compressed-regular-webfont.eot');
+    src: url('../fonts/gt-flexa-compressed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gt-flexa-compressed-regular-webfont.woff2') format('woff2'),
+         url('../fonts/gt-flexa-compressed-regular-webfont.woff') format('woff'),
+         url('../fonts/gt-flexa-compressed-regular-webfont.ttf') format('truetype'),
+         url('../fonts/gt-flexa-compressed-regular-webfont.svg#gt_flexa_trialcm_rg') format('svg');
+}
+@font-face {
+    font-family: 'gt_flexa_medium';
+    src: url('../fonts/gt-flexa-medium-webfont.eot');
+    src: url('../fonts/gt-flexa-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gt-flexa-medium-webfont.woff2') format('woff2'),
+         url('../fonts/gt-flexa-medium-webfont.woff') format('woff'),
+         url('../fonts/gt-flexa-medium-webfont.ttf') format('truetype'),
+         url('../fonts/gt-flexa-medium-webfont.svg#gt_flexa_trialmd') format('svg');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    overflow-x: hidden;
+    font-family: 'gt_zirkon_regular', sans-serif; 
+}
+.zirkon-regular{
+    font-family: 'gt_zirkon_regular', sans-serif; 
+}
+.zirkon-medium{
+    font-family: 'gt_zirkon_medium', sans-serif; 
+}
+.flexa-bold{
+    font-family: 'gt_flexa_bold', sans-serif; 
+}
+.flexa-regular{
+    font-family: 'gt_flexa_regular', sans-serif; 
+}
+.flexa-medium{
+    font-family: 'gt_flexa_medium', sans-serif; 
+}
+::-moz-selection{
+    color: #fff;
+    background: #6F42C1;
+}
+::selection {
+    color: #fff;
+    background: #6F42C1;
+}
+.primary-gradient-text{
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary;
+}
+.primary-gradient-box{
+    background: linear-gradient(90.77deg, #D453B5 28.6%, rgba(212, 83, 181, 0) 78.06%), #5E5EDD;
+}

@@ -1,0 +1,29 @@
+---
+layout: layout/layout.njk
+site_title: Appblocks - About Us
+---
+
+{% import 'partials/banner.njk' as banner %}
+<div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
+    {{ banner.common(aboutData[0].banner[0].title, aboutData[0].banner[0].desc) }}
+
+    <section class="w-full float-left">
+        <div class="max-w-5xl w-full mx-auto clearfix px-4 md:px-6 py-6">
+            <div class="w-full float-left flex flex-col items-center">
+                <h2 class="text-xl text-center text-ab-black/50 flexa-bold tracking-wider">FAQ</h2>
+                <h3 class="text-5xl text-center text-ab-black flexa-bold mt-4">Got a question<b class="flexa-bold">?</b>
+                </h3>
+                <p class="max-w-[620px] w-full text-xl text-center text-ab-black/80 flexa-medium !font-medium mt-6">
+                    Develop
+                    your
+                    web apps in
+                    blocks by
+                    collaborating with your team.
+                    Buy or sell blocks using the blocks marketplace.</p>
+                <input type="text" placeholder="Search for answers"
+                    class="max-w-[560px] w-full search-input mt-6 border border-ab-gray-medium !leading-tight rounded text-ab-black zirkon-regular focus:border-primary focus:outline-none text-xl px-4 pt-3.5 pb-3" />
+            </div>
+        </div>
+    </section>
+    {% include "partials/discover-box.html" %}
+</div>

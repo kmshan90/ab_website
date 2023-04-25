@@ -1,0 +1,82 @@
+---
+layout: layout/layout.njk
+site_title: Appblocks - Refund
+---
+
+{% import 'partials/banner.njk' as banner %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
+    {{ banner.support(supportData[0].refund[0].banner[0].title, supportData[0].refund[0].banner[0].desc) }}
+
+    <section class="w-full float-left py-8 md:py-10">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full grid grid-cols-[1fr_320px] gap-16">
+                <div class="w-full float-left zirkon-regular">
+                    <div id="introduction" class="w-full float-left mb-8">
+                        <h3 class="zirkon-medium text-2xl text-ab-black mb-3">Introduction</h3>
+                        <p class="text-sm text-[#242424] mb-3">Hi, we're Appblocks and welcome to our Market Refund
+                            Rules.
+                            Because we are a platform, these
+                            rules outline what you can expect from the authors of the items you buy. They apply to all
+                            authors and customers.</p>
+                        <p class="text-sm text-[#242424] mb-3">The products that authors sell on the platform are
+                            digital
+                            goods and cannot be "returned", so
+                            your entitlement to a refund is designed with this in mind. Of course, in addition to these
+                            rules, each country has its own laws surrounding refunds, and these local laws are not
+                            excluded if they apply to you.</p>
+                        <div class="w-full float-left">
+                            <h4 class="text-lg zirkon-medium text-ab-black mb-3">Before you ask for a refund from an
+                                author</h4>
+                            <p class="text-sm text-[#242424] mb-3">If you have purchased an item from our “Blocks” or
+                                “Code” category on BlockStore and you
+                                are experiencing a technical issue with the item we recommend that you contact the
+                                author of that item and seek assistance. Often they’ll be able to help to troubleshoot
+                                your problem.</p>
+                        </div>
+                    </div>
+                    <div id="asking" class="w-full float-left mb-8">
+                        <h3 class="zirkon-medium text-2xl text-ab-black mb-3">Asking for refunds from authors</h3>
+                        <p class="text-sm text-[#242424] mb-3">We understand, however, that sometimes the author may not
+                            be able to solve your issue or there may be circumstances in which a refund is warranted. In
+                            this case, here are the circumstances in which we would expect an author to provide you with
+                            a refund:</p>
+                        <div class="w-full float-left">
+                            <h4 class="text-lg zirkon-medium text-ab-black mb-3">Item is "not as described" or the item
+                                doesn’t work the way it should.</h4>
+                            <p class="text-sm text-[#242424] mb-3">If an item doesn’t work the way it should then the
+                                author is required to promptly fix the issue by updating the item. An item is "not as
+                                described" if it is materially different from the item description or preview. If the
+                                issue can’t be fixed or it turns out that the item is “not as described” then you would
+                                be entitled to a refund from the author.</p>
+                        </div>
+                        <div class="w-full float-left">
+                            <h4 class="text-lg zirkon-medium text-ab-black mb-3">Item has a security vulnerability</h4>
+                            <p class="text-sm text-[#242424] mb-3">If an item contains a security vulnerability and
+                                can't easily be fixed you would be entitled to a refund from the author. If the item can
+                                be fixed, then the author should do so promptly by updating the item. If the item
+                                contains a security vulnerability that is not patched in an appropriate timeframe then
+                                we would expect the author to provide a refund for the item.</p>
+                        </div>
+                    </div>
+                    {% include "partials/customer-support.html" %}
+                </div>
+                <div class="w-full float-left">
+                    <ul class="sidebar-support float-left zirkon-regular text-ab-black text-base sticky top-28">
+                        <li class="w-full float-left">
+                            <a href="#introduction"
+                                class="float-left cursor-pointer border-l-2 pl-4 py-1.5 hover:text-[#5E5EDD] active-sidebar-link">Introduction</a>
+                        </li>
+                        <li class="w-full float-left">
+                            <a href="#asking"
+                                class="float-left cursor-pointer border-l-2 border-gray-200 pl-4 py-1.5 hover:text-[#5E5EDD]">Asking
+                                for refunds from authors</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script src="../../assets/js/support.js"></script>

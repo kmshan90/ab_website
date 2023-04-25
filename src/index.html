@@ -1,0 +1,544 @@
+---
+layout: layout/layout.njk
+site_title: Appblocks
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+<script>
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function handleEmailValidation() {
+        let input = document.getElementById("email_input").value;
+        if (validateEmail(input)) {
+            document.getElementById("email_input").classList.remove("border-red-500");
+        }
+    }
+
+    function resetInput() {
+        let msgContainer = document.getElementById("succes-msg");
+        msgContainer.classList.remove("hidden");
+        document.getElementById("loader").classList.add("hidden");
+        setTimeout(function () {
+            msgContainer.classList.add("hidden");
+        }, 5000);
+    }
+    var submitBtnClick = 0;
+
+    function submitForm() {
+        if (submitBtnClick === 0) {
+            submitBtnClick = 1;
+            let input = document.getElementById("email_input").value;
+            if (validateEmail(input)) {
+                document
+                    .getElementById("email_input")
+                    .classList.remove("border-red-500");
+                document
+                    .getElementById("email_input")
+                    .classList.add("border-ab-gray-medium");
+                document.getElementById("loader").classList.remove("hidden");
+                const data = JSON.stringify({
+                    email: input,
+                });
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://lead-mail.appblocks.com/add-lead", true);
+
+                //Send the proper header information along with the request
+                xhr.setRequestHeader("Content-Type", "application/json");
+
+                xhr.onreadystatechange = () => {
+                    // Call a function when the state changes.
+                    if (
+                        (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) ||
+                        true
+                    ) {
+                        resetInput();
+                    }
+                    if (xhr.readyState === 4) {
+                        document.getElementById("email_input").value = "";
+                        submitBtnClick = 0;
+                    }
+                };
+                xhr.send(data);
+            } else {
+                submitBtnClick = 0;
+                document
+                    .getElementById("email_input")
+                    .classList.remove("border-ab-gray-medium");
+                document.getElementById("email_input").classList.add("border-red-500");
+            }
+        }
+    }
+</script>
+<!-- <section id="scroll-section-1" class="w-full h-screen float-left banner-bg pt-[80px]">
+    <div class="w-full h-full flex justify-center items-center">
+
+    </div>
+</section> -->
+<div class="inner-page-wrapper w-full min-h-screen float-left flex flex-col pt-[80px]">
+    <section class="float-left flex md:min-h-[calc(100vh-80px)] w-full justify-center">
+        <div class="clearfix mx-auto flex w-full max-w-7xl items-center px-4 md:px-6">
+            <div class="bg-banner float-left flex w-full justify-center py-8 md:min-h-[80%] md:items-center">
+                <div class="float-left grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
+                    <div class="relative float-left w-full max-w-[480px] py-6 md-lt:mx-auto">
+                        <div
+                            class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[62px] md-lt:text-center">
+                            Open SDK for <br />
+                            <span class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Quickly</span>
+                            <span
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Affordably</span>
+                            <span
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Collaboratively</span>
+                            <span
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Efficiently</span>
+                            <br />building applications
+                        </div>
+                        <p
+                            class="flexa-medium mt-5 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
+                            Appblocks combines composable architecture and efficient coding to
+                            build applications
+                            <br /><b class="text-secondary">3X</b> faster at
+                            <b class="text-secondary">0.1X</b>
+                            development cost.
+                        </p>
+                        <div class="relative float-left mt-5 flex w-full">
+                            <input type="text" onkeyup="handleEmailValidation()" id="email_input" placeholder="Email ID"
+                                class="zirkon-regular h-11 flex-grow overflow-hidden rounded-l-md border border-ab-gray-medium border-r-transparent bg-white px-4 focus:outline-none md:h-[52px] md-lt:text-sm" />
+                            <button type="button" onclick="submitForm()"
+                                class="flexa-medium flex flex-shrink-0 items-center justify-center rounded-tr-md rounded-br-md bg-primary px-3.5 text-sm text-white hover:opacity-90 focus:outline-none md:text-lg">
+                                Request Demo
+                                <img class="ml-2 hidden max-w-[16px]" id="loader" src="../../assets/images/loading.gif"
+                                    alt="Loader" />
+                            </button>
+                        </div>
+                        <div class="float-left flex w-full">
+                            <!-- <img class="max-w-[32px] mt-4 hidden" id="loader" src="../../assets/images/loading.gif"
+                                alt="Loader" /> -->
+                            <p id="succes-msg"
+                                class="zirkon-medium mt-4 w-full text-center text-primary md:text-left hidden">
+                                Thank you for contacting us<br />
+                                We will get back to you as soon as possible
+                            </p>
+                        </div>
+                        <!-- <div class="w-full float-left mt-5">
+                            <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                        </div> -->
+                    </div>
+                    <!-- <div class="w-full float-left">
+                        <div class="w-full float-left h-[550px] bg-ab-gray-light">
+                            <img class="w-full h-full object-cover" src="assets/images/icons/blocks-right-img.jpeg"
+                                alt="" />
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-24" id="discover-section">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left text-center">
+                <h4 class="flexa-bold text-2xl md:text-[48px] md:leading-[58px] text-ab-black mb-5">Stay ahead with
+                    <span class="primary-gradient-text">Appblocks</span></h4>
+                <p class="mb-5 text-base md:text-lg zirkon-medium text-ab-black/80 leading-tight">Simplify app
+                    development with the
+                    widest range of
+                    tools and <br />services custom-built for and by
+                    efficient coders.</p>
+            </div>
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5 md:order-1 order-2">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Discover
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Find blocks of
+                        reusable code
+                        suited for your specific business use case from an ever-increasing Blocks Marketplace.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative pb-5 pr-10 mt-10 md:order-2 order-1">
+                    <div class="w-full float-left grid grid-cols-2 items-start gap-7 md:gap-14 discover-box-wrapper">
+                        <div class="w-full float-left">
+                            <div
+                                class="w-full h-32 md:h-64 float-left rounded-md primary-gradient-box mt-6 md:mt-11 d-slide-box">
+                            </div>
+                            <div
+                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                            </div>
+                        </div>
+                        <div class="w-full float-left pt-11">
+                            <div
+                                class="w-full h-32 md:h-64 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                            </div>
+                            <div
+                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28" id="section-integrate">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left relative md:pb-5 md:pr-10">
+                    <div class="w-full float-left h-[340px] md:max-w-[510px] bg-[#222322] rounded-t-xl flex relative">
+                        <div class="w-7 h-full bg-[#4D4D4D] rounded-t-xl flex-shrink-0"></div>
+                        <div class="flex-grow overflow-hidden px-6 py-10">
+                            <div class="flexa-medium text-lg text-white/50 leading-tight">
+                                <p class="float-left relative max-w-full truncate typing-1"></p>
+                                <span class="cursor-blink" aria-hidden="true">_</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-10 right-0 lg:-right-10 xl:-right-20 z-10">
+                            <div class="w-60 h-60 float-left rounded-md primary-gradient-box slide-box-animation"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="w-full float-left md:max-w-[480px] py-5 md:justify-self-end">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Intergrate
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">With GitHub
+                        integration,
+                        automatically test and deploy every commit, pull request, and fork. Now that’s more time for
+                        you.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28" id="section-collaborate">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5 md:order-1 order-2">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Collaborate
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Invite your
+                        friends and
+                        teammates to work alongside you on complex apps with seamless standardized access management.
+                    </p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative md:order-2 order-1">
+                    <div
+                        class="collaborate-box transition-all duration-300 w-full float-left min-h-[380px] bg-[#F9F9F9] flex flex-col justify-center relative p-10 rounded-md">
+                        <div class="absolute left-1/2 md:left-0 top-0 md:top-6 transform-gpu -translate-x-1/2">
+                            <div class="flex float-left items-center -space-x-4 c-cicle-wrapper">
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-1">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-boys-1.svg" alt="Avatar-1" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-2">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-girls-1.svg" alt="Avatar-2" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-3">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-boys-2.svg" alt="Avatar-3" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-4">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-girls-2.svg" alt="Avatar-4" />
+                                </span>
+                                <span class="float-left border-4 rounded-full border-transparent c-circle-5">
+                                    <img class="w-10 h-10 object-cover object-center rounded-full"
+                                        src="assets/images/icons/avatar-boys-3.svg" alt="Avatar-5" />
+                                </span>
+                                <!-- <span
+                                    class="w-10 h-10 float-left border-4 rounded-full bg-[#125645] border-transparent c-circle-5"></span> -->
+                            </div>
+                        </div>
+                        <!-- bg-[#DEC8C8] -->
+                        <div class="w-3/5 h-6 bg-white float-left"></div>
+                        <div class="w-full float-left flex flex-col mt-8">
+                            <div class="w-32 h-6 bg-[#B798FF] float-left relative top-3 left-10 c-up-arrow-wrapper">
+                                <svg class="absolute bottom-full right-0 c-up-arrow mb-1" width="22" height="19"
+                                    viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0575 0.0574951L21.4498 18.0575H0.665191L11.0575 0.0574951Z"
+                                        fill="#B798FF" />
+                                </svg>
+                            </div>
+                            <div class="w-full h-3 bg-white float-left"></div>
+                        </div>
+                        <div class="w-4/5 h-3 bg-white float-left mt-3"></div>
+                        <div class="w-32 h-6 bg-[#FFA7CB] self-end mt-10 relative c-right-arrow-wrapper">
+                            <svg class="absolute bottom-full mb-0.5 left-0 -ml-6 fill-[#FFA7CB] c-right-arrow"
+                                width="22" height="19" viewBox="0 0 22 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0575 0.0574951L21.4498 18.0575H0.665191L11.0575 0.0574951Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28" id="section-deploy">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5 order-2 md:order-1">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Deploy
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Develop/edit apps
+                        on the fly
+                        with built-in app versioning and rollbacking, added with zero downtime independent Blocks
+                        deployment.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative md:pb-5 md:pr-10 order-1 md:order-2">
+                    <div class="w-full float-left h-[340px] md:max-w-[510px] bg-[#222322] rounded-t-xl flex relative">
+                        <div class="w-7 h-full bg-[#4D4D4D] rounded-t-xl flex-shrink-0"></div>
+                        <div class="flex-grow overflow-hidden px-6 py-10">
+                            <div class="flexa-medium text-lg text-white/50 leading-tight">
+                                <p class="float-left relative max-w-full truncate typing-2"></p>
+                                <span class="cursor-blink" aria-hidden="true">_</span>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-6 md:-bottom-3 md:-right-3 transform-gpu md:rotate-[-5deg] z-10 md-lt:left-1/2 md-lt:-translate-x-1/2">
+                            <div class="float-left relative">
+                                <button type="button"
+                                    class="shadow-pop-br transition-all transform-gpu ease-in-out duration-300 bg-secondary flexa-bold text-lg md:text-2xl text-white px-4 w-[180px] h-[52px] md:h-[60px] rounded md:rounded-full float-left">
+                                    Deploy
+                                </button>
+                                <!-- <svg class="deploy-ion absolute top-0 right-0 -mt-14 -mr-14" width="92" height="98"
+                                    viewBox="0 0 92 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="12.1862" y="46.3228" width="44" height="13" rx="6.5"
+                                        transform="rotate(-62.5467 12.1862 46.3228)" fill="#FBA27C" />
+                                    <rect x="41.158" y="65.9333" width="44" height="13" rx="6.5"
+                                        transform="rotate(-10.0054 41.158 65.9333)" fill="#FBA27C" />
+                                    <rect x="26.1282" y="56.6357" width="22" height="13" rx="6.5"
+                                        transform="rotate(-42.8076 26.1282 56.6357)" fill="#FBA27C" />
+                                </svg> -->
+                                <svg class="deploy-ion absolute top-0 right-0 -mt-12 -mr-12 pointer-events-none"
+                                    width="71" height="76" viewBox="0 0 71 76" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="11.3965" y="38.0081" width="36" height="8" rx="4"
+                                        transform="rotate(-68.0002 11.3965 38.0081)" fill="#FBA27C" />
+                                    <rect x="30.1605" y="50.5076" width="36" height="8" rx="4"
+                                        transform="rotate(-4.55248 30.1605 50.5076)" fill="#FBA27C" />
+                                    <rect x="20" y="44.3394" width="16" height="8" rx="4"
+                                        transform="rotate(-40.2578 20 44.3394)" fill="#FBA27C" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left relative md:pb-5 md:pr-10">
+                    <div
+                        class="w-full float-left h-[340px] md:max-w-[510px] bg-[#F1F1F1] rounded-md flex relative md-lt:flex items-center justify-center">
+                        <div class="w-full h-full flex items-end float-left overflow-hidden md-lt:hidden">
+                            {% include "partials/chart-1-svg.html" %}
+                        </div>
+                        <div class="md-lt:w-full md:absolute -bottom-10 -right-20 z-10 md-lt:flex justify-center">
+                            <div
+                                class="md:w-60 md:h-60 float-left rounded-md bg-[#F1F1F1] flex justify-center items-center">
+                                {% include "partials/chart-2-svg.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full float-left md:max-w-[480px] py-5 md:justify-self-end">
+                    <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
+                        Measure
+                    </h3>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Get real-time
+                        data on Block
+                        performance, log reports, and every mission-critical information with ease.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-24">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left">
+                <p class="flexa-bold text-[28px] leading-[34px] md:text-[48px] md:leading-[58px] text-ab-black">Build
+                    better software
+                    <br />with <span class="primary-gradient-text">appblocks</span></p>
+                <div
+                    class="w-full float-left grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8 md:mt-12 md-lt:hidden">
+                    {% for features in IndexData[0].features %}
+                    <div
+                        class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                        <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                            <img class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon_url}}" alt="" />
+                        </div>
+                        <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">{{features.title}}
+                        </h4>
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">{{features.desc}}
+                        </p>
+                        <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                            href="{{features.learn_more_link}}">Learn More</a>
+                    </div>
+                    {% endfor %}
+                    <div
+                        class="w-full float-left flex flex-col items-start justify-center space-y-4 bg-primary rounded p-6 group">
+                        <h4 class="text-2xl text-white flexa-medium ">Is appblocks right
+                            for you?</h4>
+                        <a
+                            class="float-left bg-secondary rounded-full text-white flexa-bold text-xl px-8 py-2.5 cursor-pointer mt-2">Find
+                            out</a>
+                    </div>
+                </div>
+                <div class="w-full float-left swiper feature-swiper md:hidden mt-8">
+                    <div class="swiper-wrapper">
+                        {% for features in IndexData[0].features %}
+                        <div
+                            class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
+                            <div class="min-h-[36px] min-w-[36px] float-left mb-3">
+                                <img class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon_url}}" alt="" />
+                            </div>
+                            <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
+                                {{features.title}}
+                            </h4>
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">{{features.desc}}
+                            </p>
+                            <a class="cursor-pointer underline text-primary flexa-bold text-base"
+                                href="{{features.learn_more_link}}">Learn More</a>
+                        </div>
+                        {% endfor %}
+                        <div
+                            class="swiper-slide !w-64 float-left flex flex-col items-start justify-center space-y-4 bg-primary rounded p-6 group">
+                            <h4 class="text-2xl text-white flexa-medium ">Is appblocks right
+                                for you?</h4>
+                            <a
+                                class="float-left bg-secondary rounded-full text-white flexa-bold text-xl px-8 py-2.5 cursor-pointer mt-2">Find
+                                out</a>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5">
+                    <p class="flexa-bold text-[28px] leading-[34px] md:text-[48px] md:leading-[58px] text-ab-black">Got
+                        a specific
+                        need? <br />there’s a
+                        <span class="primary-gradient-text">block</span> for that</p>
+                    <p class="w-full float-left mt-6 zirkon-medium text-sm md:text-lg leading-tight text-ab-black/70">No
+                        matter
+                        your business
+                        need, there is a Block to unblock your development roadblocks. If not, build your own
+                        hassle-free with AppBlocks.</p>
+                    <div class="w-full float-left mt-4 md:mt-5">
+                        <a
+                            class="inline-flex items-center justify-center zirkon-medium text-base md:text-xl pb-2.5 pt-3 px-6 bg-secondary rounded-full text-white hover:opacity-90 cursor-pointer">Learn
+                            more about blocks</a>
+                    </div>
+                    <div class="w-full float-left mt-4 md:mt-8">
+                        <a
+                            class="text-primary text-base flexa-medium cursor-pointer primary-gradient-text border-b border-transparent hover:border-secondary">Start
+                            Developing</a>
+                    </div>
+                </div>
+                <div class="w-full float-left relative text-center flex justify-center">
+                    {% include "partials/blox-1-svg.html" %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full float-left py-8 md:py-28">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left flex flex-col space-y-16 items-center">
+                <p
+                    class="flexa-bold text-[28px] leading-[34px] md:text-5xl text-ab-black md:leading-tight text-center mb-2">
+                    Our Customers
+                    are crazy, and
+                    <br />We
+                    <span>❤️</span>
+                    Them for It!</p>
+                <div class="w-full float-left grid grid-cols-1 md:grid-cols-3 gap-8 md-lt:hidden">
+                    {% for customer in IndexData[0].customers %}
+                    <div
+                        class="w-full flex flex-col justify-between items-start border-2 border-[{{customer.color}}]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                        <div class="w-full float-left flex flex-col items-start">
+                            {% if customer.avatar_url == "" %}
+                            <div class="w-16 h-16 bg-[#D9D9D9] rounded-full mb-7"></div>
+                            {% else %}
+                            <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                src="{{customer.avatar_url}}"></img>
+                            {% endif %}
+                            <div class="flex flex-col space-y-0.5">
+                                <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                    {{customer.name}}</h4>
+                                <span
+                                    class="text-base text-ab-black/50 flexa-medium underline truncate">{{customer.role}}</span>
+                            </div>
+                            <p
+                                class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                {{customer.desc}}</p>
+                        </div>
+                        <div
+                            class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                            <span class="zirkon-medium text-base leading-tight pt-1">{{customer.rating}}</span><img
+                                src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="w-full float-left swiper customer-swiper md:hidden">
+                    <div class="swiper-wrapper">
+                        {% for customer in IndexData[0].customers %}
+                        <div
+                            class="swiper-slide !w-80 flex flex-col justify-between items-start border-2 border-[{{customer.color}}]/50 rounded-xl bg-white px-4 py-6 transition-all duration-300 transform-gpu md:hover:translate-y-10">
+                            <div class="w-full float-left flex flex-col items-start">
+                                {% if customer.avatar_url == "" %}
+                                <div class="w-16 h-16 bg-[#D9D9D9] rounded-full mb-7"></div>
+                                {% else %}
+                                <img class="max-w-[64px] max-h-[64px] rounded-full mb-4"
+                                    src="{{customer.avatar_url}}"></img>
+                                {% endif %}
+                                <div class="flex flex-col space-y-0.5">
+                                    <h4 class="flexa-medium text-2xl text-ab-black/80 overflow-hidden text-ellipsis">
+                                        {{customer.name}}</h4>
+                                    <span
+                                        class="text-base text-ab-black/50 flexa-medium underline truncate">{{customer.role}}</span>
+                                </div>
+                                <p
+                                    class="text-sm md:text-lg text-ab-black/60 flexa-medium group-hover:text-primary mt-2 leading-snug">
+                                    {{customer.desc}}</p>
+                            </div>
+                            <div
+                                class="float-left px-3 py-1.5 bg-[#D9D9D9]/50 rounded-full flex items-center space-x-2.5 mt-7">
+                                <span class="zirkon-medium text-base leading-tight pt-1">{{customer.rating}}</span><img
+                                    src="./assets/images/icons/start-icon.svg" alt="Rating Star" />
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "partials/discover-box.html" %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="./assets/js/index.js"></script>

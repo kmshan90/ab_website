@@ -1,0 +1,74 @@
+---
+layout: partials/support-layout.njk
+site_title: Appblocks - Support
+---
+<div class="w-full float-left">
+    <div class="w-full float-left mb-10 last-of-type:mb-0">
+        <h3 class="flexa-bold text-3xl text-ab-black">{{supportData[0].support[0].topic[0].title}}</h3>
+        <p class="zirkon-medium text-base text-ab-black mt-3">
+            {{supportData[0].support[0].topic[0].desc}}
+        </p>
+        <div class="w-full float-left grid grid-cols-2 gap-x-6 gap-y-1 mt-7">
+            {% for topic in supportData[0].support[0].topic[0].topic_list %}
+            <a href="{{topic.link}}"
+                class="w-full float-left flex space-x-4 py-4 border-b-2 border-gray-200 hover:border-primary">
+                <div class="w-8 float-left flex-shrink-0 mt-1">
+                    <img src="{{topic.icon_url}}" alt="Buy and Sell" />
+                </div>
+                <div class="flex-grow overflow-hidden">
+                    <p class="text-xl zirkon-medium text-ab-black">{{topic.title}}</p>
+                    <p class="text-sm zirkon-regular mt-1.5 text-[#242424]">{{topic.desc}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="w-full float-left mb-10 last-of-type:mb-0">
+        <h3 class="flexa-bold text-3xl text-ab-black">FAQ</h3>
+        <div class="w-full float-left mt-5">
+            {% for qustn in supportData[0].support[0].faq %}
+            <div class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list">
+                <button
+                    class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative">
+                    {{qustn.question}}
+                </button>
+                <div class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300">
+                    <div class="w-full float-left pb-4">
+                        <div
+                            class="accordian-para-container w-full float-left gt_zirkon_regular text-sm text-[#242424]">
+                            {{qustn.answer | safe}}
+                        </div>
+                        <div class="w-full float-left mt-4">
+                            <p class="text-base text-ab-black zirkon-medium">For more details : <a target="_blank"
+                                    href="{{qustn.more_link}}" class=" focus:outline-none cursor-pointer underline text-primary zirkon-medium
+                                    text-base">Check
+                                    Docs</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = (event) => {
+        var elem = document.querySelectorAll(".faq-accordian-list")[0].querySelector(".faq-accordian-container");
+        document.querySelectorAll(".faq-accordian-list")[0].querySelector(".faq-accordian-btn").classList.add(
+            "active-faq-accordian");
+        elem.style.maxHeight = elem.scrollHeight + "px";
+    };
+    var acc = document.getElementsByClassName("faq-accordian-btn");
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active-faq-accordian");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>

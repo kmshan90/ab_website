@@ -1,0 +1,203 @@
+[
+    {
+        "support":
+            [
+                {
+                    "banner":
+                    [
+                        { 
+                            "title": "Help and Support",
+                            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        }
+                    ],
+                    "topic":
+                    [
+                        { 
+                            "title": "Select a topic",
+                            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent.",
+                            "topic_list":[
+                                { 
+                                    "title": "Buy and Sell",
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon_url": "../../assets/images/icons/tag-price.svg",
+                                    "link":"/pages/buy-and-sell/"
+                                },
+                                { 
+                                    "title": "Copyright and trademark",
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon_url": "../../assets/images/icons/copyright-icon.svg",
+                                    "link":"/pages/buy-and-sell/"
+                                },
+                                { 
+                                    "title": "Licensing",
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon_url": "../../assets/images/icons/licensing-icon.svg",
+                                    "link":"/pages/buy-and-sell/"
+                                },
+                                { 
+                                    "title": "Tax and compliance",
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon_url": "../../assets/images/icons/tax-icon.svg",
+                                    "link":"/pages/buy-and-sell/"
+                                },
+                                { 
+                                    "title": "Spaces",
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon_url": "../../assets/images/icons/spaces-icon.svg",
+                                    "link":"/pages/buy-and-sell/"
+                                }
+                            ]
+                            
+                        }
+                    ]
+                    ,
+                    "faq":
+                    [
+                        { 
+                            "question": "Why should my organisation use Appblocks?",
+                            "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
+                            "more_link": "https://docs.appblocks.com/"
+                        },
+                        { 
+                            "question": "Why should my organisation use Appblocks?",
+                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                            "more_link": "https://docs.appblocks.com/"
+                        },
+                        { 
+                            "question": "Why should my organisation use Appblocks?",
+                            "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
+                            "more_link": "https://docs.appblocks.com/"
+                        },
+                        { 
+                            "question": "Why should my organisation use Appblocks?",
+                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                            "more_link": "https://docs.appblocks.com/"
+                        }
+                    ]
+                }
+            ]
+        ,
+        "buy_and_sell":
+            [
+                {
+                    "title": "Buy and Sell",
+                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                    "buy_and_sell_list":
+                    [
+                        { 
+                            "title": "Item support",
+                            "buy_and_sell_list_details":[
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                }
+                            ]
+                        },
+                        { 
+                            "title": "Statements & Documents",
+                            "buy_and_sell_list_details":[
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                }
+                            ]
+                        },
+                        { 
+                            "title": "Payments",
+                            "buy_and_sell_list_details":[
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                },
+                                { 
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon": "../../assets/images/icons/paper-file-gray.svg"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        ,
+        "refund":
+        [
+            { 
+               "banner":[
+                    {
+                        "title": "Legal Information",
+                        "desc": "Refund Policy for Customers"
+                    }
+                ]
+            }
+        ],
+        "privacy_policy":
+        [
+            { 
+               "banner":[
+                    {
+                        "title": "Legal Information",
+                        "desc": "Privacy Policy"
+                    }
+                ]
+            }
+        ],
+        "terms_authors":
+        [
+            { 
+               "banner":[
+                    {
+                        "title": "Legal Information",
+                        "desc": "Terms and Conditions for Authors"
+                    }
+                ]
+            }
+        ],
+        "terms_customers":
+        [
+            { 
+               "banner":[
+                    {
+                        "title": "Legal Information",
+                        "desc": "Terms and Conditions for Customers"
+                    }
+                ]
+            }
+        ]
+    }
+]
