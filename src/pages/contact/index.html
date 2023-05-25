@@ -1,150 +1,142 @@
 ---
 layout: layout/layout.njk
-site_title: Appblocks - Contact Us
+site_title: Appblocks - Contact
 ---
-<link href="../../assets/css/flag.css" rel="stylesheet">
-<div class="w-full min-h-[calc(100vh-234px)] float-left">
-    <section class="w-full float-left pt-20 md:pt-24 pb-8">
-        <div class="w-full h-full flex justify-center items-center">
-            <div class="w-full max-w-4xl px-4 md:px-6 lg:px-10 xl:px-16 mt-10">
-                <p
-                    class="font-extrabold text-center text-[#24292E] dark:text-white text-4xl md:text-5xl md:!leading-[60px] leading-normal">
-                    How can we help?</p>
-                <p class="font-semibold text-center text-[#24292E] dark:text-white mt-5 text-xl md:text-2xl">Get in
-                    touch with us</p>
+<div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
+    <section class="w-full float-left primary-gradient-box">
+        <div class="max-w-7xl w-full mx-auto flex items-center min-h-[160px] px-4 md:px-6 py-16 banner-right-icon">
+            <div class="max-w-3xl w-full float-left">
+                <p class="flexa-bold text-white text-3xl md:text-5xl md:leading-[60px]">
+                    {{contact[0].banner[0].title | safe}}</p>
+                <p class="zirkon-regular text-white mt-2 text-2xl">
+                    {{contact[0].banner[0].desc}}</p>
+
             </div>
         </div>
     </section>
-    <div class="inner-page-wrapper w-full float-left">
-        <div class="max-w-lg mx-auto clearfix py-8 md:py-14 px-4">
-            <!-- <div class="w-full float-left text-center text-white">
-                <h6 class="text-[#6F42C1] text-base font-semibold mb-3">Contact us</h6>
-                <h4 class="text-4xl font-semibold mb-3">Get in touch</h4>
-                <p class="text-xl mb-3">We’d love to hear from you. Please fill out this form.</p>
-            </div> -->
-            <div class="w-full float-left md:mt-4">
-                <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6">
-                    <div class="w-full float-left flex flex-col">
-                        <label class="text-[#24292E] dark:text-white font-medium text-sm mb-1">First name</label>
-                        <input type="text" placeholder="First name"
-                            class="rounded-lg border border-[#D0D5DD] h-12 px-4 focus:outline-none text-base" />
+    <section class="w-full float-left">
+        <div class="max-w-7xl w-full mx-auto flex items-center px-4 md:px-6 py-10">
+            <div class="w-full grid grid-cols-1 md:grid-cols-[1fr_320px] gap-16">
+                <div class="w-full float-left">
+                    <div class="w-full float-left mb-10 last-of-type:mb-0">
+                        <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">
+                            {{contact[0].Rach_out_anytime[0].title}}</h3>
+                        <p class="zirkon-regular text-sm md:text-base text-ab-black mt-3">
+                            {{contact[0].Rach_out_anytime[0].desc}}
+                        </p>
                     </div>
-                    <div class="w-full flex flex-col">
-                        <label class="text-[#24292E] dark:text-white font-medium text-sm mb-1">Last name</label>
-                        <input type="text" placeholder="Last name"
-                            class="rounded-lg border border-[#D0D5DD] h-12 px-4 focus:outline-none text-base" />
-                    </div>
-                </div>
-                <div class="w-full float-left mb-6">
-                    <div class="w-full flex flex-col">
-                        <label class="text-[#24292E] dark:text-white font-medium text-sm mb-1">Email</label>
-                        <input type="text" placeholder="you@yourcompany.com"
-                            class="rounded-lg border border-[#D0D5DD] h-12 px-4 focus:outline-none text-base" />
-                    </div>
-                </div>
-                <div class="w-full float-left mb-6">
-                    <div class="w-full flex flex-col">
-                        <label class="text-[#24292E] dark:text-white font-medium text-sm mb-1">Phone Number</label>
-                        <div class="relative h-12 px-4 bg-white rounded-lg flex ccdropdown-wrapper border border-[#D0D5DD]"
-                            id="ccdd-main">
-                            <div class="h-full rounded-lg flex items-center flex-shrink-0 select-none cursor-pointer"
-                                onclick="displayCCDropdown()">
-                                <p class="text-base truncate uppercase max-w-[54px]" id="cc-name">IN</p>
-                                <img class="dropdownCCIcon ml-2 transition-all duration-300"
-                                    src="../../assets/images/icons/ccdrop-icon.svg" alt="Dropdown Icon" />
-                            </div>
-                            <div class="flex-grow flex items-center text-base text-gray-dark">
-                                <p class="pl-3 truncate max-w-[120px]" id="dialCode">+91</p>
-                                <div class="flex-grow">
-                                    <input type="text"
-                                        class="rounded-lg border-0 h-full pl-2.5 focus:outline-none text-base" />
+                    <div class="w-full float-left mb-10 last-of-type:mb-0">
+                        <div
+                            class="w-full float-left mb-4 p-6 rounded-lg shadow-xs bg-[#D453B5]/5 flex flex-col md:flex-row items-start md-lt:space-y-6 md:space-x-7">
+                            <img class="flex-shrink-0 w-full max-w-[56px]"
+                                src="../../assets/images/icons/help-center.svg" />
+                            <div class="flex-grow overflow-hidden">
+                                <div class="w-full float-left flex flex-col space-y-3.5">
+                                    <p class="flexa-bold text-xl md:text-2xl text-[#D453B5]">Help Centre</p>
+                                    <p class="zirkon-medium text-sm md:text-base text-ab-black">Torem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.</p>
+                                    <a
+                                        class="inline-flex items-center space-x-3 cursor-pointer zirkon-medium text-sm md:text-base text-[#D453B5] hover:underline focus:outline-none">
+                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 8H19M19 8L12 1M19 8L12 15" stroke="#D453B5" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <span class="pt-0.5">Visit Help Centre</span></a>
                                 </div>
                             </div>
-                            <div class="absolute top-14 left-0 max-w-[320px] w-full ccdropdown">
-                                <div class="w-full float-left px-2 py-2 rounded-lg bg-white border border-[#E1E4E8]">
-                                    <ul class="w-full float-left px-2 max-h-[200px] overflow-y-auto" id="cc-dropdown">
-                                        <!-- <li class="flex items-center cursor-pointer">
-                                            <div class="flex-shrink-0 mr-3 iti__flag iti__af"></div>
-                                            <div
-                                                class="flex-grow cc-text text-base flex items-center py-2 border-b border-[#E1E4E8] overflow-hidden">
-                                                <p class="truncate max-w-[120px] text-[#667085] flex-shrink-0">+93</p>
-                                                <p class="truncate flex-grow text-[#101828] pl-3">Afghanistan</p>
+                        </div>
+                        <div
+                            class="w-full float-left mb-4 p-6 rounded-lg shadow-xs bg-primary/5 flex flex-col md:flex-row items-start md-lt:space-y-6 md:space-x-7">
+                            <img class="flex-shrink-0 w-full max-w-[56px]"
+                                src="../../assets/images/icons/customer-support.svg" />
+                            <div class="flex-grow overflow-hidden">
+                                <div class="w-full float-left flex flex-col space-y-3.5">
+                                    <p class="flexa-bold text-xl md:text-2xl text-primary">Customer Support</p>
+                                    <p class="zirkon-medium text-sm md:text-base text-ab-black">Torem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.</p>
+                                    <div
+                                        class="send-query-btn inline-flex items-center space-x-3 cursor-pointer zirkon-medium text-sm md:text-base text-primary">
+                                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L7 7L13 1" stroke="#5E5EDD" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <span class="pt-0.5">Send your Queries</span></div>
+                                </div>
+                                <div class="contact-form-wrapper w-full float-left flex flex-col space-y-3.5">
+                                    <p class="zirkon-regular text-sm md:text-base text-ab-black mb-1 mt-4">Horem ipsum
+                                        dolor
+                                        sit
+                                        amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+                                        mattis tellus. Sed dignissim, </p>
+                                    <form class="w-full float-left space-y-4">
+                                        <div class="w-full float-left flex md-lt:flex-col md-lt:space-y-4 sm:space-x-4">
+                                            <div class="w-full sm:w-1/2 float-left flex flex-col">
+                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">First
+                                                    Name</label>
+                                                <input class="contact-input" type="text" placeholder="Eg. John" />
                                             </div>
-                                        </li> -->
-                                        <!-- <li class="flex items-center cursor-pointer">
-                                            <img class="flex-shrink-0 w-8 h-6 object-cover object-center mr-3"
-                                                src="../../assets/images/icons/af-flag.svg" />
-                                            <div
-                                                class="flex-grow cc-text text-base flex items-center py-2 border-b border-[#E1E4E8] overflow-hidden">
-                                                <p class="truncate max-w-[120px] text-[#667085] flex-shrink-0">+93</p>
-                                                <p class="truncate flex-grow text-[#101828] pl-3">Afghanistan</p>
+                                            <div class="w-full sm:w-1/2 float-left flex flex-col">
+                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">Last
+                                                    Name</label>
+                                                <input class="contact-input" type="text" placeholder="Eg. Deo" />
                                             </div>
-                                        </li> -->
-                                    </ul>
+                                        </div>
+                                        <div class="w-full float-left">
+                                            <div class="w-full float-left flex flex-col">
+                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">Work
+                                                    email</label>
+                                                <input class="contact-input" type="text"
+                                                    placeholder="Eg. username@domain.com" />
+                                            </div>
+                                        </div>
+                                        <div class="w-full float-left">
+                                            <div class="w-full float-left flex flex-col">
+                                                <label
+                                                    class="text-xs zirkon-medium text-ab-black mb-1.5">Message</label>
+                                                <textarea class="contact-txtarea" placeholder="Type message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="w-full float-left flex items-center">
+                                            <label class="flex items-center float-left mb-0 mr-1.5"><input
+                                                    type="checkbox" class="hidden" /><span
+                                                    class="w-4 h-4 float-left border border-primary rounded mr-2.5"></span>
+                                                <b class="font-normal pt-1 md:pt-0.5 text-sm md:text-base">I
+                                                    agree</b></label>
+                                            <a
+                                                class="focus:outline-none float-left pt-1 md:pt-0.5 cursor-pointer hover:underline text-primary text-sm md:text-base">Terms
+                                                and Conditions</a>
+                                        </div>
+                                        <div class="w-full float-left">
+                                            <button type="submit"
+                                                class="float-left my-2 py-2 px-6 text-base flexa-medium text-center text-white rounded-full bg-primary hover:opacity-90 focus:outline-none">Send
+                                                message</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full float-left mb-6">
-                    <div class="w-full flex flex-col">
-                        <label class="text-[#24292E] dark:text-white font-medium text-sm mb-1">Message</label>
-                        <textarea
-                            class="rounded-lg border border-[#D0D5DD] px-4 py-2 h-28 focus:outline-none text-base"></textarea>
-                    </div>
-                </div>
-                <div class="w-full float-left mb-6">
-                    <label class="flex items-center cursor-pointer select-none">
-                        <input type="checkbox" class="hidden"><span
-                            class="w-5 h-5 bg-white rounded-md float-left mr-3 checkbox-tick-icon dark:border-transparent border border-[#D0D5DD]"></span>
-                        <p class="text-[#24292E] dark:text-white text-base">You agree to our friendly <a
-                                class="text-[#6F42C1] cursor-pointer hover:underline">privacy
-                                policy</a>.</p>
-                    </label>
-                </div>
-                <div class="w-full float-left mb-6">
-                    <button type="button"
-                        class="w-full py-3 font-semibold text-base text-white bg-[#6F42C1] hover:bg-[#4C2888] rounded-lg border border-[#6F42C1]">Send
-                        message</button>
+                <div class="w-full float-left space-y-4">
+                    {% include "partials/support-sidebar.html" %}
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    {% include "partials/location.html" %}
+
+    {% include "partials/discover-box.html" %}
 </div>
 <script>
-    function displayCCDropdown() {
-        document.getElementById("ccdd-main").classList.toggle("hasDropdownCC");
-    }
-
-    function handleCountryCoode(index) {
-        document.getElementById("cc-name").innerText = countryList[index].code;
-        document.getElementById("dialCode").innerText = countryList[index].dial_code;
-    }
-    document.addEventListener('mouseup', function (e) {
-        var container = document.getElementById('ccdd-main');
-        if (!container.contains(e.target)) {
-            document.getElementById("ccdd-main").classList.remove("hasDropdownCC");
+    document.querySelector(".send-query-btn").addEventListener("click", function () {
+        const contactForm = document.querySelector(".contact-form-wrapper");
+        if (contactForm.style.maxHeight) {
+            contactForm.style.maxHeight = null;
+        } else {
+            contactForm.style.maxHeight = contactForm.scrollHeight + "px";
         }
     });
-    var countryList = "";
-    const userAction = async () => {
-        const response = await fetch('../../assets/data/CountryCodes.json');
-        const countries = await response.json();
-        countryList = countries;
-        for (i = 0; i < countries.length; i++) {
-            var flagClass = countries[i].code;
-            flagClass = "iti__" + flagClass.toLowerCase();
-            var childElm =
-                '<li onclick="handleCountryCoode(' + i + ')" class="flex items-center cursor-pointer">' +
-                '<div class="flex-shrink-0 mr-3 iti__flag ' + flagClass + '"></div>' +
-                '<div class="flex-grow cc-text text-base flex items-center py-2 border-b border-[#E1E4E8] overflow-hidden">' +
-                '<p class="truncate max-w-[120px] text-[#667085] flex-shrink-0">' + countries[i].dial_code +
-                '</p>' +
-                '<p class="truncate flex-grow text-[#101828] pl-3">' + countries[i].name + '</p>' +
-                '</div>' +
-                '</li>';
-            document.getElementById("cc-dropdown").insertAdjacentHTML('beforeend', childElm);
-        }
-    }
-    userAction();
 </script>

@@ -1,0 +1,75 @@
+---
+layout: layout/layout.njk
+site_title: Appblocks - Is Appblocks Right
+---
+
+<div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
+    <section class="w-full float-left primary-gradient-box">
+        <div class="max-w-7xl w-full mx-auto flex items-center min-h-[160px] px-4 md:px-6 py-16 banner-right-icon">
+            <div class="max-w-3xl w-full float-left">
+                <p class="flexa-bold text-white text-3xl md:text-5xl md:leading-[60px]">
+                    {{isAppblocksRight[0].banner[0].title | safe}}</p>
+                <p class="zirkon-regular text-white mt-2 text-2xl">
+                    {{isAppblocksRight[0].banner[0].desc}}</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full float-left py-8 md:py-20">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full mx-auto flex relative mb-20">
+                <img class="max-w-full mx-auto" src="../../assets/images/icons/service-provider.svg" alt="" />
+            </div>
+            <div class="max-w-[910px] mx-auto text-center mb-6">
+                <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">BENEFICIARIES</p>
+                <h3 class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black py-2">
+                    {{isAppblocksRight[0].BENEFICIARIES[0].title | safe}}
+                </h3>
+                <p class="mt-4 zirkon-medium md:text-2xl text-sm text-ab-black/80">
+                    {{isAppblocksRight[0].BENEFICIARIES[0].desc | safe}}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full float-left py-8 md:py-10">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div class="w-full float-left md:max-w-[480px] py-5">
+                    <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">DEVELOPERS / STARTUPS</p>
+                    <h3 class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black">Loreim ipsum dolor
+                        sit amet
+                    </h3>
+                    <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black/80">Horem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
+                        dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
+                        sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti
+                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                </div>
+                <div class="float-right text-right relative">
+                    <img class="max-w-full inline-flex" src="../../assets/images/icons/startups.svg" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full float-left py-8 md:py-20">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+            <p class="flexa-bold text-3xl text-ab-black leading-[40px]">{{isAppblocksRight[0].partner[0].title | safe}}
+            </p>
+            <div class="w-full float-left grid grid-cols-1 md:grid-cols-3 items-start gap-y-6 gap-x-12 mt-16">
+                {% for partner in isAppblocksRight[0].partner[0].list %}
+                <div class="w-full float-left flex flex-col items-start">
+                    <p class="text-ab-black text-2xl zirkon-medium">{{partner.list_title}}</p>
+                    <p class="w-full float-left mt-5 zirkon-regular text-sm md:text-base text-ab-black">
+                        {{partner.details}}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% include "partials/discover-box.html" %}
+</div>

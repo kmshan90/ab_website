@@ -198,6 +198,17 @@
                     }
                 ]
             }
+        ],
+        "block_licensing":
+        [
+            { 
+               "banner":[
+                    {
+                        "title": "Legal Information",
+                        "desc": "Block Licensing Agreement"
+                    }
+                ]
+            }
         ]
     }
 ]

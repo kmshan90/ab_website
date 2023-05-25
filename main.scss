@@ -441,6 +441,9 @@ a{
 .banner-right-icon{
   background: url(../images/icons/banner-right-icon.svg) no-repeat bottom right;
 }
+.banner-right-icon-block{
+  background: url(../images/icons/banner-right-icon.svg) no-repeat top 30px right;
+}
 .search-input{
   background: url(../images/icons/search-icon.svg) no-repeat center right 16px;
 }
@@ -553,4 +556,59 @@ a{
     display: inline-block;
     margin: 0px 12px;
   }
+}
+
+@keyframes cardAnimation1{
+  0%{
+    transform: scale(1);
+  }
+  40%{
+    transform: scale(1);
+  }
+  80%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+@keyframes cardAnimation2{
+  0%{
+    transform: scale(0);
+  }
+  40%{
+    transform: scale(0);
+  }
+  60%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@media(min-width: 1024px){
+  .card-animation-1{
+    transform-origin: bottom left;
+    animation: cardAnimation1 3s infinite alternate;
+    transform: scale(1);
+  }
+  .card-animation-2{
+    transform-origin: bottom center;
+    animation: cardAnimation2 3s infinite alternate;
+    transform: scale(0);
+  }
+}
+.view-more-container{
+  max-height: 0px;
+}
+.active-view-more-btn{
+  svg{
+    transform-origin: center;
+    transform: rotate(180deg);
+  }
+}
+.contact-form-wrapper{
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }

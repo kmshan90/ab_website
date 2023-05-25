@@ -82,3 +82,9 @@ body{
 .primary-gradient-box{
     background: linear-gradient(90.77deg, #D453B5 28.6%, rgba(212, 83, 181, 0) 78.06%), #5E5EDD;
 }
+.contact-input{
+    @apply text-ab-black zirkon-medium border border-ab-gray-dark py-2.5 px-4 w-full float-left text-sm placeholder:text-ab-black/50 focus:outline-none rounded;
+}
+.contact-txtarea{
+    @apply text-ab-black zirkon-medium border border-ab-gray-dark py-2.5 px-4 w-full float-left text-sm placeholder:text-ab-black/50 focus:outline-none rounded resize-none min-h-[80px];
+}

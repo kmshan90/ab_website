@@ -32,7 +32,7 @@
         [
             {
                 "title": "Composable Enterprise via Composable Software",
-                "desc": "Using interchangeable building blocks - software - to create, innovate & adapt business operations, enabling us to respond to external or internal factors.",
+                "desc": "Using interchangeable building blocks - software - to create, innovate & adapt business operations, <br/>enabling us to respond to external or internal factors.",
                 "list":[
                     {
                         "icon_url": "../../assets/images/icons/faster-icon.svg",

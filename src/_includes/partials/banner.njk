@@ -12,11 +12,11 @@
 {% endmacro %}
 {% macro block(title, desc) %}
 <section class="w-full float-left primary-gradient-box">
-    <div class="max-w-7xl w-full mx-auto flex items-center min-h-[480px] px-4 md:px-6 py-6 banner-right-icon">
+    <div class="max-w-7xl w-full mx-auto flex items-center min-h-[320px] px-4 md:px-6 py-6 banner-right-icon-block">
         <div class="max-w-2xl w-full float-left">
-            <p class="flexa-bold text-white text-3xl md:text-5xl">
+            <p class="flexa-bold text-white text-3xl">
                 {{title | safe}}</p>
-            <p class="flexa-bold text-white mt-3 md:mt-4 text-lg md:text-[56px] md:!leading-[64px]">
+            <p class="flexa-bold text-white mt-4 md:mt-6 text-lg md:text-5xl md:!leading-[64px]">
                 {{desc | safe}}</p>
         </div>
     </div>

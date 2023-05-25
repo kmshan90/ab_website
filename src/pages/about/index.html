@@ -2,28 +2,178 @@
 layout: layout/layout.njk
 site_title: Appblocks - About Us
 ---
-
-{% import 'partials/banner.njk' as banner %}
 <div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
-    {{ banner.common(aboutData[0].banner[0].title, aboutData[0].banner[0].desc) }}
-
+    <section class="w-full float-left primary-gradient-box">
+        <div
+            class="max-w-7xl w-full mx-auto flex items-center min-h-[160px] px-4 md:px-6 py-16 banner-right-icon-block">
+            <div class="max-w-2xl w-full float-left">
+                <p class="flexa-bold text-white text-3xl md:text-5xl md:!leading-[60px]">
+                    About<br />
+                    Appblocks</p>
+                <p class="zirkon-regular text-white mt-1 text-2xl">
+                    Worem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
     <section class="w-full float-left">
-        <div class="max-w-5xl w-full mx-auto clearfix px-4 md:px-6 py-6">
-            <div class="w-full float-left flex flex-col items-center">
-                <h2 class="text-xl text-center text-ab-black/50 flexa-bold tracking-wider">FAQ</h2>
-                <h3 class="text-5xl text-center text-ab-black flexa-bold mt-4">Got a question<b class="flexa-bold">?</b>
-                </h3>
-                <p class="max-w-[620px] w-full text-xl text-center text-ab-black/80 flexa-medium !font-medium mt-6">
-                    Develop
-                    your
-                    web apps in
-                    blocks by
-                    collaborating with your team.
-                    Buy or sell blocks using the blocks marketplace.</p>
-                <input type="text" placeholder="Search for answers"
-                    class="max-w-[560px] w-full search-input mt-6 border border-ab-gray-medium !leading-tight rounded text-ab-black zirkon-regular focus:border-primary focus:outline-none text-xl px-4 pt-3.5 pb-3" />
+        <div class="max-w-7xl w-full mx-auto flex items-center px-4 md:px-6 py-10">
+            <div class="w-full grid grid-cols-1 md:grid-cols-[1fr_320px] gap-16">
+                <div class="w-full float-left">
+                    <div class="w-full float-left mb-8">
+                        <h5 class="text-ab-black flexa-bold text-2xl md:text-3xl mb-4">App’s marketplace</h5>
+                        <p class="zirkon-medium text-base text-ab-black mb-4">Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class
+                            aptent taciti sociosqu ad litora torquent.</p>
+                        <p class="zirkon-regular text-base text-ab-black mb-4">Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+                            nec fringilla viewMoreBtnumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+                            risus.
+                            Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad
+                            litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
+                            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus
+                            nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet
+                            lacinia. Aliquam in elementum tellus.</p>
+                        <p class="zirkon-regular text-base text-ab-black mb-4">Horem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+                            nec fringilla viewMoreBtnumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+                            risus.</p>
+                    </div>
+                    <div class="w-full float-left mb-8">
+                        <h5 class="text-ab-black flexa-bold text-2xl md:text-3xl mb-4">Our leaders</h5>
+                        <p class="zirkon-medium text-xl md:text-2xl text-ab-black mb-4">Helping businesses and talent
+                            reach their
+                            full potential</p>
+                        <div class="w-full float-left p-4 border border-ab-black/30 rounded mt-4 flex">
+                            <div class="w-20 h-20 rounded-full bg-[#D9D9D9] flex-shrink-0">
+                                <img class="w-20 h-20 rounded-full object-cover object-center" />
+                            </div>
+                            <div class="flex-grow float-left overflow-hidden pl-6 leader-info-wrapper">
+                                <div class="w-full float-left flex flex-col mb-3 mt-2">
+                                    <p class=" zirkon-medium text-ab-black text-xl">John Deo</p>
+                                    <p class="zirkon-regular text-ab-black text-base">President and CEO</p>
+                                </div>
+                                <div class="w-full float-left text-sm zirkon-regular text-[#242424]">
+                                    <p class="mb-4">Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris.
+                                        Donec mattis
+                                        viewMoreBtnumsan nunc eu semper.</p>
+                                    <div
+                                        class="w-full float-left [&>p]:mb-4 overflow-hidden view-more-container transition-all duration-300">
+                                        <p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien
+                                            ut, condimentum mauris. Donec mattis viewMoreBtnumsan nunc eu semper.
+                                            Vestibulum sit
+                                            amet elit risus.Vivamus in erat</p>
+                                    </div>
+                                </div>
+                                <div class="w-full float-left">
+                                    <div class="view-more-btn float-left flex items-center space-x-2 cursor-pointer">
+                                        <span class="zirkon-medium text-primary text-base">View
+                                            More</span>
+                                        <svg class="transition-all duration-300" width="12" height="7"
+                                            viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.9999 6.75L0.649902 1.4L1.2999 0.75L5.9999 5.475L10.7249 0.75L11.3499 1.4L5.9999 6.75Z"
+                                                fill="#484848" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full float-left p-4 border border-ab-black/30 rounded mt-4 flex">
+                            <div class="w-20 h-20 rounded-full bg-[#D9D9D9] flex-shrink-0">
+                                <img class="w-20 h-20 rounded-full object-cover object-center" />
+                            </div>
+                            <div class="flex-grow float-left overflow-hidden pl-6 leader-info-wrapper">
+                                <div class="w-full float-left flex flex-col mb-3 mt-2">
+                                    <p class=" zirkon-medium text-ab-black text-xl">John Deo</p>
+                                    <p class="zirkon-regular text-ab-black text-base">President and CEO</p>
+                                </div>
+                                <div class="w-full float-left text-sm zirkon-regular text-[#242424]">
+                                    <p class="mb-4">Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris.
+                                        Donec mattis
+                                        viewMoreBtnumsan nunc eu semper.</p>
+                                    <div
+                                        class="w-full float-left [&>p]:mb-4 overflow-hidden view-more-container transition-all duration-300">
+                                        <p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien
+                                            ut, condimentum mauris. Donec mattis viewMoreBtnumsan nunc eu semper.
+                                            Vestibulum sit
+                                            amet elit risus.Vivamus in erat</p>
+                                    </div>
+                                </div>
+                                <div class="w-full float-left">
+                                    <div class="view-more-btn float-left flex items-center space-x-2 cursor-pointer">
+                                        <span class="zirkon-medium text-primary text-base">View More</span>
+                                        <svg class="transition-all duration-300" width="12" height="7"
+                                            viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.9999 6.75L0.649902 1.4L1.2999 0.75L5.9999 5.475L10.7249 0.75L11.3499 1.4L5.9999 6.75Z"
+                                                fill="#484848" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full float-left p-4 border border-ab-black/30 rounded mt-4 flex">
+                            <div class="w-20 h-20 rounded-full bg-[#D9D9D9] flex-shrink-0">
+                                <img class="w-20 h-20 rounded-full object-cover object-center" />
+                            </div>
+                            <div class="flex-grow float-left overflow-hidden pl-6 leader-info-wrapper">
+                                <div class="w-full float-left flex flex-col mb-3 mt-2">
+                                    <p class=" zirkon-medium text-ab-black text-xl">John Deo</p>
+                                    <p class="zirkon-regular text-ab-black text-base">President and CEO</p>
+                                </div>
+                                <div class="w-full float-left text-sm zirkon-regular text-[#242424]">
+                                    <p class="mb-4">Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris.
+                                        Donec mattis
+                                        viewMoreBtnumsan nunc eu semper.</p>
+                                    <div
+                                        class="w-full float-left [&>p]:mb-4 overflow-hidden view-more-container transition-all duration-300">
+                                        <p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien
+                                            ut, condimentum mauris. Donec mattis viewMoreBtnumsan nunc eu semper.
+                                            Vestibulum sit
+                                            amet elit risus.Vivamus in erat</p>
+                                    </div>
+                                </div>
+                                <div class="w-full float-left">
+                                    <div class="view-more-btn float-left flex items-center space-x-2 cursor-pointer">
+                                        <span class="zirkon-medium text-primary text-base">View More</span>
+                                        <svg class="transition-all duration-300" width="12" height="7"
+                                            viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.9999 6.75L0.649902 1.4L1.2999 0.75L5.9999 5.475L10.7249 0.75L11.3499 1.4L5.9999 6.75Z"
+                                                fill="#484848" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full float-left space-y-4">
+                    {% include "partials/support-sidebar.html" %}
+                </div>
             </div>
         </div>
     </section>
     {% include "partials/discover-box.html" %}
 </div>
+<script>
+    var viewMoreBtn = document.getElementsByClassName("view-more-btn");
+    for (i = 0; i < viewMoreBtn.length; i++) {
+        viewMoreBtn[i].addEventListener("click", function () {
+            this.classList.toggle("active-view-more-btn");
+            if (!this.classList.contains("active-view-more-btn")) {
+                this.closest('.leader-info-wrapper').querySelector('.view-more-btn span').innerHTML =
+                    "View More";
+            } else {
+                this.closest('.leader-info-wrapper').querySelector('.view-more-btn span').innerHTML =
+                    "View Less";
+            }
+            var panel = this.closest('.leader-info-wrapper').querySelector('.view-more-container');
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>

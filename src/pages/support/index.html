@@ -4,11 +4,11 @@ site_title: Appblocks - Support
 ---
 <div class="w-full float-left">
     <div class="w-full float-left mb-10 last-of-type:mb-0">
-        <h3 class="flexa-bold text-3xl text-ab-black">{{supportData[0].support[0].topic[0].title}}</h3>
-        <p class="zirkon-medium text-base text-ab-black mt-3">
+        <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">{{supportData[0].support[0].topic[0].title}}</h3>
+        <p class="zirkon-medium text-sm md:text-base text-ab-black mt-3">
             {{supportData[0].support[0].topic[0].desc}}
         </p>
-        <div class="w-full float-left grid grid-cols-2 gap-x-6 gap-y-1 mt-7">
+        <div class="w-full float-left grid lg:grid-cols-2 gap-x-6 gap-y-1 mt-7">
             {% for topic in supportData[0].support[0].topic[0].topic_list %}
             <a href="{{topic.link}}"
                 class="w-full float-left flex space-x-4 py-4 border-b-2 border-gray-200 hover:border-primary">
@@ -16,7 +16,7 @@ site_title: Appblocks - Support
                     <img src="{{topic.icon_url}}" alt="Buy and Sell" />
                 </div>
                 <div class="flex-grow overflow-hidden">
-                    <p class="text-xl zirkon-medium text-ab-black">{{topic.title}}</p>
+                    <p class="text-lg md:text-xl zirkon-medium text-ab-black">{{topic.title}}</p>
                     <p class="text-sm zirkon-regular mt-1.5 text-[#242424]">{{topic.desc}}</p>
                 </div>
             </a>
@@ -24,7 +24,7 @@ site_title: Appblocks - Support
         </div>
     </div>
     <div class="w-full float-left mb-10 last-of-type:mb-0">
-        <h3 class="flexa-bold text-3xl text-ab-black">FAQ</h3>
+        <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">FAQ</h3>
         <div class="w-full float-left mt-5">
             {% for qustn in supportData[0].support[0].faq %}
             <div class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list">
