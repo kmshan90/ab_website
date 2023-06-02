@@ -332,7 +332,9 @@ site_title: Appblocks - Blocks
     var swiperBlock = new Swiper(".blocks-swiper", {
         effect: "fade",
         autoplay: {
-            delay: 5000,
+            delay: 1500,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
         },
         pagination: {
             el: ".block-slider-pagination",

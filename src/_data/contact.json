@@ -3,15 +3,15 @@
         "banner":
         [
             { 
-                "title": "Contact Us <br/>with your queries",
-                "desc": "Worem ipsum dolor sit amet, consectetur adipiscing elit."
+                "title": "Contact Us",
+                "desc": "Get in touch with us - We value your feedback and are here to assist you!"
             }
         ],
-        "Rach_out_anytime":
+        "contact_main":
         [
             { 
-                "title": "Rach out anytime",
-                "desc": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra."
+                "title": "We'd love to hear from you",
+                "desc": "We appreciate your interest and welcome your feedback. At Appblocks, we strive to provide exceptional service and ensure your satisfaction. Whether you have a question, need assistance, or simply want to share your thoughts, we're here to help. Our dedicated team is ready to address your inquiries promptly and efficiently. Your input is valuable to us as we continuously work to improve our products and services. For frequently asked questions, visit our Help Centre. Feel free to connect with us through the Customer Support form. We look forward to hearing from you and serving you to the best of our abilities."
             }
         ]
     }

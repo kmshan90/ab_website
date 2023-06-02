@@ -16,7 +16,7 @@ site_title: Appblocks - Buy and Sell
         <h4 class="text-xl md:text-2xl zirkon-medium text-ab-black">{{topicList.title}}</h4>
         <div class="w-full float-left grid grid-cols-2 gap-x-6 gap-y-4 mt-5">
             {% for topicListDetails in topicList.buy_and_sell_list_details %}
-            <div class="w-full float-left flex space-x-4">
+            <div class="w-full float-left flex space-x-3.5">
                 <div class="w-6 float-left flex-shrink-0 mt-1">
                     <img class="max-w-[24px]" src="{{topicListDetails.icon}}" />
                 </div>
@@ -26,6 +26,14 @@ site_title: Appblocks - Buy and Sell
             </div>
             {% endfor %}
         </div>
+        <a class="text-base zirkon-medium hover:underline text-primary float-left mt-6 flex items-center space-x-3">
+            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 8H19M19 8L12 1M19 8L12 15" stroke="#5E5EDD" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span class="pt-0.5">View All List</span>
+        </a>
     </div>
     {% endfor %}
+
 </div>

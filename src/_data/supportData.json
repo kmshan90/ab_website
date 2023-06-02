@@ -7,14 +7,14 @@
                     [
                         { 
                             "title": "Help and Support",
-                            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            "desc": "Here are answers to common queries about our product, its features and policies."
                         }
                     ],
                     "topic":
                     [
                         { 
                             "title": "Select a topic",
-                            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent.",
+                            "desc": "Choose a topic from our FAQ section to find detailed answers and solutions tailored to your specific needs. Whether you have questions about billing, spaces, or CLI troubleshooting, we have compiled a comprehensive list of topics to assist you.",
                             "topic_list":[
                                 { 
                                     "title": "Buy and Sell",
@@ -23,7 +23,7 @@
                                     "link":"/pages/buy-and-sell/"
                                 },
                                 { 
-                                    "title": "Copyright and trademark",
+                                    "title": "Legal",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/copyright-icon.svg",
                                     "link":"/pages/buy-and-sell/"
@@ -35,7 +35,7 @@
                                     "link":"/pages/buy-and-sell/"
                                 },
                                 { 
-                                    "title": "Tax and compliance",
+                                    "title": "CLI",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/tax-icon.svg",
                                     "link":"/pages/buy-and-sell/"
@@ -43,7 +43,13 @@
                                 { 
                                     "title": "Spaces",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
-                                    "icon_url": "../../assets/images/icons/spaces-icon.svg",
+                                    "icon_url": "../../assets/images/icons/cli.svg",
+                                    "link":"/pages/buy-and-sell/"
+                                },
+                                { 
+                                    "title": "Others",
+                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                                    "icon_url": "../../assets/images/icons/others.svg",
                                     "link":"/pages/buy-and-sell/"
                                 }
                             ]
@@ -54,22 +60,32 @@
                     "faq":
                     [
                         { 
-                            "question": "Why should my organisation use Appblocks?",
+                            "question": "How do I create an application using Appblocks?",
                             "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
                             "more_link": "https://docs.appblocks.com/"
                         },
                         { 
-                            "question": "Why should my organisation use Appblocks?",
+                            "question": "How do I use blocks from the store in my application?",
                             "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
                             "more_link": "https://docs.appblocks.com/"
                         },
                         { 
-                            "question": "Why should my organisation use Appblocks?",
+                            "question": "How do I connect to GitHub?",
                             "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
                             "more_link": "https://docs.appblocks.com/"
                         },
                         { 
-                            "question": "Why should my organisation use Appblocks?",
+                            "question": "How do I deploy my block?",
+                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                            "more_link": "https://docs.appblocks.com/"
+                        },
+                        { 
+                            "question": "How do I sign up to Appblocks?",
+                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                            "more_link": "https://docs.appblocks.com/"
+                        },
+                        { 
+                            "question": "How do I collaborate using Spaces?",
                             "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
                             "more_link": "https://docs.appblocks.com/"
                         }

@@ -615,3 +615,14 @@ a{
 .find-out-bg{
   background: url(../images/icons/find-out-bg.svg) no-repeat right bottom #5E5EDD;
 }
+.error-msg{
+  display: none;
+}
+.has-error{
+  textarea, input{
+    border-color: #D25348;
+  }
+  .error-msg{
+    display: inline;
+  }
+}
