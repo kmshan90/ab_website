@@ -17,10 +17,10 @@
                             "desc": "Choose a topic from our FAQ section to find detailed answers and solutions tailored to your specific needs. Whether you have questions about billing, spaces, or CLI troubleshooting, we have compiled a comprehensive list of topics to assist you.",
                             "topic_list":[
                                 { 
-                                    "title": "Buy and Sell",
+                                    "title": "Publishing and using blocks",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/tag-price.svg",
-                                    "link":"/pages/buy-and-sell/"
+                                    "link":"/pages/publishing-and-using-blocks/"
                                 },
                                 { 
                                     "title": "Legal",
@@ -32,13 +32,13 @@
                                     "title": "Licensing",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/licensing-icon.svg",
-                                    "link":"/pages/buy-and-sell/"
+                                    "link":"/pages/licensing/"
                                 },
                                 { 
                                     "title": "CLI",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/tax-icon.svg",
-                                    "link":"/pages/buy-and-sell/"
+                                    "link":"/pages/cli/"
                                 },
                                 { 
                                     "title": "Spaces",
@@ -61,33 +61,29 @@
                     [
                         { 
                             "question": "How do I create an application using Appblocks?",
-                            "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
-                            "more_link": "https://docs.appblocks.com/"
+                            "answer": "Firstly, you have to install the bb-cli with the &quot;<b>npm i @appblocks/bb-cli -g</b>&quot; command. After this, Connect your Appblocks account with your GitHub account. <br/>Now you can try out the command for creating a package block, &quot;<b>bb init package_block_name</b>&quot;.",
+                            "more_link": "https://docs.appblocks.com/docs/quickstart/start-from-template/setup"
                         },
                         { 
                             "question": "How do I use blocks from the store in my application?",
-                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
-                            "more_link": "https://docs.appblocks.com/"
-                        },
+                            "answer": "Create an account with Appblocks, install the bb-cli and connect you Appblocks account with your GitHub. After this step, click the block of your liking from the store (now you are in the block details page). On this page, you'll find a bb cli command to pull and use the block."                        },
                         { 
                             "question": "How do I connect to GitHub?",
-                            "answer": "<p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper.</p><p>Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut,condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p><p>Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.Vivamus in erat dignissim, facilisis sapien ut, condimentum mauris. Donec mattis accumsan nunc eu semper. Vestibulum sit amet elit risus.</p>",
-                            "more_link": "https://docs.appblocks.com/"
+                            "answer": "Use the command &quot;<b>bb login</b>&quot;.",
+                            "more_link": "https://docs.appblocks.com/docs/quickstart/start-from-template/setup"
                         },
                         { 
                             "question": "How do I deploy my block?",
-                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
-                            "more_link": "https://docs.appblocks.com/"
+                            "answer": "To deploy the block to the configured cloud infrastructure. Currently, appblocks supports easy deploy to AWS container infrastructure. Use the command &quot;<b>bb deploy &lt;block-name&gt;</b>&quot;"     
                         },
                         { 
                             "question": "How do I sign up to Appblocks?",
-                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
-                            "more_link": "https://docs.appblocks.com/"
+                            "answer": "Visit our Store at <a href='https://store.appblocks.com' target='_blank'>store.appblocks.com</a>  or Spaces at <a href='https://spaces.appblocks.com' target='_blank'>spaces.appblocks.com</a> and you will find the sign up form."
                         },
                         { 
                             "question": "How do I collaborate using Spaces?",
-                            "answer": "Experience predefined standard data models with synced data for easy access development using Blocks.",
-                            "more_link": "https://docs.appblocks.com/"
+                            "answer": "In Spaces, you can have teams, members, roles, apps, etc.",
+                            "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces#within-a-space"
                         }
                     ]
                 }
@@ -222,6 +218,112 @@
                     {
                         "title": "Legal Information",
                         "desc": "Block Licensing Agreement"
+                    }
+                ]
+            }
+        ],
+        "licensing":
+        [
+            {
+                "title": "Licensing",
+                "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                "faq":
+                [
+                    { 
+                        "question": "Do licenses have an expiry date? Will I ever have to pay any fees (like renewals or royalties)?",
+                        "answer": "Currently it is only MIT license which is free and need not be renewed."
+                    },
+                    { 
+                        "question": "What services/permissions do I get if I purchase an MIT license?",
+                        "answer": "<ul><li><b>Use the code in commercial applications:</b> For example, a company can create a proprietary piece of software that includes all or part of the original open source code, then charge money for that software.</li><li><b>Modify the code:</b> In other words, developers can change/update the code however they’d like.</li><li><b>Distribute copies of the code and any modifications:</b> As long as the original copyright notice and the license itself are included, an organization can distribute and sell copies or modified versions of the code.</li><li><b>Sublicense the code:</b> This means you can incorporate the original code into a modification with a stricter license.</li></ul>"
+                    },
+                    { 
+                        "question": "How do I receive updates for a free block?",
+                        "answer": "For updates, find the block in the Store and check if there are newer versions released."
+                    },
+                    { 
+                        "question": "Can I resell an item with just an MIT license?",
+                        "answer": "Yes, you can."
+                    },
+                    { 
+                        "question": "Can I redistribute a block?",
+                        "answer": "Yes, you can with MIT license."
+                    },
+                    { 
+                        "question": "Can I make edits to a block?",
+                        "answer": "Yes, you can with MIT license."
+                    },
+                    { 
+                        "question": "What am I not supposed to do with a MIT licensed block?",
+                        "answer": "<ul><li>You can’t hold the code author(s) legally liable for any reason.</li><li>You also can’t delete the copyright notice and original license from your version of the code.</li></ul>"
+                    }
+                ]
+            }
+        ],
+        "cli":
+        [
+            {
+                "title": "CLI",
+                "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                "faq":
+                [
+                    { 
+                        "question": "How to install the CLI",
+                        "answer": "Use the command &quot;<b>npm i @appblocks/bb-cli</b>&quot; in the your command prompt."
+                    },
+                    { 
+                        "question": "What services/permissions do I get if I purchase an MIT license?",
+                        "answer": "<ul><li><b>Use the code in commercial applications:</b> For example, a company can create a proprietary piece of software that includes all or part of the original open source code, then charge money for that software.</li><li><b>Modify the code:</b> In other words, developers can change/update the code however they’d like.</li><li><b>Distribute copies of the code and any modifications:</b> As long as the original copyright notice and the license itself are included, an organization can distribute and sell copies or modified versions of the code.</li><li><b>Sublicense the code:</b> This means you can incorporate the original code into a modification with a stricter license.</li></ul>"
+                    },
+                    { 
+                        "question": "How do I receive updates for a free block?",
+                        "answer": "For updates, find the block in the Store and check if there are newer versions released."
+                    },
+                    { 
+                        "question": "Can I resell an item with just an MIT license?",
+                        "answer": "Yes, you can."
+                    },
+                    { 
+                        "question": "Can I redistribute a block?",
+                        "answer": "Yes, you can with MIT license."
+                    },
+                    { 
+                        "question": "Can I make edits to a block?",
+                        "answer": "Yes, you can with MIT license."
+                    },
+                    { 
+                        "question": "What am I not supposed to do with a MIT licensed block?",
+                        "answer": "<ul><li>You can’t hold the code author(s) legally liable for any reason.</li><li>You also can’t delete the copyright notice and original license from your version of the code.</li></ul>"
+                    }
+                ]
+            }
+        ],
+        "publishing_and_using_blocks":
+        [
+            {
+                "title": "Publishing and using blocks",
+                "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                "faq":
+                [
+                    { 
+                        "question": "I'm trying to find a specific block. How do I find it?",
+                        "answer": "Visit the <a target='_blank' href='https://store.appblocks.com'>https://store.appblocks.com/</a> There are filters, and search to easily find blocks."
+                    },
+                    { 
+                        "question": "How do I publish a block?",
+                        "answer": "To publish a block, your block has to be first deployed. Go to the manage blocks page and find the publish button. You will then fill a form and wait for Appblocks to review and publish your block."
+                    },
+                    { 
+                        "question": "How to install a block? ",
+                        "answer": "To install a block, you have to have installed the (bb-cli)[<a target='_blank' href='https://docs.appblocks.com/docs/quickstart/start-from-template/setup'>https://docs.appblocks.com/docs/quickstart/start-from-template/setup</a>] first. Go to the block details page of this particular block and find the installation command on the right hand side of this page. Copy and paste it in your CLI."
+                    },
+                    { 
+                        "question": "Why did Appblocks reject my publish request?",
+                        "answer": "The reason for rejecting a publish request will be shown in the review status tab of the Publish a block page. "
+                    },
+                    { 
+                        "question": "How do I delist a block?",
+                        "answer": "To delist a block, go to the manage blocks page and find the delist button. If you don't see the delist button, it means that your block is not published."
                     }
                 ]
             }

@@ -2,6 +2,7 @@
 layout: layout/layout.njk
 site_title: Appblocks - Contact
 ---
+{% import 'partials/banner.njk' as banner %}
 <script>
     function validateEmail(email) {
         var re = /\S+@\S+\.\S+/;
@@ -85,18 +86,7 @@ site_title: Appblocks - Contact
     }
 </script>
 <div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
-    <section class="w-full float-left primary-gradient-box">
-        <div
-            class="max-w-7xl w-full mx-auto flex items-center min-h-[160px] px-4 md:px-6 py-24 banner-right-icon-block">
-            <div class="w-full float-left">
-                <p class="flexa-bold text-white text-3xl md:text-5xl md:leading-[60px]">
-                    {{contact[0].banner[0].title | safe}}</p>
-                <p class="zirkon-regular text-white mt-2 text-2xl">
-                    {{contact[0].banner[0].desc}}</p>
-
-            </div>
-        </div>
-    </section>
+    {{ banner.common(contact[0].banner[0].title, contact[0].banner[0].desc) }}
     <section class="w-full float-left">
         <div class="max-w-7xl w-full mx-auto flex items-center px-4 md:px-6 py-10">
             <div class="w-full grid grid-cols-1 md:grid-cols-[1fr_320px] gap-8 lg:gap-16">

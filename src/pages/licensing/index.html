@@ -1,50 +1,35 @@
 ---
 layout: partials/support-layout.njk
-site_title: Appblocks - Support
+site_title: Appblocks - Support Licensing
 ---
 
 <div class="w-full float-left">
-  <div class="w-full float-left mb-10 last-of-type:mb-0">
-    <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">
-      {{supportData[0].support[0].topic[0].title}}
-    </h3>
-    <p class="zirkon-medium text-sm md:text-base text-ab-black mt-3">
-      {{supportData[0].support[0].topic[0].desc}}
-    </p>
-    <div class="w-full float-left grid lg:grid-cols-2 gap-x-6 gap-y-1 mt-7">
-      {% for topic in supportData[0].support[0].topic[0].topic_list %}
-      <a
-        href="{{topic.link}}"
-        class="w-full float-left flex space-x-3.5 py-4 border-b-2 border-gray-200 hover:border-primary items-center"
-      >
-        <div class="w-8 float-left flex-shrink-0 mt-1">
-          <img src="{{topic.icon_url}}" alt="Buy and Sell" />
-        </div>
-        <div class="flex-grow overflow-hidden">
-          <p class="text-lg md:text-xl zirkon-medium text-ab-black pt-1.5">
-            {{topic.title}}
-          </p>
-          {#
-          <p class="text-sm zirkon-regular mt-1.5 text-[#242424]">
-            {{topic.desc}}
-          </p>
-          #}
-        </div>
-      </a>
-      {% endfor %}
+  <div class="w-full float-left mb-8 last-of-type:mb-0">
+    <div
+      class="breadcrumb mb-6 flex w-full float-left flex-wrap text-sm zirkon-medium text-ab-black/50"
+    >
+      <a href="../../pages/support/" class="cursor-pointer">Help and Support</a>
+      <a class="text-ab-black">Licensing</a>
     </div>
+    <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black clear-both">
+      {{supportData[0].licensing[0].title}}
+    </h3>
+    {#
+    <p class="zirkon-regular text-sm md:text-base text-ab-black mt-3">
+      {{supportData[0].licensing[0].desc}}
+    </p>
+    #}
   </div>
-  <div class="w-full float-left mb-10 last-of-type:mb-0">
-    <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">FAQ</h3>
-    <div class="w-full float-left mt-5">
-      {% for qustn in supportData[0].support[0].faq %}
+  <div class="w-full float-left mb-8 last-of-type:mb-0">
+    <div class="w-full float-left">
+      {% for qustn in supportData[0].licensing[0].faq %}
       <div
         class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list"
       >
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          {{qustn.question}}
+          {{qustn.question | safe}}
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"

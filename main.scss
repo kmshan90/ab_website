@@ -441,8 +441,14 @@ a{
 .banner-right-icon{
   background: url(../images/icons/banner-right-icon.svg) no-repeat bottom right;
 }
+.banner-right-icon-top{
+  background: url(../images/icons/banner-right-icon.svg) no-repeat top -40px right;
+}
 .banner-right-icon-block{
-  background: url(../images/icons/banner-right-icon.svg) no-repeat top 30px right;
+  background: url(../images/icons/banner-right-icon-block.svg) no-repeat bottom right;
+}
+.banner-right-icon-bottom{
+  background: url(../images/icons/banner-right-icon-new.svg) no-repeat bottom right;
 }
 .search-input{
   background: url(../images/icons/search-icon.svg) no-repeat center right 16px;
@@ -478,12 +484,24 @@ a{
     &>*{
       margin-bottom: 14px;
       font-weight: 500;
-      font-size: 16px;
       color: rgba(72, 72, 72, 0.8);
       font-family: 'gt_zirkon_regular', sans-serif; 
       &:last-of-type{
         margin-bottom: 0px;
       }
+      &>b{
+        color: #000;
+        font-family: 'gt_zirkon_medium', sans-serif; 
+      }
+    }
+    b{
+      color: #000;
+      font-family: 'gt_zirkon_medium', sans-serif; 
+    }
+    a{
+      color: #000;
+      font-family: 'gt_zirkon_medium', sans-serif; 
+      text-decoration: underline;
     }
   }
 }
@@ -624,5 +642,26 @@ a{
   }
   .error-msg{
     display: inline;
+  }
+}
+.faq-accordian-container{
+  .accordian-para-container{
+    font-size: 14px;
+    ul{
+      li{
+        list-style-type: initial;
+        margin-left: 16px;
+        font-size: 14px;
+        color: #242424;
+        &:not(:last-of-type){
+          margin-bottom: 12px;
+        }
+        &>b{
+          color: #000;
+          font-weight: 500;
+          font-family: 'gt_zirkon_medium', sans-serif; 
+        }
+      }
+    }
   }
 }

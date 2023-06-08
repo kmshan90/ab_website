@@ -38,14 +38,13 @@ site_title: Appblocks - Blocks
         <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
             <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
                 <div class="w-full float-left md:max-w-[480px] py-5">
-                    <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">TYPES OF BLOCKS</p>
+                    <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">
+                        {{blockData[0].types_of_blocks[0].title | safe}}</p>
                     <h3 class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black">
-                        Blocks come in <br />all <span class="primary-gradient-text">shapes</span> and <span
-                            class="text-primary">sizes</span>
+                        {{blockData[0].types_of_blocks[0].sub_title | safe}}
                     </h3>
-                    <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black/80">There’s always a
-                        Block to play around with. Code away in an opinionated architecture, Block by Block, and easily
-                        improve the functionality of your app. </p>
+                    <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black/80">
+                        {{blockData[0].types_of_blocks[0].desc | safe}}</p>
                     <div class="mt-4 md:mt-5">
                         <a class="text-primary text-xl flexa-medium cursor-pointer hover:underline">Check Docs</a>
                     </div>
@@ -68,182 +67,34 @@ site_title: Appblocks - Blocks
                 <div class="float-left flex-grow max-w-[1024px] overflow-hidden flex ">
                     <div class="w-full blocks-swiper float-left overflow-hidden">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide w-full bg-white !flex items-center">
-                                <div class="w-full flex sm:space-x-16">
-                                    <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                        <img class="mx-auto" src="../../assets/images/icons/ui-block.svg" alt="" />
-                                    </div>
-                                    <div class="w-full float-left md:max-w-[480px] py-5">
-                                        <div class="float-left rounded-full mb-8 pl-2">
-                                            <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                alt="" />
+                            {% for slider in blockData[0].block_slider %}
+                                <div class="swiper-slide w-full bg-white !flex items-center">
+                                    <div class="w-full flex sm:space-x-16">
+                                        <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
+                                            <img class="mx-auto" src="{{slider.img_url}}" alt="" />
                                         </div>
-                                        <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                            UI Block
-                                        </h3>
-                                        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                            UI Block is a frontend Block developed for browser runtimes. It includes UI
-                                            Elements, which are reusable UI components, and Container Blocks, which
-                                            orchestrate the elements and handle routing and layout. UI Blocks are
-                                            React-based and follow Webpack Module Federation. Container Blocks pull and
-                                            render remote element Blocks, combining bundles from remote servers at
-                                            runtime to render the app.</p>
-                                        <div class="mt-4 md:mt-6 flex flex-wrap">
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-3.svg" alt="" />
+                                        <div class="w-full float-left md:max-w-[480px] py-5">
+                                            <div class="float-left rounded-full mb-8 pl-2">
+                                                <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
+                                                    alt="" />
+                                            </div>
+                                            <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
+                                                {{slider.title | safe}}
+                                            </h3>
+                                            <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
+                                               {{slider.desc | safe}}</p>
+                                            <div class="mt-4 md:mt-6 flex flex-wrap">
+                                                <img class="max-w-[32px] flex-shrink-0 mr-4"
+                                                    src="../../assets/images/icons/tech-icon-1.svg" alt="" />
+                                                <img class="max-w-[32px] flex-shrink-0 mr-4"
+                                                    src="../../assets/images/icons/tech-icon-2.svg" alt="" />
+                                                <img class="max-w-[32px] flex-shrink-0 mr-4"
+                                                    src="../../assets/images/icons/tech-icon-3.svg" alt="" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide w-full bg-white !flex items-center">
-                                <div class="w-full flex sm:space-x-16">
-                                    <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                        <img class="mx-auto" src="../../assets/images/icons/fn-block.svg" alt="" />
-                                    </div>
-                                    <div class="w-full float-left md:max-w-[480px] py-5">
-                                        <div class="float-left rounded-full mb-8 pl-2">
-                                            <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                alt="" />
-                                        </div>
-                                        <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                            Function Block
-                                        </h3>
-                                        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                            Fn Blocks are the backend API Blocks.
-                                            Each of these blocks is supposed to be mutually exclusive.<br />
-                                            Every Fn Block will have a specific URL to invoke it and in practical
-                                            scenarios, all the Fn Blocks in an app will be stitched together and run in
-                                            a single instance on the server.</p>
-                                        <div class="mt-4 md:mt-6 flex flex-wrap">
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-3.svg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide w-full bg-white !flex items-center">
-                                <div class="w-full flex sm:space-x-16">
-                                    <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                        <img class="mx-auto" src="../../assets/images/icons/shared-block.svg" alt="" />
-                                    </div>
-                                    <div class="w-full float-left md:max-w-[480px] py-5">
-                                        <div class="float-left rounded-full mb-8 pl-2">
-                                            <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                alt="" />
-                                        </div>
-                                        <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                            Shared Block
-                                        </h3>
-                                        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                            In both frontend and backend, there can be some pieces of code that may be
-                                            shared which are most probably for utility methods or for data models. Eg,
-                                            function to find the age of a person from dob/ date filter and so on. These
-                                            blocks are called Shared Blocks.</p>
-                                        <div class="mt-4 md:mt-6 flex flex-wrap">
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-3.svg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide w-full bg-white !flex items-center">
-                                <div class="w-full flex sm:space-x-16">
-                                    <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                        <img class="mx-auto" src="../../assets/images/icons/package-block.svg" alt="" />
-                                    </div>
-                                    <div class="w-full float-left md:max-w-[480px] py-5">
-                                        <div class="float-left rounded-full mb-8 pl-2">
-                                            <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                alt="" />
-                                        </div>
-                                        <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                            Package Block
-                                        </h3>
-                                        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                            When multiple Blocks are combined together into a unit, such an arrangement
-                                            is called a Package Block or PB. UI, Fn, and shared Blocks have their own
-                                            repositories. They are the building blocks of an application. Once all the
-                                            Blocks are stitched together, we build a configuration that is a snapshot of
-                                            how the apps are composed.</p>
-                                        <div class="mt-4 md:mt-6 flex flex-wrap">
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-3.svg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide w-full bg-white !flex items-center">
-                                <div class="w-full flex sm:space-x-16">
-                                    <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                        <img class="mx-auto" src="../../assets/images/icons/data-block.svg" alt="" />
-                                    </div>
-                                    <div class="w-full float-left md:max-w-[480px] py-5">
-                                        <div class="float-left rounded-full mb-8 pl-2">
-                                            <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                alt="" />
-                                        </div>
-                                        <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                            Data Block
-                                        </h3>
-                                        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                            s simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                            has been the industry's standard dummy text ever since the 1500s, whe a
-                                            galley of type and scrambled it to make a type spe</p>
-                                        <div class="mt-4 md:mt-6 flex flex-wrap">
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-3.svg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide w-full bg-white !flex items-center">
-                                <div class="w-full flex sm:space-x-16">
-                                    <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                        <img class="mx-auto" src="../../assets/images/icons/job-block.svg" alt="" />
-                                    </div>
-                                    <div class="w-full float-left md:max-w-[480px] py-5">
-                                        <div class="float-left rounded-full mb-8 pl-2">
-                                            <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                alt="" />
-                                        </div>
-                                        <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                            Job Block
-                                        </h3>
-                                        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                            s simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                            has been the industry's standard dummy text ever since the 1500s, whe a
-                                            galley of type and scrambled it to make a type spe</p>
-                                        <div class="mt-4 md:mt-6 flex flex-wrap">
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                            <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                src="../../assets/images/icons/tech-icon-3.svg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -335,6 +186,10 @@ site_title: Appblocks - Blocks
             delay: 1500,
             pauseOnMouseEnter: true,
             disableOnInteraction: false,
+        },
+        mousewheel: {
+            releaseOnEdges: false,
+            thresholdTime: 500,
         },
         pagination: {
             el: ".block-slider-pagination",
