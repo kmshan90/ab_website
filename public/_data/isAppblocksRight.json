@@ -1,0 +1,38 @@
+[
+    {
+        "banner":
+        [
+            { 
+                "title": "Is Appblocks <br/>right for your team?",
+                "desc": "Shh is an open-source link management tool for modern marketing teams to create, share, and track short links."
+            }
+        ],
+        "BENEFICIARIES":
+        [
+            { 
+                "title": "Developers or <br/>Software service providers",
+                "desc": "A unit of an app which solves a business use case with <br/>it’s code and contract"
+            }
+        ],
+        "partner":
+        [
+            {
+                "title": "You could further partner with <br />other vendors to up scale your offering as",
+                "list":[
+                    {
+                        "list_title":"Tech Partners",
+                        "details": "Broadly speaking, if a partnership involves your tech product integrating with your partner’s tech product, you have a technology partnership on your hands. This is also referred to as an “integration partnership”. These partners are known as “tech partners” or Independent Software Vendors (ISVs). Buy repackaging license to sell a packaged block."
+                    },
+                    {
+                        "list_title":"Channel Partners",
+                        "details": "Channel partners include all go-to-market (GTM) partners that market or sell a partner’s product or service. A GTM partner leverages a “go-to-market strategy” that defines how each partner will help the other reach their respective target customers. Repackaging (adds to an already existing block allowing the new block to break into market easily)"
+                    },
+                    {
+                        "list_title":"Resellers",
+                        "details": "Partner managers sometimes use the term resellers as a general umbrella term for channel partnerships. However, as a standalone partnership type, a “reseller” is a vendor that sells a product or service on behalf of its partner. The reseller invoices the customer and sends some of the revenue back to the ISV partner. redistributor (a type of redistributor where buyer resells the block as is) – not on behalf of partner."
+                    } 
+                ]
+            }
+        ]
+    }
+]

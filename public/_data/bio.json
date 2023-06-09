@@ -1,0 +1,114 @@
+[
+    { 
+        "name":"Faiz M H",
+        "designation": "CEO @NeoITO",
+        "bio_details": "Serial Entrepreneur, SAFE Note Investor, Fortune 50 Architect Helped $MM startups like Waitwhile, Daily.AI, etc., to scale their businesses from zero to eight and nine-figure valuation in less than a year. Currently, founder/investor to a few startups like Numax, PropertyOK and Appblocks.",
+        "img_url": "./assets/images/team-1.png",
+        "img_url_about": "../../assets/images/team-1.png",
+        "img_dark_url": "./assets/images/team-dark-1.png"
+    },
+    { 
+        "name":"Jayakrishnan JR",
+        "designation": "Prinicipal Engineers",
+        "bio_details": "A technology and programming enthusiast and have worked as a Tech Lead and Architect of leading startups like DailyAI, RideYellow, CWiX and many other product-based companies.",
+        "img_url":"./assets/images/team-2.png",
+        "img_url_about": "../../assets/images/team-2.png",
+        "img_dark_url": "./assets/images/team-dark-2.png"
+    },
+    { 
+        "name":"Jishnu N Bhattathiri",
+        "designation": "Prinicipal Engineer",
+        "bio_details": "I am a 10 year experienced senior engineer, mostly doing web development almost all my career. I have been an architect for several products including queue management systems, real time applications and streaming applications. I am a performance obsessed developer, and enjoy doing performance engineering.",
+        "img_url":"./assets/images/team-3.png",
+        "img_url_about": "../../assets/images/team-3.png",
+        "img_dark_url": "./assets/images/team-dark-3.png"
+    },
+    { 
+        "name":"Sajin Abdu",
+        "designation": "Product Manager",
+        "bio_details": "I am a technology driven professional with experience of 12 years as a Mainframe developer, PMO, Project Manager, Product Manager, Head of Technology.advisor",
+        "img_url":"./assets/images/team-4.png",
+        "img_url_about": "../../assets/images/team-4.png",
+        "img_dark_url": "./assets/images/team-dark-4.png"
+    },
+    { 
+        "name":"Frederic Thomson",
+        "designation": "Frontend Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-5.png",
+        "img_url_about": "../../assets/images/team-5.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Arjun S Kumar",
+        "designation": "Frontend Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-6.png",
+        "img_url_about": "../../assets/images/team-6.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Joyal Thomas",
+        "designation": "Frontend Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-7.png",
+        "img_url_about": "../../assets/images/team-7.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Navaf Muhammed",
+        "designation": "UI/UX Designer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-8.png",
+        "img_url_about": "../../assets/images/team-8.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Athul R Nath",
+        "designation": "Backend Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-9.png",
+        "img_url_about": "../../assets/images/team-9.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Vinil Varghese",
+        "designation": "Backend Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-10.png",
+        "img_url_about": "../../assets/images/team-10.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Thalal Hassan",
+        "designation": "Backend Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-11.png",
+        "img_url_about": "../../assets/images/team-11.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Shan K M",
+        "designation": "UI Developer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-12.png",
+        "img_url_about": "../../assets/images/team-12.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Devika Murali E",
+        "designation": "Business Analyst",
+        "bio_details": "",
+        "img_url":"./assets/images/team-13.png",
+        "img_url_about": "../../assets/images/team-13.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    },
+    { 
+        "name":"Jeena Joy",
+        "designation": "Software Test Engineer",
+        "bio_details": "",
+        "img_url":"./assets/images/team-default.png",
+        "img_url_about": "../../assets/images/team-default.png",
+        "img_dark_url": "./assets/images/team-default.png"
+    }
+]

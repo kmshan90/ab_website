@@ -134,7 +134,7 @@
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          What services/permissions do I get if I purchase an MIT license?
+          What is block.config.json?
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
@@ -143,7 +143,19 @@
             <div
               class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
             >
-              <ul><li><b>Use the code in commercial applications:</b> For example, a company can create a proprietary piece of software that includes all or part of the original open source code, then charge money for that software.</li><li><b>Modify the code:</b> In other words, developers can change/update the code however they’d like.</li><li><b>Distribute copies of the code and any modifications:</b> As long as the original copyright notice and the license itself are included, an organization can distribute and sell copies or modified versions of the code.</li><li><b>Sublicense the code:</b> This means you can incorporate the original code into a modification with a stricter license.</li></ul>
+              block.config.json is where cli stores critical information about the blocks. The data from this config helps CLI to make informed decision on how to handle your blocks. configs are usually kept both in your git repo and appblocks registry. if block is a package block, user should manually push it to registry using bb push-config
+            </div>
+            
+            <div class="w-full float-left mt-4">
+              <p class="text-base text-ab-black zirkon-medium">
+                For more details :
+                <a
+                  target="_blank"
+                  href="https://docs.appblocks.com/docs/core-concepts/type-of-blocks#blockconfigjson"
+                  class="focus:outline-none cursor-pointer underline text-primary zirkon-medium text-base"
+                  >Check Docs</a
+                >
+              </p>
             </div>
             
           </div>
@@ -156,7 +168,7 @@
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          How do I receive updates for a free block?
+          How to install the CLI in different OS
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
@@ -165,7 +177,7 @@
             <div
               class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
             >
-              For updates, find the block in the Store and check if there are newer versions released.
+              CLI is built using javascript and so it needs Node in your machine to work irrespective of the OS. Step one would be to install node. Use nvm or install directly from nodejs website. after that, install bb-cli from npmjs. make sure to install bb-cli globally.
             </div>
             
           </div>
@@ -178,7 +190,7 @@
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          Can I resell an item with just an MIT license?
+          How can i configure CLI
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
@@ -187,7 +199,7 @@
             <div
               class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
             >
-              Yes, you can.
+              User can user bb config command to view and edit cli configuration. use bb config --help  for more information
             </div>
             
           </div>
@@ -200,7 +212,7 @@
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          Can I redistribute a block?
+          How can i delete a block i accidently created
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
@@ -209,7 +221,7 @@
             <div
               class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
             >
-              Yes, you can with MIT license.
+              Use bb delete &gt;block-name&lt; for deleting blocks. This will also try to delete the block repo from github (if you are using github)
             </div>
             
           </div>
@@ -222,7 +234,7 @@
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          Can I make edits to a block?
+          Why do i have to always restart emulator to see the changes in my function block?
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
@@ -231,7 +243,7 @@
             <div
               class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
             >
-              Yes, you can with MIT license.
+              It is due to limitation in node's import strategies. Based on <a href='https://github.com/nodejs/help/issues/2751#issuecomment-1075535742' target='blank'>https://github.com/nodejs/help/issues/2751#issuecomment-1075535742</a>, we have implementated a solution. Make NODE_ENV=development and it will work.
             </div>
             
           </div>
@@ -244,7 +256,7 @@
         <button
           class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
         >
-          What am I not supposed to do with a MIT licensed block?
+          How can i inject custom values to environment from block
         </button>
         <div
           class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
@@ -253,7 +265,107 @@
             <div
               class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
             >
-              <ul><li>You can’t hold the code author(s) legally liable for any reason.</li><li>You also can’t delete the copyright notice and original license from your version of the code.</li></ul>
+              All values in .env inside block dirs are parsed and added to respective envs (.env.view for view blocks and .env.fucntions for function blocks) on start. Just add a .env inside your block directory
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list"
+      >
+        <button
+          class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
+        >
+          I think i have a lot of blocks started and running and is taking my system resources, I dont want to go to each block directory and run bb stop , is there a solution?
+        </button>
+        <div
+          class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
+        >
+          <div class="w-full float-left pb-4">
+            <div
+              class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
+            >
+              Yes there is! CLI has a one time stop all facility. use stop with &quot;<b>-g</b>&quot; from anywhere. <br/>&quot;<b>bb stop -g</b>&quot;. CLI will try to located all blocks and stop them for you.
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list"
+      >
+        <button
+          class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
+        >
+          Why is HMR not working for fedearted modules
+        </button>
+        <div
+          class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
+        >
+          <div class="w-full float-left pb-4">
+            <div
+              class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
+            >
+              CLI generated webpack config has the setup for @module-federation/fmr . Uncomment the code and add you container name and port. Do this in every federated component where you want HMR.
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list"
+      >
+        <button
+          class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
+        >
+          What is the difference between ‘bb create’ and ‘bb init’?
+        </button>
+        <div
+          class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
+        >
+          <div class="w-full float-left pb-4">
+            <div
+              class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
+            >
+              &quot;<b>bb init</b>&quot; is used to create a package block. &quot;<b>bb create</b>&quot; is used to create a block; UI, Function, or Shared Block. This command will prompt you to choose the type of block. It will also create a sample template.
+            </div>
+            
+            <div class="w-full float-left mt-4">
+              <p class="text-base text-ab-black zirkon-medium">
+                For more details :
+                <a
+                  target="_blank"
+                  href="https://docs.appblocks.com/docs/CLI/commands"
+                  class="focus:outline-none cursor-pointer underline text-primary zirkon-medium text-base"
+                  >Check Docs</a
+                >
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="w-full float-left mb-4 border border-ab-gray-dark rounded faq-accordian-list"
+      >
+        <button
+          class="faq-accordian-btn w-full float-left focus:outline-none text-base flexa-medium text-ab-black pl-6 pr-14 py-5 text-left relative"
+        >
+          What languages are supported?
+        </button>
+        <div
+          class="faq-accordian-container w-full float-left px-6 overflow-hidden transition-all duration-300"
+        >
+          <div class="w-full float-left pb-4">
+            <div
+              class="accordian-para-container w-full float-left zirkon-regular text-sm text-[#242424]"
+            >
+              react
             </div>
             
           </div>
