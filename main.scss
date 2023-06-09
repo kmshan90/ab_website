@@ -481,27 +481,44 @@ a{
 }
 .faq-accordian-container{
   .accordian-para-container{
+    font-size: 14px;
     &>*{
       margin-bottom: 14px;
-      font-weight: 500;
-      color: rgba(72, 72, 72, 0.8);
       font-family: 'gt_zirkon_regular', sans-serif; 
       &:last-of-type{
         margin-bottom: 0px;
       }
       &>b{
         color: #000;
+        font-weight: 500;
         font-family: 'gt_zirkon_medium', sans-serif; 
       }
     }
     b{
       color: #000;
+      font-weight: 500;
       font-family: 'gt_zirkon_medium', sans-serif; 
     }
     a{
       color: #000;
       font-family: 'gt_zirkon_medium', sans-serif; 
       text-decoration: underline;
+    }
+    ul{
+      li{
+        list-style-type: initial;
+        margin-left: 16px;
+        font-size: 14px;
+        color: #242424;
+        &:not(:last-of-type){
+          margin-bottom: 12px;
+        }
+        &>b{
+          color: #000;
+          font-weight: 500;
+          font-family: 'gt_zirkon_medium', sans-serif; 
+        }
+      }
     }
   }
 }
@@ -642,26 +659,5 @@ a{
   }
   .error-msg{
     display: inline;
-  }
-}
-.faq-accordian-container{
-  .accordian-para-container{
-    font-size: 14px;
-    ul{
-      li{
-        list-style-type: initial;
-        margin-left: 16px;
-        font-size: 14px;
-        color: #242424;
-        &:not(:last-of-type){
-          margin-bottom: 12px;
-        }
-        &>b{
-          color: #000;
-          font-weight: 500;
-          font-family: 'gt_zirkon_medium', sans-serif; 
-        }
-      }
-    }
   }
 }

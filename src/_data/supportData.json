@@ -23,12 +23,6 @@
                                     "link":"/pages/publishing-and-using-blocks/"
                                 },
                                 { 
-                                    "title": "Legal",
-                                    "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
-                                    "icon_url": "../../assets/images/icons/copyright-icon.svg",
-                                    "link":"/pages/buy-and-sell/"
-                                },
-                                { 
                                     "title": "Licensing",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/licensing-icon.svg",
@@ -44,13 +38,13 @@
                                     "title": "Spaces",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/cli.svg",
-                                    "link":"/pages/buy-and-sell/"
+                                    "link":"/pages/spaces/"
                                 },
                                 { 
                                     "title": "Others",
                                     "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
                                     "icon_url": "../../assets/images/icons/others.svg",
-                                    "link":"/pages/buy-and-sell/"
+                                    "link":"/pages/others/"
                                 }
                             ]
                             
@@ -324,6 +318,94 @@
                     { 
                         "question": "How do I delist a block?",
                         "answer": "To delist a block, go to the manage blocks page and find the delist button. If you don't see the delist button, it means that your block is not published."
+                    }
+                ]
+            }
+        ],
+        "spaces":
+        [
+            {
+                "title": "Spaces",
+                "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                "faq":
+                [
+                    { 
+                        "question": "What is a space?",
+                        "answer": "A space helps your organizations and teams to collaboratively work on applications and blocks and allows you to manage accesses of all these, all in one workspace.",
+                        "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces"
+                    },
+                    { 
+                        "question": "How can you manage access to appblocks resources via spaces?",
+                        "answer": "In Appblocks, each space admin can decide the access controls of the members in that space. A space admin can create teams and roles, making managing access of each added member easier."
+                    },
+                    { 
+                        "question": "How to change my password?",
+                        "answer": "To change password, go to the Profile Settings page shown in the left side navigation menu. You will find the change password option, where you have to enter the current and new passwords.",
+                        "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces#using-spaces"
+                    },
+                    { 
+                        "question": "Can the invited user access all the resources in the space?",
+                        "answer": "An invited user has access to only actions that the space owner has given the member rights to."     
+                    },
+                    { 
+                        "question": "How many spaces, teams, and roles a member can be assigned?",
+                        "answer": "There is no limit on the number of spaces, teams or roles you can create. You can also have any number of members added."
+                    },
+                    { 
+                        "question": "What can I use teams for? Can I assign team permissions to blocks? ",
+                        "answer": ""
+                    },
+                    { 
+                        "question": "How do I create a new space?",
+                        "answer": "To create a new space, you can either click on &quot;<b>Create New</b>&quot; inside the Home page list or click on &quot;<b>Create New Space</b>&quot; on the Spaces list in the left side navigation menu.",
+                        "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#create"
+                    },
+                    { 
+                        "question": "How can you invite other people to space?",
+                        "answer": "To invite a person to your space, standing in the space - members tab, click the &quot;<b>New Member</b>&quot; button and send invites.",
+                        "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#members"
+                    },
+                    { 
+                        "question": "How to edit a space name after creating it?",
+                        "answer": "Once you create a space, you will find it in a list in the left side navigation menu. Choose the space, and go to its Settings tab in the space details page. Click on the text field, make changes and save.",
+                        "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#edit"
+                    },
+                    { 
+                        "question": "How do I delete a space?",
+                        "answer": "Currently, deleting a space is not an option."
+                    }
+                ]
+            }
+        ],
+        "others":
+        [
+            {
+                "title": "Others",
+                "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                "faq":
+                [
+                    { 
+                        "question": "What problem does Appblocks solve?",
+                        "answer": "&quot;<b>Not all Apps require re-engineering. Much of it can be built using reusable blocks of code within composable standards.</b>&quot; <br/>Large enterprises use their own composable framework enabling reusability and maintaining code quality. But these are not open to the rest of the world. Appblocks addresses this need by developing a Universal Composable Framework that can be adopted by any individual developer or organization and also enabling collaboration between them."
+                    },
+                    { 
+                        "question": "How to change my password?",
+                        "answer": "To change password, go to the Profile Settings page shown in the left side navigation menu. You will find the change password option, where you have to enter the current and new passwords.",
+                        "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces#using-space"
+                    }
+                ]
+            }
+        ],
+        "legal":
+        [
+            {
+                "title": "Legal",
+                "desc": "Vestibulum sit amet elit risus.Vivamus in erat dignissim.",
+                "faq":
+                [
+                    { 
+                        "question": "What license does free blocks come under? What are the conditions of the license?",
+                        "answer": "<p>All free blocks are under MIT license as per OSI guidelines.</p><p>The condition states that:</p><p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>"
                     }
                 ]
             }
