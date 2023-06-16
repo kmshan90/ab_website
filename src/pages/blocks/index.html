@@ -4,201 +4,289 @@ site_title: Appblocks - Blocks
 ---
 
 {% import 'partials/banner.njk' as banner %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
 <div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
-    {{ banner.block(blockData[0].banner[0].title, blockData[0].banner[0].desc) }}
+  {{ banner.block(blockData[0].banner[0].title, blockData[0].banner[0].desc) }}
 
-    <section class="w-full float-left py-8 md:py-20">
-        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
-            <div class="w-full mx-auto flex relative mb-20">
-                <img class="max-w-full mx-auto" src="../../assets/images/icons/blocks-graphics.svg" alt="" />
-            </div>
-            <div class="max-w-[910px] mx-auto text-center mb-6">
-                <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">APPBLOCKS</p>
-                <h3 class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black py-2">
-                    {{blockData[0].appblocks_info[0].title}}
-                </h3>
-                <p class="mt-4 zirkon-medium md:text-2xl text-sm text-ab-black">
-                    {{blockData[0].appblocks_info[0].desc | safe}}
-                </p>
-            </div>
-            <div class="w-full float-left grid grid-cols-1 md:grid-cols-3 items-start gap-6 mt-4">
-                {% for blockDetails in blockData[0].appblocks_info[0].list %}
-                <div class="w-full float-left flex flex-col items-start">
-                    <p class="w-full float-left mt-5 zirkon-regular text-sm md:text-base text-ab-black">
-                        {{blockDetails.details}}
+  <section class="w-full float-left py-8 md:py-20">
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+      <div class="w-full mx-auto flex relative mb-20">
+        <img
+          class="max-w-full mx-auto"
+          src="../../assets/images/icons/blocks-graphics.svg"
+          alt=""
+        />
+      </div>
+      <div class="max-w-[910px] mx-auto text-center mb-6">
+        <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">
+          APPBLOCKS
+        </p>
+        <h3
+          class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black py-2"
+        >
+          {{blockData[0].appblocks_info[0].title}}
+        </h3>
+        <p class="mt-4 zirkon-medium md:text-2xl text-sm text-ab-black">
+          {{blockData[0].appblocks_info[0].desc | safe}}
+        </p>
+      </div>
+      <div
+        class="w-full float-left grid grid-cols-1 md:grid-cols-3 items-start gap-6 mt-4"
+      >
+        {% for blockDetails in blockData[0].appblocks_info[0].list %}
+        <div class="w-full float-left flex flex-col items-start">
+          <p
+            class="w-full float-left mt-5 zirkon-regular text-sm md:text-base text-ab-black"
+          >
+            {{blockDetails.details}}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full float-left py-8 md:py-20">
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+      <div
+        class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4"
+      >
+        <div class="w-full float-left md:max-w-[480px] py-5">
+          <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">
+            {{blockData[0].types_of_blocks[0].title | safe}}
+          </p>
+          <h3
+            class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black"
+          >
+            {{blockData[0].types_of_blocks[0].sub_title | safe}}
+          </h3>
+          <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black/80">
+            {{blockData[0].types_of_blocks[0].desc | safe}}
+          </p>
+          <div class="mt-4 md:mt-5">
+            <a
+              class="text-primary text-xl flexa-medium cursor-pointer hover:underline"
+              >Check Docs</a
+            >
+          </div>
+        </div>
+        <div class="float-right text-right relative">
+          <img
+            class="max-w-full inline-flex"
+            src="../../assets/images/icons/blocks-shape.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full float-left py-8 md:py-20">
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+      <div class="w-full float-left flex md-lt:flex-col justify-between">
+        <div
+          class="float-left relative flex md-lt:flex-col md-lt:order-2 md:pr-10"
+        >
+          <div
+            class="block-slider-pagination float-left flex-shrink-0 w-full md:!w-[56px] flex md:flex-col md-lt:justify-center md:!space-y-12 items-center relative"
+          ></div>
+        </div>
+        <div class="float-left flex-grow max-w-[1024px] overflow-hidden flex">
+          <div class="w-full blocks-swiper float-left overflow-hidden">
+            <div class="swiper-wrapper">
+              {% for slider in blockData[0].block_slider %}
+              <div class="swiper-slide w-full bg-white !flex items-center">
+                <div class="w-full flex sm:space-x-16">
+                  <div
+                    class="w-full float-left relative md:flex hidden md:max-w-[480px]"
+                  >
+                    <img class="mx-auto" src="{{slider.img_url}}" alt="" />
+                  </div>
+                  <div class="w-full float-left md:max-w-[480px] py-5">
+                    <div class="float-left rounded-full mb-4 md:mb-8 pl-2">
+                      <img
+                        class="max-w-[64px]"
+                        src="../../assets/images/icons/block-cube.svg"
+                        alt=""
+                      />
+                    </div>
+                    <h3
+                      class="text-xl md:text-3xl flexa-bold text-ab-black clear-both"
+                    >
+                      {{slider.title | safe}}
+                    </h3>
+                    <p
+                      class="mt-4 zirkon-regular text-sm md:text-base text-ab-black"
+                    >
+                      {{slider.desc | safe}}
                     </p>
+                    <div class="mt-4 md:mt-6 flex flex-wrap">
+                      <img
+                        class="max-w-[32px] flex-shrink-0 mr-4"
+                        src="../../assets/images/icons/tech-icon-1.svg"
+                        alt=""
+                      />
+                      <img
+                        class="max-w-[32px] flex-shrink-0 mr-4"
+                        src="../../assets/images/icons/tech-icon-2.svg"
+                        alt=""
+                      />
+                      <img
+                        class="max-w-[32px] flex-shrink-0 mr-4"
+                        src="../../assets/images/icons/tech-icon-3.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
                 </div>
-                {% endfor %}
+              </div>
+              {% endfor %}
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="w-full float-left py-8 md:py-20">
-        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
-            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
-                <div class="w-full float-left md:max-w-[480px] py-5">
-                    <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">
-                        {{blockData[0].types_of_blocks[0].title | safe}}</p>
-                    <h3 class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black">
-                        {{blockData[0].types_of_blocks[0].sub_title | safe}}
-                    </h3>
-                    <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black/80">
-                        {{blockData[0].types_of_blocks[0].desc | safe}}</p>
-                    <div class="mt-4 md:mt-5">
-                        <a class="text-primary text-xl flexa-medium cursor-pointer hover:underline">Check Docs</a>
-                    </div>
-                </div>
-                <div class="float-right text-right relative">
-                    <img class="max-w-full inline-flex" src="../../assets/images/icons/blocks-shape.svg" alt="" />
-                </div>
-            </div>
+  <section class="w-full float-left py-8 md:py-20">
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+      <div class="max-w-[910px] mx-auto text-center">
+        <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">
+          WHY APPBLOCKS
+        </p>
+        <h3
+          class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black"
+        >
+          {{blockData[0].why_appblocks[0].title}}
+        </h3>
+        <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
+          {{blockData[0].why_appblocks[0].desc | safe}}
+        </p>
+        <div
+          class="w-full grid grid-cols-1 md:grid-cols-3 items-center gap-4 mt-12 md:mt-20"
+        >
+          {% for why_appblocks_details in blockData[0].why_appblocks[0].list %}
+          <div class="w-full float-left flex flex-col items-center">
+            <img
+              class="mb-3 flex-shrink-0"
+              src="{{why_appblocks_details.icon_url}}"
+              alt=""
+            />
+            <h4
+              class="flexa-bold text-2xl md:text-[32px] leading-9 primary-gradient-text"
+            >
+              {{why_appblocks_details.list_title}}
+            </h4>
+            <p
+              class="mt-2 md:mt-4 zirkon-regular text-sm md:text-base text-ab-black"
+            >
+              {{why_appblocks_details.details | safe}}
+            </p>
+          </div>
+          {% endfor %}
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="w-full float-left py-8 md:py-20">
-        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
-            <div class="w-full float-left flex justify-between">
-                <div class="float-left relative flex pr-10">
-                    <div
-                        class="block-slider-pagination  float-left flex-shrink-0 !w-[56px] flex flex-col !space-y-12 items-center relative">
-                    </div>
-                </div>
-                <div class="float-left flex-grow max-w-[1024px] overflow-hidden flex ">
-                    <div class="w-full blocks-swiper float-left overflow-hidden">
-                        <div class="swiper-wrapper">
-                            {% for slider in blockData[0].block_slider %}
-                                <div class="swiper-slide w-full bg-white !flex items-center">
-                                    <div class="w-full flex sm:space-x-16">
-                                        <div class="w-full float-left relative sm:flex hidden md:max-w-[480px] ">
-                                            <img class="mx-auto" src="{{slider.img_url}}" alt="" />
-                                        </div>
-                                        <div class="w-full float-left md:max-w-[480px] py-5">
-                                            <div class="float-left rounded-full mb-8 pl-2">
-                                                <img class="max-w-[64px]" src="../../assets/images/icons/block-cube.svg"
-                                                    alt="" />
-                                            </div>
-                                            <h3 class="text-xl md:text-3xl flexa-bold text-ab-black clear-both">
-                                                {{slider.title | safe}}
-                                            </h3>
-                                            <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                                               {{slider.desc | safe}}</p>
-                                            <div class="mt-4 md:mt-6 flex flex-wrap">
-                                                <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                    src="../../assets/images/icons/tech-icon-1.svg" alt="" />
-                                                <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                    src="../../assets/images/icons/tech-icon-2.svg" alt="" />
-                                                <img class="max-w-[32px] flex-shrink-0 mr-4"
-                                                    src="../../assets/images/icons/tech-icon-3.svg" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section class="w-full float-left py-8 md:py-20">
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
+      <div
+        class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-start gap-4"
+      >
+        <div class="w-full float-left md:max-w-[480px] py-5">
+          <p
+            class="w-full float-left zirkon-medium text-xl text-ab-black tracking-wider mb-6"
+          >
+            BUILD . SHARE . GROW
+          </p>
+          <h3
+            class="w-full float-left text-xl md:text-5xl md:!leading-[54px] flexa-bold text-ab-black"
+          >
+            Built to scale.<br />
+            Fit to your needs.<br />
+            Effortlessly.
+          </h3>
+          <div
+            class="w-full float-left mt-4 zirkon-regular text-sm md:text-base text-ab-black [&>p]:mt-4"
+          >
+            <p>
+              Find applications, get inspired, or build your own apps in our
+              open-sourced app marketplace, made with Blocks.
+            </p>
+
+            <p>
+              Search and pull code you need from our Blocks store Standardized
+              applications built within an opinionated architecture.
+            </p>
+
+            <p>Build and share app templates in our community</p>
+          </div>
+          <div class="w-full float-left mt-4 md:mt-6">
+            <a
+              class="flex items-center cursor-pointer hover:no-underline space-x-4"
+            >
+              <img
+                class="flex-shrink-0"
+                src="../../assets/images/icons/github.svg"
+              />
+              <span
+                class="text-ab-black text-lg flexa-medium leading-tight pt-1"
+                >Github</span
+              >
+            </a>
+          </div>
         </div>
-    </section>
-
-
-    <section class="w-full float-left py-8 md:py-20">
-        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
-            <div class="max-w-[910px] mx-auto text-center">
-                <p class="zirkon-medium text-xl text-ab-black mb-4 tracking-wider">WHY APPBLOCKS</p>
-                <h3 class="text-xl md:text-5xl md:leading-[58px] flexa-bold text-ab-black">
-                    {{blockData[0].why_appblocks[0].title}}
-                </h3>
-                <p class="mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                    {{blockData[0].why_appblocks[0].desc | safe}}
-                </p>
-                <div class="w-full grid grid-cols-1 md:grid-cols-3 items-center gap-4 mt-12 md:mt-20">
-                    {% for why_appblocks_details in blockData[0].why_appblocks[0].list %}
-                    <div class="w-full float-left flex flex-col items-center">
-                        <img class="mb-3 flex-shrink-0" src="{{why_appblocks_details.icon_url}}" alt="" />
-                        <h4 class="flexa-bold text-2xl md:text-[32px] leading-9 primary-gradient-text">
-                            {{why_appblocks_details.list_title}}</h4>
-                        <p class="mt-2 md:mt-4 zirkon-regular text-sm md:text-base text-ab-black">
-                            {{why_appblocks_details.details | safe}}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+        <div class="w-full relative float-right self-end">
+          <div class="float-left relative">
+            <img
+              src="../../assets/images/icons/macbook.svg"
+              class="float-left max-w-full flex relative mb-4 md:mb-0"
+            />
+            <img
+              src="../../assets/images/icons/card-box-2.svg"
+              class="card-animation-1 float-left max-w-full absolute right-0 -top-1/3 hidden lg:flex"
+            />
+            <img
+              src="../../assets/images/icons/card-box-1.svg"
+              class="card-animation-2 float-left max-w-full absolute right-[214px] -top-1/3 hidden lg:flex"
+            />
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="w-full float-left py-8 md:py-20">
-        <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
-            <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-start gap-4">
-                <div class="w-full float-left md:max-w-[480px] py-5">
-                    <p class="w-full float-left zirkon-medium text-xl text-ab-black tracking-wider mb-6">BUILD . SHARE .
-                        GROW</p>
-                    <h3 class="w-full float-left text-xl md:text-5xl md:!leading-[54px] flexa-bold text-ab-black">
-                        Built to scale.<br />
-                        Fit to your needs.<br />
-                        Effortlessly.
-                    </h3>
-                    <div class="w-full float-left mt-4 zirkon-regular text-sm md:text-base text-ab-black [&>p]:mt-4">
-                        <p>Find
-                            applications, get inspired, or build your own apps in our open-sourced app marketplace, made
-                            with Blocks.</p>
-
-                        <p>Search and pull code you need from
-                            our Blocks store Standardized applications built within
-                            an
-                            opinionated architecture.</p>
-
-                        <p>Build and share app templates in our
-                            community</p>
-                    </div>
-                    <div class="w-full float-left mt-4 md:mt-6">
-                        <a class="flex items-center cursor-pointer hover:no-underline space-x-4">
-                            <img class="flex-shrink-0" src="../../assets/images/icons/github.svg" />
-                            <span class="text-ab-black text-lg flexa-medium leading-tight pt-1">Github</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full relative float-right self-end">
-                    <div class="float-left relative">
-                        <img src="../../assets/images/icons/macbook.svg"
-                            class="float-left max-w-full flex relative mb-4 md:mb-0">
-                        </img>
-                        <img src="../../assets/images/icons/card-box-2.svg"
-                            class="card-animation-1 float-left max-w-full absolute right-0 -top-1/3 hidden lg:flex">
-                        </img>
-                        <img src="../../assets/images/icons/card-box-1.svg"
-                            class="card-animation-2 float-left max-w-full absolute right-[214px] -top-1/3 hidden lg:flex">
-                        </img>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {% include "partials/discover-box.html" %}
+  {% include "partials/discover-box.html" %}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-    var swiperBlock = new Swiper(".blocks-swiper", {
-        effect: "fade",
-        autoplay: {
-            delay: 1500,
-            pauseOnMouseEnter: true,
-            disableOnInteraction: false,
-        },
-        /*mousewheel: {
+  var swiperBlock = new Swiper(".blocks-swiper", {
+    effect: "fade",
+    autoplay: {
+      delay: 1500,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    /*mousewheel: {
             releaseOnEdges: false,
             thresholdTime: 500,
         },*/
-        pagination: {
-            el: ".block-slider-pagination",
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<div class="' + className +
-                    '"><span class="flexa-medium text-white text-lg leading-tight pt-1">' +
-                    (((index + 1) < 9) ? ("0" + (index + 1)) : (index + 1)) + '</span></div>';
-            },
-        }
-    });
+    pagination: {
+      el: ".block-slider-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return (
+          '<div class="' +
+          className +
+          '"><span class="flexa-medium text-white text-xs md:text-lg leading-tight pt-0.5 md:pt-1">' +
+          (index + 1 < 9 ? "0" + (index + 1) : index + 1) +
+          "</span></div>"
+        );
+      },
+    },
+  });
 </script>

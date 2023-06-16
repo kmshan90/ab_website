@@ -370,10 +370,6 @@
                         "answer": "There is no limit on the number of spaces, teams or roles you can create. You can also have any number of members added."
                     },
                     { 
-                        "question": "What can I use teams for? Can I assign team permissions to blocks? ",
-                        "answer": ""
-                    },
-                    { 
                         "question": "How do I create a new space?",
                         "answer": "To create a new space, you can either click on &quot;<b>Create New</b>&quot; inside the Home page list or click on &quot;<b>Create New Space</b>&quot; on the Spaces list in the left side navigation menu.",
                         "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#create"

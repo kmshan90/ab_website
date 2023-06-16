@@ -2,193 +2,291 @@
 layout: layout/layout.njk
 site_title: Appblocks - Contact
 ---
+
 {% import 'partials/banner.njk' as banner %}
 <script>
-    function validateEmail(email) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
-    }
+  function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
 
-    function resetForms() {
-        document.getElementById("contact-email").value = "";
-        document.getElementById("contact-message").value = "";
-    }
-    const handleSuccessClose = () => {
-        document.getElementById("success-msg").classList.remove("flex");
-        document.getElementById("success-msg").classList.add("hidden");
-        handleContactFrmHt();
-    }
+  function resetForms() {
+    document.getElementById("contact-email").value = "";
+    document.getElementById("contact-message").value = "";
+  }
+  const handleSuccessClose = () => {
+    document.getElementById("success-msg").classList.remove("flex");
+    document.getElementById("success-msg").classList.add("hidden");
+    handleContactFrmHt();
+  };
 
-    const handleContactFrmHt = () => {
-        let contactFrmWrapper = document.querySelector(".contact-form-wrapper");
-        contactFrmWrapper.style.maxHeight = contactFrmWrapper.scrollHeight + "px";
+  const handleContactFrmHt = () => {
+    let contactFrmWrapper = document.querySelector(".contact-form-wrapper");
+    contactFrmWrapper.style.maxHeight = contactFrmWrapper.scrollHeight + "px";
+  };
+  const clearError = (type) => {
+    if (type === undefined) {
+      let elm = document.querySelectorAll(".contact-frm-row");
+      if (document.querySelectorAll(".has-error").length > 0) {
+        elm.forEach((item) => {
+          item.querySelector(".error-msg").textContent = "";
+          item.classList.remove("has-error");
+        });
+      }
+    } else {
+      document
+        .getElementById(type)
+        .closest(".contact-frm-row")
+        .querySelector(".error-msg").textContent = "";
+      document
+        .getElementById(type)
+        .closest(".contact-frm-row")
+        .classList.remove("has-error");
     }
-    const clearError = (type) => {
-        if (type === undefined) {
-            let elm = document.querySelectorAll(".contact-frm-row");
-            if (document.querySelectorAll(".has-error").length > 0) {
-                elm.forEach((item) => {
-                    item.querySelector(".error-msg").textContent = "";
-                    item.classList.remove("has-error");
-                })
-            }
-        } else {
-            document.getElementById(type).closest(".contact-frm-row").querySelector(".error-msg").textContent = "";
-            document.getElementById(type).closest(".contact-frm-row").classList.remove("has-error");
-        }
-    }
-    const handleHasError = (elem, msg) => {
-        elem.classList.add("has-error");
-        elem.querySelector(".error-msg").textContent = msg;
-        handleContactFrmHt();
-    }
-    const handleContactFrm = () => {
-        clearError();
+  };
+  const handleHasError = (elem, msg) => {
+    elem.classList.add("has-error");
+    elem.querySelector(".error-msg").textContent = msg;
+    handleContactFrmHt();
+  };
+  const handleContactFrm = () => {
+    clearError();
 
-        let contactEmail = document.getElementById("contact-email");
-        let contactMessage = document.getElementById("contact-message");
+    let contactEmail = document.getElementById("contact-email");
+    let contactMessage = document.getElementById("contact-message");
 
-        if (contactEmail.value.trim() === "") {
-            let elem = contactEmail.closest(".contact-frm-row");
-            handleHasError(elem, "Please enter your email ID");
-
-        } else if (!validateEmail(contactEmail.value)) {
-            let elem = contactEmail.closest(".contact-frm-row");
-            handleHasError(elem, "Invalid email ID");
-        } else if (contactMessage.value.trim() === "") {
-            let elem = contactMessage.closest(".contact-frm-row");
-            handleHasError(elem, "Please type your message");
-        } else {
-            resetForms();
-            document.getElementById("success-msg").classList.remove("hidden");
-            document.getElementById("success-msg").classList.add("flex");
-            handleContactFrmHt();
-            setTimeout(() => {
-                handleSuccessClose();
-            }, 7000);
-        }
+    if (contactEmail.value.trim() === "") {
+      let elem = contactEmail.closest(".contact-frm-row");
+      handleHasError(elem, "Please enter your email ID");
+    } else if (!validateEmail(contactEmail.value)) {
+      let elem = contactEmail.closest(".contact-frm-row");
+      handleHasError(elem, "Invalid email ID");
+    } else if (contactMessage.value.trim() === "") {
+      let elem = contactMessage.closest(".contact-frm-row");
+      handleHasError(elem, "Please type your message");
+    } else {
+      resetForms();
+      document.getElementById("success-msg").classList.remove("hidden");
+      document.getElementById("success-msg").classList.add("flex");
+      handleContactFrmHt();
+      setTimeout(() => {
+        handleSuccessClose();
+      }, 7000);
     }
-    const handleKeypressFrm = (type) => {
-        if (type === "contact-email") {
-            if (document.getElementById("contact-email").closest(".contact-frm-row").querySelector(".error-msg")
-                .textContent == "Please enter your email ID") {
-                clearError(type);
-            }
-            if (validateEmail(document.getElementById("contact-email").value.trim())) {
-                clearError(type);
-            }
-            if (document.getElementById("contact-email").value.trim() === "") {
-                clearError(type);
-            }
-        } else {
-            clearError(type);
-        }
+  };
+  const handleKeypressFrm = (type) => {
+    if (type === "contact-email") {
+      if (
+        document
+          .getElementById("contact-email")
+          .closest(".contact-frm-row")
+          .querySelector(".error-msg").textContent ==
+        "Please enter your email ID"
+      ) {
+        clearError(type);
+      }
+      if (
+        validateEmail(document.getElementById("contact-email").value.trim())
+      ) {
+        clearError(type);
+      }
+      if (document.getElementById("contact-email").value.trim() === "") {
+        clearError(type);
+      }
+    } else {
+      clearError(type);
     }
+  };
 </script>
 <div class="min-h-[calc(100vh-208px)] w-full float-left pt-[72px] md:pt-[80px]">
-    {{ banner.common(contact[0].banner[0].title, contact[0].banner[0].desc) }}
-    <section class="w-full float-left">
-        <div class="max-w-7xl w-full mx-auto flex items-center px-4 md:px-6 py-10">
-            <div class="w-full grid grid-cols-1 md:grid-cols-[1fr_320px] gap-8 lg:gap-16">
-                <div class="w-full float-left overflow-hidden">
-                    <div class="w-full float-left mb-10 last-of-type:mb-0">
-                        <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">
-                            {{contact[0].contact_main[0].title}}</h3>
-                        <p class="zirkon-regular text-sm md:text-base text-ab-black mt-3">
-                            {{contact[0].contact_main[0].desc}}
-                        </p>
+  {{ banner.common(contact[0].banner[0].title, contact[0].banner[0].desc) }}
+  <section class="w-full float-left">
+    <div class="max-w-7xl w-full mx-auto flex items-center px-4 md:px-6 py-10">
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-[1fr_320px] gap-8 lg:gap-16"
+      >
+        <div class="w-full float-left overflow-hidden">
+          <div class="w-full float-left mb-10 last-of-type:mb-0">
+            <h3 class="flexa-bold text-2xl md:text-3xl text-ab-black">
+              {{contact[0].contact_main[0].title}}
+            </h3>
+            <p class="zirkon-regular text-sm md:text-base text-ab-black mt-3">
+              {{contact[0].contact_main[0].desc}}
+            </p>
+          </div>
+          <div class="w-full float-left mb-10 last-of-type:mb-0">
+            <div
+              class="w-full float-left mb-4 p-6 rounded-lg shadow-xs bg-[#D453B5]/5 flex flex-col md:flex-row items-start md-lt:space-y-6 md:space-x-7"
+            >
+              <img
+                class="flex-shrink-0 w-full max-w-[56px]"
+                src="../../assets/images/icons/help-center.svg"
+              />
+              <div class="flex-grow overflow-hidden">
+                <div class="w-full float-left flex flex-col space-y-3.5">
+                  <p class="flexa-bold text-xl md:text-2xl text-[#D453B5]">
+                    Help and Support
+                  </p>
+                  <p class="zirkon-medium text-sm md:text-base text-ab-black">
+                    Get the help you need and find answers to your questions
+                    quickly with our comprehensive Help and Support page.
+                  </p>
+                  <a
+                    href="/pages/support/"
+                    class="inline-flex items-center space-x-3 cursor-pointer zirkon-medium text-sm md:text-base text-[#D453B5] hover:underline focus:outline-none"
+                  >
+                    <svg
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 8H19M19 8L12 1M19 8L12 15"
+                        stroke="#D453B5"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="pt-0.5">Visit Help and Support</span></a
+                  >
+                </div>
+              </div>
+            </div>
+            {#
+            <div
+              class="w-full float-left mb-4 p-6 rounded-lg shadow-xs bg-primary/5 flex flex-col md:flex-row items-start md-lt:space-y-6 md:space-x-7"
+            >
+              <img
+                class="flex-shrink-0 w-full max-w-[56px]"
+                src="../../assets/images/icons/customer-support.svg"
+              />
+              <div class="flex-grow overflow-hidden md-lt:w-full">
+                <div class="w-full float-left flex flex-col space-y-3.5">
+                  <p class="flexa-bold text-xl md:text-2xl text-primary">
+                    Customer Support
+                  </p>
+                  <p class="zirkon-medium text-sm md:text-base text-ab-black">
+                    Please fill out the customer support form below with your
+                    inquiry / feedback / suggestion, and our dedicated team will
+                    respond to you as soon as possible.
+                  </p>
+                  <div
+                    class="send-query-btn inline-flex items-center space-x-3 cursor-pointer zirkon-medium text-sm md:text-base text-primary"
+                  >
+                    <svg
+                      width="14"
+                      height="8"
+                      viewBox="0 0 14 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1L7 7L13 1"
+                        stroke="#5E5EDD"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="pt-0.5">View / Hide the form</span>
+                  </div>
+                </div>
+                <div
+                  class="contact-form-wrapper w-full float-left flex flex-col space-y-3.5"
+                >
+                  <div
+                    id="success-msg"
+                    class="w-full float-left hidden justify-between space-x-2 items-center zirkon-medium text-base mt-4 px-4 py-2 bg-white border border-[#01944C] rounded-md text-[#01944C]"
+                  >
+                    <div class="flex items-center flex-grow overflow-hidden">
+                      <span
+                        class="w-[18px] h-[18px] mr-3 flex-shrink-0 float-left rounded-full bg-[#01944C] flex items-center justify-center"
+                      >
+                        <img
+                          src="../../assets/images/icons/white-tick-xs.svg"
+                          alt="Tick"
+                        />
+                      </span>
+                      <p class="pt-1">Your message has been sent!</p>
                     </div>
-                    <div class="w-full float-left mb-10 last-of-type:mb-0">
-                        <div
-                            class="w-full float-left mb-4 p-6 rounded-lg shadow-xs bg-[#D453B5]/5 flex flex-col md:flex-row items-start md-lt:space-y-6 md:space-x-7">
-                            <img class="flex-shrink-0 w-full max-w-[56px]"
-                                src="../../assets/images/icons/help-center.svg" />
-                            <div class="flex-grow overflow-hidden">
-                                <div class="w-full float-left flex flex-col space-y-3.5">
-                                    <p class="flexa-bold text-xl md:text-2xl text-[#D453B5]">Help and Support</p>
-                                    <p class="zirkon-medium text-sm md:text-base text-ab-black">Get the help you need
-                                        and find answers to your questions quickly with our comprehensive Help and
-                                        Support page.</p>
-                                    <a href="/pages/support/"
-                                        class="inline-flex items-center space-x-3 cursor-pointer zirkon-medium text-sm md:text-base text-[#D453B5] hover:underline focus:outline-none">
-                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 8H19M19 8L12 1M19 8L12 15" stroke="#D453B5" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        <span class="pt-0.5">Visit Help and Support</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="w-full float-left mb-4 p-6 rounded-lg shadow-xs bg-primary/5 flex flex-col md:flex-row items-start md-lt:space-y-6 md:space-x-7">
-                            <img class="flex-shrink-0 w-full max-w-[56px]"
-                                src="../../assets/images/icons/customer-support.svg" />
-                            <div class="flex-grow overflow-hidden md-lt:w-full">
-                                <div class="w-full float-left flex flex-col space-y-3.5">
-                                    <p class="flexa-bold text-xl md:text-2xl text-primary">Customer Support</p>
-                                    <p class="zirkon-medium text-sm md:text-base text-ab-black">Please fill out the
-                                        customer support form below with your inquiry / feedback / suggestion, and our
-                                        dedicated team will respond to you as soon as possible.</p>
-                                    <div
-                                        class="send-query-btn inline-flex items-center space-x-3 cursor-pointer zirkon-medium text-sm md:text-base text-primary">
-                                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 1L7 7L13 1" stroke="#5E5EDD" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        <span class="pt-0.5">View / Hide the form</span></div>
-                                </div>
-                                <div class="contact-form-wrapper w-full float-left flex flex-col space-y-3.5">
-                                    <div id="success-msg"
-                                        class="w-full float-left hidden justify-between space-x-2 items-center zirkon-medium text-base mt-4 px-4 py-2 bg-white border border-[#01944C] rounded-md text-[#01944C]">
-                                        <div class="flex items-center flex-grow overflow-hidden">
-                                            <span
-                                                class="w-[18px] h-[18px] mr-3 flex-shrink-0 float-left rounded-full bg-[#01944C] flex items-center justify-center">
-                                                <img src="../../assets/images/icons/white-tick-xs.svg" alt="Tick" />
-                                            </span>
-                                            <p class="pt-1">Your message has been sent!</p>
-                                        </div>
-                                        <img onclick="handleSuccessClose()" class="flex-shrink-0 cursor-pointer"
-                                            src="../../assets/images/icons/success-close-icon.svg" alt="Close" />
-                                    </div>
-                                    <form class="w-full float-left space-y-4 mt-4">
-                                        <div
-                                            class="w-full float-left flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-                                            <div class="w-full lg:w-1/2 float-left flex flex-col">
-                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">First
-                                                    Name</label>
-                                                <input class="contact-input" type="text" placeholder="Eg. John" />
-                                            </div>
-                                            <div class="w-full lg:w-1/2 float-left flex flex-col">
-                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">Last
-                                                    Name</label>
-                                                <input class="contact-input" type="text" placeholder="Eg. Deo" />
-                                            </div>
-                                        </div>
-                                        <div class="w-full float-left">
-                                            <div class="w-full float-left flex flex-col contact-frm-row">
-                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">Work
-                                                    email <span class="text-[#D25348]">*</span></label>
-                                                <input id="contact-email" class="contact-input" type="text"
-                                                    onkeyup="handleKeypressFrm('contact-email')"
-                                                    placeholder="Eg. username@domain.com" />
-                                                <span
-                                                    class="error-msg text-[#D25348] text-xs zirkon-medium mt-1.5"></span>
-                                            </div>
-                                        </div>
-                                        <div class="w-full float-left">
-                                            <div class="w-full float-left flex flex-col contact-frm-row">
-                                                <label class="text-xs zirkon-medium text-ab-black mb-1.5">Message <span
-                                                        class="text-[#D25348]">*</span></label>
-                                                <textarea id="contact-message" class="contact-txtarea"
-                                                    onkeyup="handleKeypressFrm('contact-message')"
-                                                    placeholder="Type message"></textarea>
-                                                <span
-                                                    class="error-msg text-[#D25348] text-xs zirkon-medium mt-1.5"></span>
-                                            </div>
-                                        </div>
-                                        <!-- <div class="w-full float-left flex items-center">
+                    <img
+                      onclick="handleSuccessClose()"
+                      class="flex-shrink-0 cursor-pointer"
+                      src="../../assets/images/icons/success-close-icon.svg"
+                      alt="Close"
+                    />
+                  </div>
+                  <form class="w-full float-left space-y-4 mt-4">
+                    <div
+                      class="w-full float-left flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4"
+                    >
+                      <div class="w-full lg:w-1/2 float-left flex flex-col">
+                        <label
+                          class="text-xs zirkon-medium text-ab-black mb-1.5"
+                          >First Name</label
+                        >
+                        <input
+                          class="contact-input"
+                          type="text"
+                          placeholder="Eg. John"
+                        />
+                      </div>
+                      <div class="w-full lg:w-1/2 float-left flex flex-col">
+                        <label
+                          class="text-xs zirkon-medium text-ab-black mb-1.5"
+                          >Last Name</label
+                        >
+                        <input
+                          class="contact-input"
+                          type="text"
+                          placeholder="Eg. Deo"
+                        />
+                      </div>
+                    </div>
+                    <div class="w-full float-left">
+                      <div
+                        class="w-full float-left flex flex-col contact-frm-row"
+                      >
+                        <label
+                          class="text-xs zirkon-medium text-ab-black mb-1.5"
+                          >Work email
+                          <span class="text-[#D25348]">*</span></label
+                        >
+                        <input
+                          id="contact-email"
+                          class="contact-input"
+                          type="text"
+                          onkeyup="handleKeypressFrm('contact-email')"
+                          placeholder="Eg. username@domain.com"
+                        />
+                        <span
+                          class="error-msg text-[#D25348] text-xs zirkon-medium mt-1.5"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="w-full float-left">
+                      <div
+                        class="w-full float-left flex flex-col contact-frm-row"
+                      >
+                        <label
+                          class="text-xs zirkon-medium text-ab-black mb-1.5"
+                          >Message <span class="text-[#D25348]">*</span></label
+                        >
+                        <textarea
+                          id="contact-message"
+                          class="contact-txtarea"
+                          onkeyup="handleKeypressFrm('contact-message')"
+                          placeholder="Type message"
+                        ></textarea>
+                        <span
+                          class="error-msg text-[#D25348] text-xs zirkon-medium mt-1.5"
+                        ></span>
+                      </div>
+                    </div>
+                    <!-- <div class="w-full float-left flex items-center">
                                             <label class="flex items-center float-left mb-0 mr-1.5"><input
                                                     type="checkbox" class="hidden" /><span
                                                     class="w-4 h-4 float-left border border-primary rounded mr-2.5"></span>
@@ -198,35 +296,41 @@ site_title: Appblocks - Contact
                                                 class="focus:outline-none float-left pt-1 md:pt-0.5 cursor-pointer hover:underline text-primary text-sm md:text-base">Terms
                                                 and Conditions</a>
                                         </div> -->
-                                        <div class="w-full float-left">
-                                            <button type="button" onclick="handleContactFrm()"
-                                                class="float-left my-2 py-2 px-6 text-base flexa-medium text-center text-white rounded-full bg-primary hover:opacity-90 focus:outline-none">Send
-                                                message</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="w-full float-left">
+                      <button
+                        type="button"
+                        onclick="handleContactFrm()"
+                        class="float-left my-2 py-2 px-6 text-base flexa-medium text-center text-white rounded-full bg-primary hover:opacity-90 focus:outline-none"
+                      >
+                        Send message
+                      </button>
                     </div>
+                  </form>
                 </div>
-                <div class="w-full float-left space-y-4">
-                    {% include "partials/support-sidebar.html" %}
-                </div>
+              </div>
             </div>
+            #}
+          </div>
         </div>
-    </section>
+        <div class="w-full float-left space-y-4">
+          {% include "partials/support-sidebar.html" %}
+        </div>
+      </div>
+    </div>
+  </section>
 
-    {% include "partials/location.html" %}
-
-    {% include "partials/discover-box.html" %}
+  {% include "partials/location.html" %} {% include "partials/discover-box.html"
+  %}
 </div>
 <script>
-    document.querySelector(".send-query-btn").addEventListener("click", function () {
-        const contactForm = document.querySelector(".contact-form-wrapper");
-        if (contactForm.style.maxHeight) {
-            contactForm.style.maxHeight = null;
-        } else {
-            contactForm.style.maxHeight = contactForm.scrollHeight + "px";
-        }
+  document
+    .querySelector(".send-query-btn")
+    .addEventListener("click", function () {
+      const contactForm = document.querySelector(".contact-form-wrapper");
+      if (contactForm.style.maxHeight) {
+        contactForm.style.maxHeight = null;
+      } else {
+        contactForm.style.maxHeight = contactForm.scrollHeight + "px";
+      }
     });
 </script>
