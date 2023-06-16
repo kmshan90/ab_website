@@ -54,28 +54,28 @@
                     "faq":
                     [
                         { 
-                            "question": "How do I create an application using Appblocks?",
+                            "question": "How to create an application using Appblocks?",
                             "answer": "Firstly, you have to install the bb-cli with the &quot;<b>npm i @appblocks/bb-cli -g</b>&quot; command. After this, Connect your Appblocks account with your GitHub account. <br/>Now you can try out the command for creating a package block, &quot;<b>bb init package_block_name</b>&quot;.",
                             "more_link": "https://docs.appblocks.com/docs/quickstart/start-from-template/setup"
                         },
                         { 
-                            "question": "How do I use blocks from the store in my application?",
+                            "question": "How to use blocks from the store in an application?",
                             "answer": "Create an account with Appblocks, install the bb-cli and connect you Appblocks account with your GitHub. After this step, click the block of your liking from the store (now you are in the block details page). On this page, you'll find a bb cli command to pull and use the block."                        },
                         { 
-                            "question": "How do I connect to GitHub?",
+                            "question": "How to connect the CLI to GitHub?",
                             "answer": "Use the command &quot;<b>bb login</b>&quot;.",
                             "more_link": "https://docs.appblocks.com/docs/quickstart/start-from-template/setup"
                         },
                         { 
-                            "question": "How do I deploy my block?",
+                            "question": "How to deploy a block?",
                             "answer": "To deploy the block to the configured cloud infrastructure. Currently, appblocks supports easy deploy to AWS container infrastructure. Use the command &quot;<b>bb deploy &lt;block-name&gt;</b>&quot;"     
                         },
                         { 
-                            "question": "How do I sign up to Appblocks?",
+                            "question": "How to sign up in Appblocks?",
                             "answer": "Visit our Store at <a href='https://store.appblocks.com' target='_blank'>store.appblocks.com</a>  or Spaces at <a href='https://spaces.appblocks.com' target='_blank'>spaces.appblocks.com</a> and you will find the sign up form."
                         },
                         { 
-                            "question": "How do I collaborate using Spaces?",
+                            "question": "How to collaborate using Spaces?",
                             "answer": "In Spaces, you can have teams, members, roles, apps, etc.",
                             "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces#within-a-space"
                         }
