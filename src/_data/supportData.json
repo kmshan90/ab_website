@@ -224,31 +224,31 @@
                 "faq":
                 [
                     { 
-                        "question": "Do licenses have an expiry date? Will I ever have to pay any fees (like renewals or royalties)?",
+                        "question": "Do licenses have an expiry date? Is there any fees involved (renewals or royalties)?",
                         "answer": "Currently it is only MIT license which is free and need not be renewed."
                     },
                     { 
-                        "question": "What services/permissions do I get if I purchase an MIT license?",
+                        "question": "What are the services/permissions provided with the MIT license?",
                         "answer": "<ul><li><b>Use the code in commercial applications:</b> For example, a company can create a proprietary piece of software that includes all or part of the original open source code, then charge money for that software.</li><li><b>Modify the code:</b> In other words, developers can change/update the code however they’d like.</li><li><b>Distribute copies of the code and any modifications:</b> As long as the original copyright notice and the license itself are included, an organization can distribute and sell copies or modified versions of the code.</li><li><b>Sublicense the code:</b> This means you can incorporate the original code into a modification with a stricter license.</li></ul>"
                     },
                     { 
-                        "question": "How do I receive updates for a free block?",
+                        "question": "How to receive updates for a free block?",
                         "answer": "For updates, find the block in the Store and check if there are newer versions released."
                     },
                     { 
-                        "question": "Can I resell an item with just an MIT license?",
+                        "question": "Is it legal to resell an MIT licensed block?",
                         "answer": "Yes, you can."
                     },
                     { 
-                        "question": "Can I redistribute a block?",
+                        "question": "Is it legal to redistribute an MIT licensed block?",
                         "answer": "Yes, you can with MIT license."
                     },
                     { 
-                        "question": "Can I make edits to a block?",
+                        "question": "Is it legal to edit an MIT licensed block?",
                         "answer": "Yes, you can with MIT license."
                     },
                     { 
-                        "question": "What am I not supposed to do with a MIT licensed block?",
+                        "question": "What are the activities to be avoided with an MIT-licensed block?",
                         "answer": "<ul><li>You can’t hold the code author(s) legally liable for any reason.</li><li>You also can’t delete the copyright notice and original license from your version of the code.</li></ul>"
                     }
                 ]
@@ -275,23 +275,23 @@
                         "answer": "CLI is built using javascript and so it needs Node in your machine to work irrespective of the OS. Step one would be to install node. Use nvm or install directly from nodejs website. after that, install bb-cli from npmjs. make sure to install bb-cli globally."
                     },
                     { 
-                        "question": "How can i configure CLI",
+                        "question": "How to configure the bb-cli?",
                         "answer": "User can user bb config command to view and edit cli configuration. use bb config --help  for more information"
                     },
                     { 
-                        "question": "How can i delete a block i accidently created",
+                        "question": "How to delete a block that was created accidentally?",
                         "answer": "Use bb delete &gt;block-name&lt; for deleting blocks. This will also try to delete the block repo from github (if you are using github)"
                     },
                     { 
-                        "question": "Why do i have to always restart emulator to see the changes in my function block?",
+                        "question": "Having to restart the emulator to see the changes in a function block. How to fix this?",
                         "answer": "It is due to limitation in node's import strategies. Based on <a href='https://github.com/nodejs/help/issues/2751#issuecomment-1075535742' target='blank'>https://github.com/nodejs/help/issues/2751#issuecomment-1075535742</a>, we have implementated a solution. Make NODE_ENV=development and it will work."
                     },
                     { 
-                        "question": "How can i inject custom values to environment from block",
+                        "question": "How to inject custom values to an environment from the block?",
                         "answer": "All values in .env inside block dirs are parsed and added to respective envs (.env.view for view blocks and .env.fucntions for function blocks) on start. Just add a .env inside your block directory"
                     },
                     { 
-                        "question": "I think i have a lot of blocks started and running and is taking my system resources, I dont want to go to each block directory and run bb stop , is there a solution?",
+                        "question": "I have multiple blocks running on my system, consuming system resources. Is there a solution to stop all blocks without manually accessing each block directory and running &quot;bb stop&quot;?",
                         "answer": "Yes there is! CLI has a one time stop all facility. use stop with &quot;<b>-g</b>&quot; from anywhere. <br/>&quot;<b>bb stop -g</b>&quot;. CLI will try to located all blocks and stop them for you."
                     },
                     { 
@@ -318,11 +318,11 @@
                 "faq":
                 [
                     { 
-                        "question": "I'm trying to find a specific block. How do I find it?",
+                        "question": "How to find a specific block?",
                         "answer": "Visit the <a target='_blank' href='https://store.appblocks.com'>Store</a>. There are filters, and search to easily find blocks."
                     },
                     { 
-                        "question": "How do I publish a block?",
+                        "question": "How to publish a block?",
                         "answer": "To publish a block, your block has to be first deployed. Go to the manage blocks page and find the publish button. You will then fill a form and wait for Appblocks to review and publish your block."
                     },
                     { 
@@ -330,11 +330,11 @@
                         "answer": "To install a block, you have to have installed the <a target='_blank' href='https://docs.appblocks.com/docs/quickstart/start-from-template/setup'>bb-cli</a> first. Go to the block details page of this particular block and find the installation command on the right hand side of this page. Copy and paste it in your CLI."
                     },
                     { 
-                        "question": "Why did Appblocks reject my publish request?",
+                        "question": "How to find the reason for a particular block publish request getting rejected?",
                         "answer": "The reason for rejecting a publish request will be shown in the review status tab of the Publish a block page. "
                     },
                     { 
-                        "question": "How do I delist a block?",
+                        "question": "How to delist a block?",
                         "answer": "To delist a block, go to the manage blocks page and find the delist button. If you don't see the delist button, it means that your block is not published."
                     }
                 ]
@@ -370,12 +370,12 @@
                         "answer": "There is no limit on the number of spaces, teams or roles you can create. You can also have any number of members added."
                     },
                     { 
-                        "question": "How do I create a new space?",
+                        "question": "How to create a new space?",
                         "answer": "To create a new space, you can either click on &quot;<b>Create New</b>&quot; inside the Home page list or click on &quot;<b>Create New Space</b>&quot; on the Spaces list in the left side navigation menu.",
                         "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#create"
                     },
                     { 
-                        "question": "How can you invite other people to space?",
+                        "question": "How to invite other people to a space?",
                         "answer": "To invite a person to your space, standing in the space - members tab, click the &quot;<b>New Member</b>&quot; button and send invites.",
                         "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#members"
                     },
@@ -385,7 +385,7 @@
                         "more_link": "https://docs.appblocks.com/docs/Platform%20Features/Spaces/#edit"
                     },
                     { 
-                        "question": "How do I delete a space?",
+                        "question": "How to delete a space?",
                         "answer": "Currently, deleting a space is not an option."
                     }
                 ]
