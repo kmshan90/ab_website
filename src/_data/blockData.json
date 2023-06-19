@@ -15,15 +15,15 @@
                 "list":[
                     {
                         "icon":"",
-                        "details": "When building applications, reusing common business use cases in the same or multiple Apps happens regularly. A Block is the basic unit of an app that solves a business use case."
+                        "details": "Reusing common business use cases in the same or multiple apps happens when building applications. A Block is the basic unit of an app that solves a business use case."
                     },
                     {
                         "icon":"",
-                        "details": "From a developer's perspective, A Block encases any specific functionality. Building a Block or reusing it is as easy as writing an ordinary function."
+                        "details": "From a developer's perspective, a block encases any specific functionality. Building a block or reusing it is as easy as writing an ordinary function."
                     },
                     {
                         "icon":"",
-                        "details": "Each Block has a type for the kind of functionality it performs. The Block types are: UI Blocks (classified as Fn Blocks, UI-Element Blocks and UI-Container Blocks), Shared Blocks and Appblocks."
+                        "details": "Each Block has a type for the kind of functionality it performs. The Block types are UI Blocks (UI-Element Blocks and UI-Container Blocks), Function blocks, Shared Blocks and Packaged Blocks."
                     }
                 ]
             }
@@ -81,16 +81,6 @@
                 "title": "Package Block",
                 "desc": "When multiple Blocks are combined together into a unit, such an arrangement is called a Package Block or PB. UI, Fn, and shared Blocks have their own repositories. They are the building blocks of an application. Once all the Blocks are stitched together, we build a configuration that is a snapshot of how the apps are composed.",
                 "img_url": "../../assets/images/icons/package-block.svg"
-            },
-            {
-                "title": "Data Block",
-                "desc": "Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, whe a galley of type and scrambled it to make a type sp",
-                "img_url": "../../assets/images/icons/data-block.svg"
-            },
-            {
-                "title": "Job Block",
-                "desc": "Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, whe a galley of type and scrambled it to make a type sp",
-                "img_url": "../../assets/images/icons/job-block.svg"
             }
         ]
     }
