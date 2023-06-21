@@ -47,7 +47,7 @@ a{
       }
       &.expanded-nav{
           .nav-menu-wrapper{
-              height: 210px;
+              height: 264px;
               padding-top: 16px;
               padding-bottom: 8px;
           }
@@ -373,20 +373,20 @@ a{
   }
 }
 
-.discover-box-wrapper{
-  @media(min-width: 769px){
-    &.slide-bottom-animation{
-      .d-slide-box{
-          animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-      }
-    }
-    &.slide-up-animation{
-      .d-slide-box{
-          animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-      }
-    }
-  }
-}
+// .discover-box-wrapper{
+//   @media(min-width: 769px){
+//     &.slide-bottom-animation{
+//       .d-slide-box{
+//           animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+//       }
+//     }
+//     &.slide-up-animation{
+//       .d-slide-box{
+//           animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+//       }
+//     }
+//   }
+// }
 
 @keyframes blox-animation-move-1{
   from{

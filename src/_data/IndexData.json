@@ -4,7 +4,7 @@
         [
             { 
                 "title": "Standardized libraries",
-                "desc": "Experience predefined standard data models with synced data for easy access development using Blocks.",
+                "desc": "Experience predefined standard data models with synced data for easy access development using blocks.",
                 "learn_more_link":"#",
                 "icon_url":"./assets/images/icons/feature-icon-1.svg"
             },
@@ -28,7 +28,7 @@
             },
             { 
                 "title": "Maintenability",
-                "desc": "Easy to update and bug fix. The AppBlocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.",
+                "desc": "Easy to update and bug fix. The Appblocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.",
                 "learn_more_link":"#",
                 "icon_url":"./assets/images/icons/feature-icon-5.svg"
             },

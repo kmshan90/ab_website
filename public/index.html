@@ -41,6 +41,12 @@
         <li>
           <a href="https://docs.appblocks.com/" target="_blank" class="block hover:underline underline-offset-1 text-ab-black">Documentation </a>
         </li>
+        
+         <li>
+          <a href="/pages/blocks" class="flex items-center justify-center py-2.5 px-6 bg-secondary rounded-full text-white hover:opacity-90">
+            What the T#CH?!
+          </a>
+        </li>
         <li>
           <a href="https://discord.gg/b7YSVvHp2x" target="_blank" class="flex items-center justify-center py-2.5 px-6 bg-primary rounded-full text-white hover:opacity-90">
             <img class="mr-2.5" src="../../assets/images/icons/discord-icon.svg" alt="Discord"/>Join Discord
@@ -156,22 +162,22 @@
                 <div class="float-left grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
                     <div class="relative float-left w-full max-w-[480px] py-6 md-lt:mx-auto">
                         <div
-                            class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[62px] md-lt:text-center">
-                            Build applications <br />
-                            <span class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Quickly</span>
+                            class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[58px] md-lt:text-center">
+                            Build applications <br/>
+                            <span class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Quickly</span>
                             <span
-                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Affordably</span>
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Affordably</span>
                             <span
-                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Collaboratively</span>
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Collaboratively</span>
                             <span
-                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2">Efficiently</span><br/>
+                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Efficiently</span><br/>
                         </div>
                         <p
-                            class="flexa-medium mt-5 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
+                            class="flexa-medium mt-5 md:mt-7 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
                             Appblocks combines composable architecture and efficient coding to build enterprise grade
                             applications.
                         </p>
-                        <div class="relative float-left mt-5 flex w-full">
+                        <div class="relative float-left mt-6 flex w-full">
                             <input type="text" onkeyup="handleEmailValidation()" id="email_input" placeholder="Email ID"
                                 class="zirkon-regular h-11 flex-grow overflow-hidden rounded-l-md border border-ab-gray-medium border-r-transparent bg-white px-4 focus:outline-none md:h-[52px] md-lt:text-sm" />
                             <button type="button" onclick="submitForm()"
@@ -235,15 +241,15 @@
                                 class="w-full h-32 md:h-64 float-left rounded-md primary-gradient-box mt-6 md:mt-11 d-slide-box">
                             </div>
                             <div
-                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#eeeeee] mt-6 md:mt-11 d-slide-box">
                             </div>
                         </div>
                         <div class="w-full float-left pt-11">
                             <div
-                                class="w-full h-32 md:h-64 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                                class="w-full h-32 md:h-64 float-left rounded-md bg-[#eeeeee] mt-6 md:mt-11 d-slide-box">
                             </div>
                             <div
-                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#F9F9F9] mt-6 md:mt-11 d-slide-box">
+                                class="w-full h-16 md:h-36 float-left rounded-md bg-[#eeeeee] mt-6 md:mt-11 d-slide-box">
                             </div>
                         </div>
                     </div>
@@ -360,10 +366,7 @@
                     <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
                         Deploy
                     </h3>
-                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">Develop/edit apps
-                        on the fly
-                        with built-in app versioning and rollbacking, added with zero downtime independent Blocks
-                        deployment.</p>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">We support terraform deployment, which enables developers to create their infrastructure and deploy these blocks to their on-prem cloud.</p>
                     <div class="w-full float-left mt-4 md:mt-5">
                         <a href="https://docs.appblocks.com/" target="_blank" class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
                     </div>
@@ -557,7 +560,7 @@
                         </div>
                         <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Standardized libraries
                         </h4>
-                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Experience predefined standard data models with synced data for easy access development using Blocks.
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Experience predefined standard data models with synced data for easy access development using blocks.
                         </p>
                         
                     </div>
@@ -605,7 +608,7 @@
                         </div>
                         <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">Maintenability
                         </h4>
-                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Easy to update and bug fix. The AppBlocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.
+                        <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Easy to update and bug fix. The Appblocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.
                         </p>
                         
                     </div>
@@ -654,7 +657,7 @@
                             <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
                                 Standardized libraries
                             </h4>
-                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Experience predefined standard data models with synced data for easy access development using Blocks.
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Experience predefined standard data models with synced data for easy access development using blocks.
                             </p>
                             
                         </div>
@@ -706,7 +709,7 @@
                             <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
                                 Maintenability
                             </h4>
-                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Easy to update and bug fix. The AppBlocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.
+                            <p class="text-lg text-ab-black/80 flexa-medium group-hover:text-primary">Easy to update and bug fix. The Appblocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.
                             </p>
                             
                         </div>
@@ -765,15 +768,10 @@
                         need, there is a Block to unblock your development roadblocks. If not, build your own
                         hassle-free with Appblocks.</p>
                     
-                    <div class="w-full float-left mt-4">
-                        <a href="https://store.appblocks.com/" target="_blank"
-                            class="text-primary text-base flexa-medium cursor-pointer primary-gradient-text border-b border-transparent hover:border-secondary">Visit
-                            our store</a>
-                    </div>
-                    <div class="w-full float-left mt-4">
+                    
+                    <div class="w-full float-left mt-6">
                         <a href="/pages/blocks"
-                            class="inline-flex items-center justify-center zirkon-medium text-base md:text-xl pb-2.5 pt-3 px-6 bg-secondary rounded-full text-white hover:opacity-90 cursor-pointer">Learn
-                            more about blocks</a>
+                            class="inline-flex items-center justify-center zirkon-medium text-base md:text-xl pb-2.5 pt-3 px-6 bg-secondary rounded-full hover:opacity-90 cursor-pointer text-white">What the T#CH?!</a>
                     </div>
                 </div>
                 <div class="w-full float-left relative text-center flex justify-center">
@@ -961,7 +959,7 @@
         <p
           class="flexa-bold text-2xl md:text-5xl text-white md:!leading-[56px] text-center"
         >
-          Discover game changing <br />software with Appblocks
+          Build your vision, <br />block by block.
         </p>
         <a
           href="https://spaces.appblocks.com/"

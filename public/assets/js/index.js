@@ -80,13 +80,13 @@ function typingAnimation() {
     if (currentScrollTop > integrateSection) {
         if(typing_1 === 0){
             typing_1 = 1;
-            StartTextAnimation(0,["bb pull @appblocks v1.10."],"typing-1");
+            StartTextAnimation(0,["bb connect github."],"typing-1");
         }
     }
     if (currentScrollTop > deploySection) {
         if(typing_2 === 0){
             typing_2 = 1;
-            StartTextAnimation(0,["bb pull @appblocks v1.10."],"typing-2");
+            StartTextAnimation(0,["bb deploy block1"],"typing-2");
         }
     } 
 }
