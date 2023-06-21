@@ -280,7 +280,7 @@
                     },
                     { 
                         "question": "How to delete a block that was created accidentally?",
-                        "answer": "Use bb delete &gt;block-name&lt; for deleting blocks. This will also try to delete the block repo from github (if you are using github)"
+                        "answer": "Use &quot;<b>bb delete &lt;block-name&gt;</b>&quot; for deleting blocks. This will also try to delete the block repo from github (if you are using github)"
                     },
                     { 
                         "question": "Having to restart the emulator to see the changes in a function block. How to fix this?",

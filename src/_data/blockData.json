@@ -4,7 +4,7 @@
         [
             { 
                 "title": "Build web applications",
-                "desc": "the world can build upon block by block!"
+                "desc": "the world can build upon, Block by Block!"
             }
         ],
         "appblocks_info":
@@ -15,7 +15,7 @@
                 "list":[
                     {
                         "icon":"",
-                        "details": "Reusing common business use cases in the same or multiple apps happens when building applications. A Block is the basic unit of an app that solves a business use case."
+                        "details": "Reusing common business use cases in the same or multiple apps happens when building applications. A block is the basic unit of an app that solves a business use case."
                     },
                     {
                         "icon":"",
@@ -23,7 +23,7 @@
                     },
                     {
                         "icon":"",
-                        "details": "Each Block has a type for the kind of functionality it performs. The Block types are UI Blocks (UI-Element Blocks and UI-Container Blocks), Function blocks, Shared Blocks and Packaged Blocks."
+                        "details": "Each block has a type for the kind of functionality it performs. The block types are UI Blocks (UI-Element Blocks and UI-Container Blocks), Function Blocks, Shared Blocks and Packaged Blocks."
                     }
                 ]
             }
