@@ -22,19 +22,19 @@
             },
             { 
                 "title": "Easy integration",
-                "desc": "With GitHub integration, simplify app development process with automatic testing and deployment of commits, pull requests, and forks.",
+                "desc": "With GitHub integration, simplify the app development process with automatic testing and deployment of commits, pull requests, and forks.",
                 "learn_more_link":"#",
                 "icon_url":"./assets/images/icons/feature-icon-4.svg"
             },
             { 
                 "title": "Maintenability",
-                "desc": "Easy to update and bug fix. The Appblocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.",
+                "desc": "Easy to update and fix bugs. The Appblocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.",
                 "learn_more_link":"#",
                 "icon_url":"./assets/images/icons/feature-icon-5.svg"
             },
             { 
                 "title": "Seamless deployment",
-                "desc": "Users can either develop on-premise or utilize cloud-first development, preventing unneeded technology lock-ins.",
+                "desc": "Users can develop on-premise or utilize cloud-first development, preventing unneeded technology lock-ins.",
                 "learn_more_link":"#",
                 "icon_url":"./assets/images/icons/feature-icon-6.svg"
             },

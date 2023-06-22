@@ -4,90 +4,6 @@ site_title: Appblocks
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-<script>
-    function validateEmail(email) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
-    }
-
-    function handleEmailValidation() {
-        let input = document.getElementById("email_input").value;
-        if (validateEmail(input)) {
-            document.getElementById("email_input").classList.remove("border-red-500");
-            document.getElementById("error-msg").classList.add("hidden");
-        }
-        if(input === ""){
-            document.getElementById("error-msg").innerText = "Please Enter Email ID";
-        }
-        else{
-            document.getElementById("error-msg").innerText = "Invalid Email ID";
-        }
-    }
-
-    function resetInput() {
-        let msgContainer = document.getElementById("succes-msg");
-        msgContainer.classList.remove("hidden");
-        document.getElementById("loader").classList.add("hidden");
-        setTimeout(function () {
-            msgContainer.classList.add("hidden");
-        }, 5000);
-    }
-    var submitBtnClick = 0;
-
-    function submitForm() {
-        if (submitBtnClick === 0) {
-            submitBtnClick = 1;
-            let input = document.getElementById("email_input").value;
-            if (validateEmail(input)) {
-                document
-                    .getElementById("email_input")
-                    .classList.remove("border-red-500");
-                document.getElementById("error-msg").classList.add("hidden");
-                document.getElementById("error-msg").innerText="";
-                document
-                    .getElementById("email_input")
-                    .classList.add("border-ab-gray-medium");
-                document.getElementById("loader").classList.remove("hidden");
-                const data = JSON.stringify({
-                    email: input,
-                });
-                const xhr = new XMLHttpRequest();
-                xhr.open("POST", "https://lead-mail.appblocks.com/add-lead", true);
-
-                //Send the proper header information along with the request
-                xhr.setRequestHeader("Content-Type", "application/json");
-
-                xhr.onreadystatechange = () => {
-                    // Call a function when the state changes.
-                    if (
-                        (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) ||
-                        true
-                    ) {
-                        resetInput();
-                    }
-                    if (xhr.readyState === 4) {
-                        document.getElementById("email_input").value = "";
-                        submitBtnClick = 0;
-                    }
-                };
-                xhr.send(data);
-            } else {
-                submitBtnClick = 0;
-                document
-                    .getElementById("email_input")
-                    .classList.remove("border-ab-gray-medium");
-                document.getElementById("email_input").classList.add("border-red-500");
-                document.getElementById("error-msg").classList.remove("hidden");
-                if(input === ""){
-                    document.getElementById("error-msg").innerText = "Please Enter Email ID";
-                }
-                else{
-                    document.getElementById("error-msg").innerText = "Invalid Email ID";
-                }
-            }
-        }
-    }
-</script>
 <!-- <section id="scroll-section-1" class="w-full h-screen float-left banner-bg pt-[80px]">
     <div class="w-full h-full flex justify-center items-center">
 
@@ -112,10 +28,15 @@ site_title: Appblocks
                         </div>
                         <p
                             class="flexa-medium mt-5 md:mt-7 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
-                            Appblocks combines composable architecture and efficient coding to build enterprise grade
+                            Appblocks combines composable architecture and efficient coding to build enterprise-grade
                             applications.
                         </p>
-                        <div class="relative float-left mt-6 flex w-full">
+                        <div class="relative float-left mt-6 flex w-full md-lt:justify-center">
+                            <a href="https://spaces.appblocks.com/" target="_blank" class="flex items-center relative justify-center py-2 px-5 bg-primary rounded-full text-white flexa-medium hover:opacity-90">
+                                Start Developing <img class="absolute -top-2.5 -right-2.5" src="../../assets/images/icons/beta-sticker.svg" alt="Beta"/>
+                            </a>
+                        </div>
+                        {# <div class="relative float-left mt-6 flex w-full">
                             <input type="text" onkeyup="handleEmailValidation()" id="email_input" placeholder="Email ID"
                                 class="zirkon-regular h-11 flex-grow overflow-hidden rounded-l-md border border-ab-gray-medium border-r-transparent bg-white px-4 focus:outline-none md:h-[52px] md-lt:text-sm" />
                             <button type="button" onclick="submitForm()"
@@ -134,7 +55,7 @@ site_title: Appblocks
                                 Thank you for contacting us<br />
                                 We will get back to you as soon as possible
                             </p>
-                        </div>
+                        </div> #}
                         <!-- <div class="w-full float-left mt-5">
                             <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
                         </div> -->
@@ -451,7 +372,7 @@ site_title: Appblocks
                 <div class="w-full float-left md:max-w-[480px] py-5">
                     <p class="flexa-bold text-[28px] leading-[34px] md:text-[48px] md:leading-[58px] text-ab-black">Got
                         a specific
-                        need? <br />there’s a
+                        need? <br />There’s a
                         <span class="primary-gradient-text">block</span> for that</p>
                     <p class="w-full float-left mt-6 zirkon-medium text-sm md:text-lg leading-tight text-ab-black/70">No
                         matter
