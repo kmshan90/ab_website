@@ -23,7 +23,7 @@
                     },
                     {
                         "icon":"",
-                        "details": "Each block has a type for the kind of functionality it performs. The block types are UI Blocks (UI-Element Blocks and UI-Container Blocks), Function Blocks, Shared Blocks and Packaged Blocks."
+                        "details": "Each block has a type for the kind of functionality it performs. The block types are UI Blocks (UI-Element Blocks and UI-Container Blocks), Function Blocks, Shared Blocks and Package Blocks."
                     }
                 ]
             }
@@ -32,7 +32,7 @@
         [
             {
                 "title": "Composable Enterprise via Composable Software",
-                "desc": "Using interchangeable building blocks - software - to create, innovate & adapt business operations, <br/>enabling us to respond to external or internal factors.",
+                "desc": "Using interchangeable building blocks to create, innovate and adapt business operations, <br/>enabling us to respond to external or internal factors.",
                 "list":[
                     {
                         "icon_url": "../../assets/images/icons/faster-icon.svg",
@@ -57,7 +57,7 @@
             {
                 "title": "TYPES OF BLOCKS",
                 "sub_title": "Blocks come in <br />all <span class='primary-gradient-text'>shapes</span> and <span class='text-primary'>sizes</span>",
-                "desc": "There’s always a Block to play around with. Code away in an opinionated architecture, Block by Block, and easily improve the functionality of your app."
+                "desc": "There’s always a block to play around with. Code away in an opinionated architecture, block by block, and improve the functionality of your app with ease."
             }
         ],
         "block_slider":
@@ -79,7 +79,7 @@
             },
             {
                 "title": "Package Block",
-                "desc": "When multiple Blocks are combined together into a unit, such an arrangement is called a Package Block or PB. UI, Fn, and shared Blocks have their own repositories. They are the building blocks of an application. Once all the Blocks are stitched together, we build a configuration that is a snapshot of how the apps are composed.",
+                "desc": "When multiple blocks are combined together into a unit, such an arrangement is called a Package Block. UI, Fn, and shared Blocks have their own repositories. They are the building blocks of an application. Once all the Blocks are stitched together, we build a configuration that is a snapshot of how the apps are composed.",
                 "img_url": "../../assets/images/icons/package-block.svg"
             }
         ]
