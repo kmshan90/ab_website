@@ -1089,6 +1089,10 @@ video {
   max-height: 32px;
 }
 
+.max-h-\[64px\] {
+  max-height: 64px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2695,6 +2699,14 @@ body{
 
   .md\:pt-16 {
     padding-top: 4rem;
+  }
+
+  .md\:pb-8 {
+    padding-bottom: 2rem;
+  }
+
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 
   .md\:text-left {

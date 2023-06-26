@@ -316,7 +316,7 @@ site_title: Appblocks
                     <div
                         class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
                         <div class="min-h-[36px] min-w-[36px] float-left mb-3">
-                            <img class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon_url}}" alt="" />
+                            <img width="{{features.icon.width}}" height="{{features.icon.height}}" class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon.url}}" alt="" />
                         </div>
                         <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">{{features.title}}
                         </h4>
@@ -328,7 +328,7 @@ site_title: Appblocks
                     {% endfor %}
                     <div
                         class="bg-primary w-full float-left flex flex-col items-start justify-between space-y-4 rounded px-6 py-8 group">
-                        <img src="./assets/images/icons/paper-file-white.svg"/>
+                        <img width="64" height="64" src="./assets/images/icons/paper-file-white.svg"/>
                         <h4 class="text-2xl text-white flexa-medium">Read our <br />Documentation</h4>
                         <p class="text-base text-white zirkon-medium">Learn more about Appblocks</p>
                         <a href="https://docs.appblocks.com/" target="_blank"
@@ -341,7 +341,7 @@ site_title: Appblocks
                         <div
                             class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
                             <div class="min-h-[36px] min-w-[36px] float-left mb-3">
-                                <img class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon_url}}" alt="" />
+                                <img width="{{features.icon.width}}" height="{{features.icon.height}}" class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon.url}}" alt="" />
                             </div>
                             <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
                                 {{features.title}}
@@ -354,7 +354,7 @@ site_title: Appblocks
                         {% endfor %}
                         <div
                             class="swiper-slide !w-64 h-full float-left flex flex-col items-start justify-start space-y-4 bg-primary rounded p-6 group">
-                            <img src="./assets/images/icons/paper-file-white.svg"/>
+                            <img width="64" height="64" src="./assets/images/icons/paper-file-white.svg"/>
                             <h4 class="text-2xl text-white flexa-medium">Read our Documentation</h4>
                             <p class="text-base text-white zirkon-medium">Learn more about Appblocks</p>
                             <a

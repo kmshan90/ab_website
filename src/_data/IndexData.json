@@ -6,43 +6,71 @@
                 "title": "Standardized libraries",
                 "desc": "Experience predefined standard data models with synced data for easy access development using blocks.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-1.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-1.svg",
+                    "width": 36,
+                    "height": 36
+                }
             },
             { 
                 "title": "Modular",
                 "desc": "Explore the full range of composable app development with easy-to-use blocks to build infinitely scalable products.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-2.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-2.svg",
+                    "width": 31,
+                    "height": 32
+                }
             },
             { 
                 "title": "Reusable",
                 "desc": "Ensure maximum flexibility with reusable blocks, both public and private that can be managed and shared across teams.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-3.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-3.svg",
+                    "width": 37,
+                    "height": 36
+                }
             },
             { 
                 "title": "Easy integration",
                 "desc": "With GitHub integration, simplify the app development process with automatic testing and deployment of commits, pull requests, and forks.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-4.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-4.svg",
+                    "width": 37,
+                    "height": 36
+                }
             },
             { 
                 "title": "Maintenability",
                 "desc": "Easy to update and fix bugs. The Appblocks platform grows with ever-changing industry standards, providing regular updates and bug fixes for a seamless experience.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-5.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-5.svg",
+                    "width": 36,
+                    "height": 36
+                }
             },
             { 
                 "title": "Seamless deployment",
                 "desc": "Users can develop on-premise or utilize cloud-first development, preventing unneeded technology lock-ins.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-6.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-6.svg",
+                    "width": 36,
+                    "height": 36
+                }
             },
             { 
                 "title": "Collaboration",
                 "desc": "Manage your organization, apps, blocks, teams, and more in one space.",
                 "learn_more_link":"#",
-                "icon_url":"./assets/images/icons/feature-icon-7.svg"
+                "icon":{
+                    "url":"./assets/images/icons/feature-icon-7.svg",
+                    "width": 36,
+                    "height": 36
+                }
             }
         ],
         "customers":
