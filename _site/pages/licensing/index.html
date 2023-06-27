@@ -13,7 +13,7 @@
         <meta charset="utf-8">
         <meta name="description" content="Appblocks">
         <meta name="keywords" content="Appblocks, Neoito">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link href="/assets/css/styles.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -27,7 +27,7 @@
         <header id="nav-header" class="w-full fixed top-0 left-0 z-50 border-b border-ab-gray-medium bg-white">
   <div
     class="max-w-7xl w-full mx-auto px-4 md:px-6 flex flex-wrap items-center justify-between md-lt:py-4 md:min-h-[80px] py-2 relative">
-    <a href="/" class="focus:outline-none flexa-medium flex items-center space-x-2"><img class="max-w-[68px]" src="../../assets/images/logo.svg" alt="Logo"><img class="md-lt:hidden" src="../../assets/images/logo-txt.svg" alt="Logo Text"></a>
+    <a href="/" class="focus:outline-none flexa-medium flex items-center space-x-2 md:mr-2"><img width="68" height="42" class="max-w-[68px]" src="../../assets/images/logo.svg" alt="Logo"><img width="115" height="16" class="md-lt:hidden" src="../../assets/images/logo-txt.svg" alt="Logo Text"></a>
     <button onclick="showmenu(this)" type="button"
       class="inline-flex items-center justify-center p-2 ml-3 md:hidden focus:outline-none h-9"
       aria-controls="navbar-default" aria-expanded="false">
@@ -604,10 +604,14 @@
       <div
         class="flex w-full float-left flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center py-5 border-t border-ab-gray-dark"
       >
-        <a href="/" class="float-left flex-shrink-0"
+        <a
+          href="/"
+          class="float-left flex-shrink-0"
+          aria-label="Appblock Home page"
           ><img
             width="144"
             height="32"
+            alt="Logo"
             src="../../assets/images/logo-footer.svg"
         /></a>
         <p class="flex-grow text-center text-sm my-1 zirkon-regular text-white">
@@ -617,6 +621,7 @@
           <a
             class="cursor-pointer my-1 ml-2 group"
             target="_blank"
+            aria-label="linkedin"
             href="https://www.linkedin.com/company/89235117/admin/"
           >
             <svg
@@ -653,6 +658,7 @@
           <a
             class="cursor-pointer my-1 ml-2 group"
             target="_blank"
+            aria-label="facebook"
             href="https://www.facebook.com/profile.php?id=100086034980312"
           >
             <svg
@@ -679,6 +685,7 @@
           <a
             class="cursor-pointer my-1 ml-2 group"
             target="_blank"
+            aria-label="Twitter"
             href="https://twitter.com/Appblocksapp"
           >
             <svg

@@ -6,6 +6,7 @@
          url('../fonts/gt-zirkon-regular-webfont.woff') format('woff'),
          url('../fonts/gt-zirkon-regular-webfont.ttf') format('truetype'),
          url('../fonts/gt-zirkon-regular-webfont.svg#gt_zirkon_trialrg') format('svg');
+   font-display: swap;
 }
 @font-face {
     font-family: 'gt_zirkon_medium';
@@ -15,6 +16,7 @@
          url('../fonts/gt-zirkon-medium-webfont.woff') format('woff'),
          url('../fonts/gt-zirkon-medium-webfont.ttf') format('truetype'),
          url('../fonts/gt-zirkon-medium-webfont.svg#gt_zirkon_trialmd') format('svg');
+    font-display: swap;
 }
 
 @font-face {
@@ -25,6 +27,7 @@
          url('../fonts/gt-flexa-bold-webfont.woff') format('woff'),
          url('../fonts/gt-flexa-bold-webfont.ttf') format('truetype'),
          url('../fonts/gt-flexa-bold-webfont.svg#gt_flexa_trialbd') format('svg');
+    font-display: swap;
 }
 @font-face {
     font-family: 'gt_flexa_regular';
@@ -34,6 +37,7 @@
          url('../fonts/gt-flexa-compressed-regular-webfont.woff') format('woff'),
          url('../fonts/gt-flexa-compressed-regular-webfont.ttf') format('truetype'),
          url('../fonts/gt-flexa-compressed-regular-webfont.svg#gt_flexa_trialcm_rg') format('svg');
+    font-display: swap;
 }
 @font-face {
     font-family: 'gt_flexa_medium';
@@ -43,6 +47,7 @@
          url('../fonts/gt-flexa-medium-webfont.woff') format('woff'),
          url('../fonts/gt-flexa-medium-webfont.ttf') format('truetype'),
          url('../fonts/gt-flexa-medium-webfont.svg#gt_flexa_trialmd') format('svg');
+    font-display: swap;
 }
 
 @tailwind base;
