@@ -711,3 +711,28 @@ a{
     display: inline;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.ToastfadeIn {
+  animation: fadeIn 0.3s linear forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+.ToastfadeOut {
+  animation: fadeOut 0.3s linear forwards;
+}

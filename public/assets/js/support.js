@@ -1,12 +1,14 @@
 const links = document.querySelectorAll(".sidebar-support li a");
-// var clickScroll = false;
-// var currentOffsetTop;
+var clickScroll = false;
+var currentOffsetTop = 0;
+var scrollTimer;
 for (const link of links) {
     link.addEventListener("click", clickHandler);
 }
 
 function clickHandler(e) {
-    // clickScroll = true;
+    clickScroll = true;
+    clearTimeout(scrollTimer);
     e.preventDefault();
     const href = this.getAttribute("href");
     var elem = document.querySelectorAll("a[href='" + href + "']");
@@ -15,7 +17,7 @@ function clickHandler(e) {
     }
     elem[0].classList.add("active-sidebar-link");
     const offsetTop = document.querySelector(href).offsetTop - 100;
-    // currentOffsetTop = offsetTop;
+    currentOffsetTop = offsetTop;
     scroll({
         top: offsetTop,
         behavior: "smooth"
@@ -32,15 +34,17 @@ function activeProgressRemove() {
 }
 
 window.onscroll = function () {
-    // if(window.pageYOffset == currentOffsetTop){
-    //     console.log(currentOffsetTop);
-    //     setTimeout(function(){
-    //         clickScroll = false;
-    //     },250);
-    // }
-    // if(!clickScroll){
-        // windowScroll();
-    // }
+    if(!clickScroll){
+        windowScroll();
+    }
+    else{
+        if(window.pageYOffset == currentOffsetTop){
+            scrollTimer = setTimeout(function(){
+            // console.log(currentOffsetTop);
+                clickScroll = false;
+            },250);
+        }
+    }
 };
 
 function windowScroll() {

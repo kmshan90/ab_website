@@ -90,7 +90,7 @@
                         <p>This Customer Terms and Conditions agreement (<span class="zirkon-medium">“Terms and
                                 Conditions”</span>, and <span class="zirkon-medium">“this agreement”</span>) governs
                             your (<span class="zirkon-medium">“Customer”</span>, <span class="zirkon-medium">“You”</span>, <span class="zirkon-medium">“Your”</span>) interactions
-                            with, and use of, content, software, and services, provided by NeoITO Technologies Private Limited (<span class="zirkon-medium">“Company”</span>, <span
+                            with, and use of, content, software, and services, provided by Appblocks Technologies Private Limited (<span class="zirkon-medium">“Company”</span>, <span
                                 class="zirkon-medium">“We”</span>, <span class="zirkon-medium">“Us”</span> or <span
                                 class="zirkon-medium">“Our”</span>) on behalf of itself and its Affiliate (as defined below) Appblocks Technology India Private Limited, at or through the website at <a class="underline"
                                 href="https://www.appblocks.com/">https://www.appblocks.com/</a> and any other software or websites provided by Us that indicates the applicability of this agreement. Collectively, the abovementioned websites and software are referred to in this agreement as <span class="zirkon-medium">“Platform”</span>.</p>
@@ -456,12 +456,30 @@
     }
   }
 
+  function handleToast() {
+    let elem = document.getElementById("succes-msg");
+    elem.classList.remove("ToastfadeIn");
+    elem.classList.add("ToastfadeOut");
+    elem.addEventListener("animationend", TaEndFunction);
+  };
+
+  function TaEndFunction() {
+    let elem = document.getElementById("succes-msg");
+    if (elem.classList.contains("ToastfadeOut")) {
+      elem.classList.add("hidden");
+      elem.classList.remove("ToastfadeOut");
+    }
+  }
+  var toastTimer;
+
   function resetInput() {
+    clearTimeout(toastTimer);
     let msgContainer = document.getElementById("succes-msg");
-    msgContainer.classList.remove("hidden");
+    msgContainer.classList.remove("hidden", "ToastfadeOut");
+    msgContainer.classList.add("ToastfadeIn");
     document.getElementById("loader").classList.add("hidden");
-    setTimeout(function () {
-      msgContainer.classList.add("hidden");
+    toastTimer = setTimeout(function () {
+      handleToast();
     }, 5000);
   }
   var submitBtnClick = 0;
@@ -522,32 +540,19 @@
 </script>
 
 <footer class="w-full float-left bg-primary">
-  <div
-    class="w-full float-left bg-[url(../images/icons/block-footer-bg.svg)] bg-repeat-x bg-[left_top_-24px]"
-  >
+  <div class="w-full float-left bg-[url(../images/icons/block-footer-bg.svg)] bg-repeat-x bg-[left_top_-24px]">
     <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
-      <div
-        class="w-full grid grid-cols-1 md:grid-cols-4 gap-y-5 gap-x-4 md-lt:py-8 md:pt-28 md:pb-16"
-      >
+      <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-y-5 gap-x-4 md-lt:py-8 md:pt-28 md:pb-16">
         <div class="w-full float-left">
-          <p
-            class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left"
-          >
+          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             Company
           </p>
-          <ul
-            class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2"
-          >
+          <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
             <li>
               <a class="hover:underline" href="/pages/about/">About Us</a>
             </li>
             <li>
-              <a
-                class="hover:underline"
-                href="https://store.appblocks.com/"
-                target="_blank"
-                >Block store</a
-              >
+              <a class="hover:underline" href="https://store.appblocks.com/" target="_blank">Block store</a>
             </li>
             <li>
               <a class="hover:underline" href="/pages/contact/">Contact Us</a>
@@ -555,168 +560,125 @@
           </ul>
         </div>
         <div class="w-full float-left">
-          <p
-            class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left"
-          >
+          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             Legal
           </p>
-          <ul
-            class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2"
-          >
+          <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
             <!-- <li><a>How Appblocks work</a></li> -->
             <li>
-              <a
-                class="hover:underline"
-                href="/pages/terms-conditions-customers/"
-                >Terms of use for Customers</a
-              >
+              <a class="hover:underline" href="/pages/terms-conditions-customers/">Terms of use for Customers</a>
             </li>
             <li>
-              <a class="hover:underline" href="/pages/terms-conditions-authors/"
-                >Terms of use for Authors</a
-              >
+              <a class="hover:underline" href="/pages/terms-conditions-authors/">Terms of use for Authors</a>
             </li>
             <li>
-              <a class="hover:underline" href="/pages/privacy-policy/"
-                >Privacy policy</a
-              >
+              <a class="hover:underline" href="/pages/privacy-policy/">Privacy policy</a>
             </li>
             <!-- <li><a href="/pages/refund/">Refund policies</a></li> -->
           </ul>
         </div>
         <div class="w-full float-left hidden">
-          <p
-            class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left"
-          >
+          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             For Authors
           </p>
-          <ul
-            class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2"
-          >
+          <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
             <!-- <li><a>How Appblocks help</a></li> -->
             <li>
-              <a href="/pages/terms-conditions-authors/"
-                >Terms of use for Authors</a
-              >
+              <a href="/pages/terms-conditions-authors/">Terms of use for Authors</a>
             </li>
           </ul>
         </div>
         <div class="w-full float-left">
-          <p
-            class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left"
-          >
+          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             Resources
           </p>
           <ul
-            class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium font-medium [&>li>a]:text-white [&>li]:mt-2"
-          >
+            class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium font-medium [&>li>a]:text-white [&>li]:mt-2">
             <li>
-              <a class="hover:underline" href="/pages/support/"
-                >Help & Support</a
-              >
+              <a class="hover:underline" href="/pages/support/">Help & Support</a>
             </li>
             <!-- <li><a>View Blog</a></li> -->
             <li>
-              <a class="hover:underline" href="https://discord.gg/b7YSVvHp2x"
-                >Community</a
-              >
+              <a class="hover:underline" href="https://discord.gg/b7YSVvHp2x">Community</a>
             </li>
           </ul>
         </div>
 
         <div class="w-full float-left md:min-h-[210px]">
-          <p
-            class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left"
-          >
+          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             News Letter
           </p>
           <div class="w-full float-left mt-2 md:mt-3">
-            <input
-              type="text"
-              onkeyup="handleEmailValidation()"
-              id="email_input"
-              placeholder="Email ID"
-              class="zirkon-regular h-10 w-full float-left rounded border border-white text-white placeholder:text-white/50 bg-primary p-3 focus:outline-none md-lt:text-sm"
-            />
+            <input type="text" onkeyup="handleEmailValidation()" id="email_input" placeholder="Email ID"
+              class="zirkon-regular h-10 w-full float-left rounded border border-white text-white placeholder:text-white/50 bg-primary p-3 focus:outline-none md-lt:text-sm" />
             <div class="float-left flex w-full">
               <!-- <img class="max-w-[32px] mt-4 hidden" id="loader" src="../../assets/images/loading.gif"
                                 alt="Loader" /> -->
-              <p
-                id="error-msg"
-                class="zirkon-medium mt-2 w-full text-center text-white md:text-left hidden"
-              >
+              <p id="error-msg" class="zirkon-medium mt-2 w-full text-center text-white md:text-left hidden">
                 Please Enter valid Email ID
               </p>
             </div>
-            <button
-              type="button"
-              onclick="submitForm()"
-              class="flexa-medium flex float-left items-center justify-center rounded bg-secondary px-5 py-2 text-sm text-white hover:opacity-90 focus:outline-none md:text-base mt-3"
-            >
+            <button type="button" onclick="submitForm()"
+              class="flexa-medium flex float-left items-center justify-center rounded bg-secondary px-5 py-2 text-sm text-white hover:opacity-90 focus:outline-none md:text-base mt-3">
               Subscribe
-              <img
-                class="ml-2 hidden max-w-[20px]"
-                id="loader"
-                src="../../assets/images/loading-footer.gif"
-                alt="Loader"
-              />
+              <img class="ml-2 hidden max-w-[20px]" id="loader" src="../../assets/images/loading-footer.gif"
+                alt="Loader" />
             </button>
-
-            <p
-              id="succes-msg"
-              class="zirkon-medium mt-4 w-full float-left text-center text-white md:text-left hidden"
-            >
-              Thank you for subscribing to <br />our Newsletter.
-            </p>
+            <div id="succes-msg"
+              class="fixed max-w-[640px] w-full top-0 left-1/2 transform-gpu -translate-x-1/2 p-4 z-[999] hidden">
+              <div
+                class="w-full float-left flex justify-between bg-white rounded border border-ab-green p-4 space-x-3 shadow-md">
+                <div class="flex-grow overflow-hidden flex space-x-2 sm:space-x-4">
+                  <svg class="flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                      fill="#01944C" />
+                    <path
+                      d="M10.8099 14.8896C10.6799 14.8896 10.5499 14.8396 10.4599 14.7396L8.06992 12.3496C7.86992 12.1496 7.86992 11.8396 8.06992 11.6396C8.26992 11.4396 8.57992 11.4396 8.77992 11.6396L10.8099 13.6696L15.2299 9.24961C15.4299 9.04961 15.7399 9.04961 15.9399 9.24961C16.1399 9.44961 16.1399 9.75961 15.9399 9.95961L11.1699 14.7296C11.0699 14.8296 10.9399 14.8896 10.8099 14.8896Z"
+                      fill="white" />
+                  </svg>
+                  <div class="w-full float-left flex flex-col">
+                    <p class="zirkon-medium w-full float-left text-base md:text-[17px] text-ab-green">
+                      Done!
+                    </p>
+                    <p class="zirkon-medium w-full float-left text-sm md:text-[15px] text-ab-black mt-0.5">
+                      Thank you for subscribing to our Newsletter.
+                    </p>
+                  </div>
+                </div>
+                <svg id="toast-close-btn" onclick="handleToast()"
+                  class="flex-shrink-0 cursor-pointer opacity-80 hover:opacity-100" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.7894 11.9975L18.8351 5.9475C19.055 5.7275 19.055 5.3775 18.8351 5.1575C18.6253 4.9475 18.2555 4.9475 18.0457 5.1575L12 11.2075L5.95432 5.1575C5.74447 4.9475 5.37473 4.9475 5.16488 5.1575C4.94504 5.3775 4.94504 5.7275 5.16488 5.9475L11.2106 11.9975L5.16488 18.0475C4.94504 18.2675 4.94504 18.6175 5.16488 18.8375C5.37473 19.0475 5.74447 19.0475 5.95432 18.8375L12 12.7875L18.0457 18.8375C18.1556 18.9475 18.2955 18.9975 18.4354 18.9975C18.5853 18.9975 18.7252 18.9375 18.8351 18.8375C19.055 18.6175 19.055 18.2675 18.8351 18.0475L12.7894 11.9975Z"
+                    fill="#484848" fill-opacity="0.5" />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div
-        class="flex w-full float-left flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center py-5 border-t border-ab-gray-dark"
-      >
-        <a
-          href="/"
-          class="float-left flex-shrink-0"
-          aria-label="Appblock Home page"
-          ><img
-            width="144"
-            height="32"
-            alt="Logo"
-            src="../../assets/images/logo-footer.svg"
-        /></a>
+        class="flex w-full float-left flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center py-5 border-t border-ab-gray-dark">
+        <a href="/" class="float-left flex-shrink-0" aria-label="Appblock Home page"><img width="144" height="32"
+            alt="Logo" src="../../assets/images/logo-footer.svg" /></a>
         <p class="flex-grow text-center text-sm my-1 zirkon-regular text-white">
           Copyright Ⓒ Appblocks 2023 | All rights reserved
         </p>
         <div class="flex justify-center flex-wrap text-white">
-          <a
-            class="cursor-pointer my-1 ml-2 group"
-            target="_blank"
-            aria-label="linkedin"
-            href="https://www.linkedin.com/company/89235117/admin/"
-          >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <a class="cursor-pointer my-1 ml-2 group" target="_blank" aria-label="linkedin"
+            href="https://www.linkedin.com/company/89235117/admin/">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_5582_13927)">
-                <path
-                  class="group-hover:opacity-80 transition-all"
+                <path class="group-hover:opacity-80 transition-all"
                   d="M11.56 9.78218C11.56 10.7624 10.937 11.5644 9.77998 11.5644C8.71199 11.5644 8 10.7624 8 9.87129C8 8.89109 8.71199 8 9.77998 8C10.848 8 11.56 8.80198 11.56 9.78218Z"
-                  fill="#ffffff"
-                />
-                <path
-                  class="group-hover:opacity-80 transition-all"
-                  d="M11.5598 12.4456H8.00977V24H11.5598V12.4456Z"
-                  fill="#ffffff"
-                />
-                <path
-                  class="group-hover:opacity-80 transition-all"
+                  fill="#ffffff" />
+                <path class="group-hover:opacity-80 transition-all" d="M11.5598 12.4456H8.00977V24H11.5598V12.4456Z"
+                  fill="#ffffff" />
+                <path class="group-hover:opacity-80 transition-all"
                   d="M20.0841 12.6238C18.2151 12.6238 17.157 13.6931 16.712 14.406H16.623L16.445 12.8911H13.251C13.251 13.8713 13.34 15.0198 13.34 16.3565V24H16.89V17.6931C16.89 17.3366 16.89 17.0693 16.979 16.802C17.246 16.1782 17.691 15.3763 18.67 15.3763C19.916 15.3763 20.45 16.4456 20.45 17.8614V23.9901H24V17.4159C23.9902 14.1287 22.2992 12.6238 20.0841 12.6238Z"
-                  fill="#ffffff"
-                />
+                  fill="#ffffff" />
               </g>
               <defs>
                 <clipPath id="clip0_5582_13927">
@@ -725,25 +687,13 @@
               </defs>
             </svg>
           </a>
-          <a
-            class="cursor-pointer my-1 ml-2 group"
-            target="_blank"
-            aria-label="facebook"
-            href="https://www.facebook.com/profile.php?id=100086034980312"
-          >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <a class="cursor-pointer my-1 ml-2 group" target="_blank" aria-label="facebook"
+            href="https://www.facebook.com/profile.php?id=100086034980312">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_5582_13928)">
-                <path
-                  class="group-hover:opacity-80 transition-all"
+                <path class="group-hover:opacity-80 transition-all"
                   d="M19.4131 10.228H20.9911V7H18.6152C15.2465 7 13.6418 8.88508 13.6418 11.5709V14.1149H11V17.1844H13.6418V25H17.6046V17.1844H20.2465L21 14.1149H17.6135V12.013C17.6046 11.1622 18.1011 10.228 19.4131 10.228Z"
-                  fill="#ffffff"
-                />
+                  fill="#ffffff" />
               </g>
               <defs>
                 <clipPath id="clip0_5582_13928">
@@ -752,25 +702,13 @@
               </defs>
             </svg>
           </a>
-          <a
-            class="cursor-pointer my-1 ml-2 group"
-            target="_blank"
-            aria-label="Twitter"
-            href="https://twitter.com/Appblocksapp"
-          >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <a class="cursor-pointer my-1 ml-2 group" target="_blank" aria-label="Twitter"
+            href="https://twitter.com/Appblocksapp">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_5582_13929)">
-                <path
-                  class="group-hover:opacity-80 transition-all"
+                <path class="group-hover:opacity-80 transition-all"
                   d="M7 22.2525C8.97455 22.4287 10.7114 21.9463 12.3112 20.7868C11.9638 20.694 11.6713 20.6383 11.3879 20.5456C10.3183 20.2023 9.56875 19.4787 9.10253 18.449C8.95627 18.1336 8.99283 18.1058 9.33107 18.1151C9.68758 18.1244 10.0441 18.1707 10.4646 18.013C9.82471 17.8275 9.31279 17.5399 8.874 17.1225C8.17925 16.4638 7.76788 15.6568 7.69475 14.6827C7.66733 14.2931 7.71303 14.2653 8.06041 14.423C8.39864 14.5807 8.74602 14.6827 9.17566 14.6827C8.91056 14.3766 8.62718 14.154 8.42607 13.8478C7.62162 12.6604 7.4845 11.3988 8.04212 10.063C8.18839 9.71046 8.25238 9.6919 8.4992 9.97948C9.73329 11.3895 11.2233 12.4285 12.9785 13.05C13.7555 13.3283 14.5508 13.5046 15.3736 13.5881C15.7941 13.6345 15.8306 13.5881 15.7849 13.1706C15.6112 11.6864 16.4431 10.1279 17.7869 9.42288C19.1307 8.70858 20.8584 8.91267 21.9463 9.9331C22.1565 10.1279 22.3668 10.1743 22.6319 10.1001C23.1986 9.94237 23.7563 9.73829 24.2773 9.45071C24.3596 9.40433 24.4327 9.32084 24.579 9.3765C24.3322 10.1743 23.8294 10.7773 23.2078 11.2968C23.8294 11.2225 24.4053 11.037 24.9995 10.8051C25.0086 11.0185 24.8898 11.1205 24.8075 11.2318C24.4419 11.7142 24.0305 12.1595 23.546 12.5306C23.3175 12.6975 23.2443 12.8923 23.2443 13.1799C23.2809 15.6753 22.4947 17.911 21.023 19.8869C19.277 22.2339 16.9185 23.5605 14.0481 23.913C11.6713 24.2098 9.44077 23.746 7.36566 22.54C7.29253 22.4937 7.21939 22.4473 7.14626 22.4009C7.10056 22.3731 7.08227 22.3452 7 22.2525Z"
-                  fill="#ffffff"
-                />
+                  fill="#ffffff" />
               </g>
               <defs>
                 <clipPath id="clip0_5582_13929">
@@ -784,6 +722,5 @@
     </div>
   </div>
 </footer>
-
     </body>
 </html>
