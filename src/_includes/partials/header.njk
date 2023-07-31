@@ -40,5 +40,11 @@
 <script>
   function showmenu() {
     document.getElementById("nav-header").classList.toggle("expanded-nav");
+    if(document.getElementById("nav-header").classList.contains("expanded-nav")){
+      document.body.style.overflowY = "hidden";
+    }
+    else{
+      document.body.style.overflowY = "auto";
+    }
   }
 </script>

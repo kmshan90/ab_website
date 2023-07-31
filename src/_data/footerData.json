@@ -1,0 +1,55 @@
+[
+    {
+        "main_links":[
+            {
+                "title": "Company",
+                "links":[
+                    {
+                      "name": "About Us",
+                      "url": "/pages/about/"
+                    },
+                    {
+                        "name": "Block store",
+                        "url": "https://store.appblocks.com/",
+                        "target":"_blank"
+                    },
+                    {
+                        "name": "Contact Us",
+                        "url": "/pages/contact/"
+                    }
+                ]
+            },
+            {
+                "title": "Legal",
+                "links":[
+                    {
+                      "name": "Terms of use for Customers",
+                      "url": "/pages/terms-conditions-customers/"
+                    },
+                    {
+                        "name": "Terms of use for Authors",
+                        "url": "/pages/terms-conditions-authors/"
+                    },
+                    {
+                        "name": "Privacy policy",
+                        "url": "/pages/privacy-policy/"
+                    }
+                ]
+            },
+            {
+                "title": "Resources",
+                "links":[
+                    {
+                      "name": "Help & Support",
+                      "url": "/pages/support/"
+                    },
+                    {
+                        "name": "Community",
+                        "url": "https://discord.gg/b7YSVvHp2x",
+                        "target":"_blank"
+                    }
+                ]
+            }
+        ]
+    }
+]

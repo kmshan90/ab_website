@@ -46,8 +46,11 @@ a{
           }
       }
       &.expanded-nav{
+        background-color: #fff !important;
+        z-index: 99 !important;
           .nav-menu-wrapper{
-              height: 264px;
+              height: 320px;
+              height: calc(100vh - 74px);
               padding-top: 16px;
               padding-bottom: 8px;
           }
@@ -596,6 +599,9 @@ a{
       border-radius: 100%;
     }
   }
+  .swiper-pagination-bullet:only-child {
+    display: flex !important;
+  }
 
   .swiper-pagination-bullet{
     display: flex;
@@ -603,10 +609,11 @@ a{
     height: 24px;
     opacity: 1;
     z-index: 1;
+    flex-shrink: 0;
     background-color: #ddd;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
     &:focus{
       outline: none;
     }

@@ -285,11 +285,11 @@ site_title: Appblocks - Blocks
       clickable: true,
       renderBullet: function (index, className) {
         return (
-          '<div class="' +
+          '<div class="w-[56px] h-[56px] flex justify-center items-center flex-shrink-0"><div class="' +
           className +
           '"><span class="flexa-medium text-white text-xs md:text-lg leading-tight pt-0.5 md:pt-1">' +
           (index + 1 < 9 ? "0" + (index + 1) : index + 1) +
-          "</span></div>"
+          "</span></div></div>"
         );
       },
     },

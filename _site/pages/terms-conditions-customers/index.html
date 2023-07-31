@@ -62,6 +62,12 @@
 <script>
   function showmenu() {
     document.getElementById("nav-header").classList.toggle("expanded-nav");
+    if(document.getElementById("nav-header").classList.contains("expanded-nav")){
+      document.body.style.overflowY = "hidden";
+    }
+    else{
+      document.body.style.overflowY = "auto";
+    }
   }
 </script>
         
@@ -543,40 +549,66 @@
   <div class="w-full float-left bg-[url(../images/icons/block-footer-bg.svg)] bg-repeat-x bg-[left_top_-24px]">
     <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
       <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-y-5 gap-x-4 md-lt:py-8 md:pt-28 md:pb-16">
+        
         <div class="w-full float-left">
           <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             Company
           </p>
           <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
-            <li>
-              <a class="hover:underline" href="/pages/about/">About Us</a>
-            </li>
-            <li>
-              <a class="hover:underline" href="https://store.appblocks.com/" target="_blank">Block store</a>
-            </li>
-            <li>
-              <a class="hover:underline" href="/pages/contact/">Contact Us</a>
-            </li>
+           
+              <li>
+                <a class="hover:underline" href="/pages/about/" target="">About Us</a>
+              </li>
+            
+              <li>
+                <a class="hover:underline" href="https://store.appblocks.com/" target="_blank">Block store</a>
+              </li>
+            
+              <li>
+                <a class="hover:underline" href="/pages/contact/" target="">Contact Us</a>
+              </li>
+            
           </ul>
         </div>
+        
         <div class="w-full float-left">
           <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             Legal
           </p>
           <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
-            <!-- <li><a>How Appblocks work</a></li> -->
-            <li>
-              <a class="hover:underline" href="/pages/terms-conditions-customers/">Terms of use for Customers</a>
-            </li>
-            <li>
-              <a class="hover:underline" href="/pages/terms-conditions-authors/">Terms of use for Authors</a>
-            </li>
-            <li>
-              <a class="hover:underline" href="/pages/privacy-policy/">Privacy policy</a>
-            </li>
-            <!-- <li><a href="/pages/refund/">Refund policies</a></li> -->
+           
+              <li>
+                <a class="hover:underline" href="/pages/terms-conditions-customers/" target="">Terms of use for Customers</a>
+              </li>
+            
+              <li>
+                <a class="hover:underline" href="/pages/terms-conditions-authors/" target="">Terms of use for Authors</a>
+              </li>
+            
+              <li>
+                <a class="hover:underline" href="/pages/privacy-policy/" target="">Privacy policy</a>
+              </li>
+            
           </ul>
         </div>
+        
+        <div class="w-full float-left">
+          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
+            Resources
+          </p>
+          <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
+           
+              <li>
+                <a class="hover:underline" href="/pages/support/" target="">Help &amp; Support</a>
+              </li>
+            
+              <li>
+                <a class="hover:underline" href="https://discord.gg/b7YSVvHp2x" target="_blank">Community</a>
+              </li>
+            
+          </ul>
+        </div>
+        
         <div class="w-full float-left hidden">
           <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
             For Authors
@@ -584,22 +616,7 @@
           <ul class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium [&>li>a]:text-white [&>li]:mt-2">
             <!-- <li><a>How Appblocks help</a></li> -->
             <li>
-              <a href="/pages/terms-conditions-authors/">Terms of use for Authors</a>
-            </li>
-          </ul>
-        </div>
-        <div class="w-full float-left">
-          <p class="w-full text-base uppercase zirkon-regular text-white mb-3 md-lt:mb-0 float-left">
-            Resources
-          </p>
-          <ul
-            class="w-full float-left [&>li>a]:text-base [&>li>a]:zirkon-medium font-medium [&>li>a]:text-white [&>li]:mt-2">
-            <li>
-              <a class="hover:underline" href="/pages/support/">Help & Support</a>
-            </li>
-            <!-- <li><a>View Blog</a></li> -->
-            <li>
-              <a class="hover:underline" href="https://discord.gg/b7YSVvHp2x">Community</a>
+              <a class="hover:underline" href="/pages/terms-conditions-authors/">Terms of use for Authors</a>
             </li>
           </ul>
         </div>
