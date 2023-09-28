@@ -221,3 +221,19 @@ var swiperCustomer = new Swiper(".customer-swiper", {
         },
     },
 });
+
+var bannerSwiper = new Swiper(".banner-slider", {
+    speed: 1000,
+    effect: "fade",
+    autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    },
+  pagination: {
+    el: ".banner-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '"></span>';
+    },
+  },
+});

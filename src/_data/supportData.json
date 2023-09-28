@@ -216,6 +216,17 @@
                 ]
             }
         ],
+        "contributor_license_agreement":
+        [
+            { 
+               "banner":[
+                    {
+                        "title": "Appblock’s",
+                        "desc": "Contributor License agreement"
+                    }
+                ]
+            }
+        ],
         "licensing":
         [
             {

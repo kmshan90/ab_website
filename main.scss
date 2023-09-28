@@ -72,6 +72,10 @@ a{
     @media(min-width: 769px){
       background: url(../images/icons/banner.svg) no-repeat bottom right;
       background-size: contain;
+      &.hacktoberfest-bg{
+        background: url(../images/hacktopberfest.png) no-repeat center right;
+        background-size: 560px auto;
+      }
     }
   }
   .banner-word {
@@ -742,4 +746,21 @@ a{
 }
 .ToastfadeOut {
   animation: fadeOut 0.3s linear forwards;
+}
+
+.date-input{
+  background: url(../images/icons/date-icon.svg) no-repeat center right 16px #fff;
+}
+.banner-pagination{
+  @media(min-width:769px){
+    bottom: 48px !important;
+  }
+  span.swiper-pagination-bullet{
+    width: 48px !important;
+    height: 4px !important;
+    border-radius: 0px;
+    &-active{
+      background-color: #5E5EDD;
+    }
+  }
 }

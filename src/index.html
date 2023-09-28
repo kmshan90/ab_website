@@ -10,72 +10,83 @@ site_title: Appblocks
     </div>
 </section> -->
 <div class="inner-page-wrapper w-full min-h-screen float-left flex flex-col pt-[80px]">
-    <section class="float-left flex md:min-h-[calc(100vh-80px)] w-full justify-center">
-        <div class="clearfix mx-auto flex w-full max-w-7xl items-center px-4 md:px-6">
-            <div class="bg-banner float-left flex w-full justify-center py-8 md:min-h-[80%] md:items-center">
-                <div class="float-left grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
-                    <div class="relative float-left w-full max-w-[480px] py-6 md-lt:mx-auto">
-                        <div
-                            class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[58px] md-lt:text-center">
-                            Build applications <br/>
-                            <span class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Quickly</span>
-                            <span
-                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Affordably</span>
-                            <span
-                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Collaboratively</span>
-                            <span
-                                class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Efficiently</span><br/>
+    <div class="w-full float-left swiper banner-slider">
+        <div class="swiper-wrapper">
+            <section class="swiper-slide float-left flex md:min-h-[calc(100vh-80px)] w-full justify-center bg-white">
+                <div class="clearfix mx-auto flex w-full max-w-7xl items-center px-4 md:px-6">
+                    <div class="bg-banner float-left flex w-full justify-center py-8 md:min-h-[80%] md:items-center">
+                        <div class="float-left grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
+                            <div class="relative float-left w-full max-w-[480px] py-6 md-lt:mx-auto">
+                                <div
+                                    class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[58px] md-lt:text-center">
+                                    Build applications <br />
+                                    <span
+                                        class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Quickly</span>
+                                    <span
+                                        class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Affordably</span>
+                                    <span
+                                        class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Collaboratively</span>
+                                    <span
+                                        class="banner-word text-secondary md-lt:left-0 md-lt:w-full md-lt:px-2 pt-1.5 md:pt-2.5">Efficiently</span><br />
+                                </div>
+                                <p
+                                    class="flexa-medium mt-5 md:mt-7 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
+                                    Appblocks combines composable architecture and efficient coding to build
+                                    enterprise-grade
+                                    applications.
+                                </p>
+                                <div class="relative float-left mt-6 flex w-full md-lt:justify-center">
+                                    <a href="https://spaces.appblocks.com/" target="_blank"
+                                        class="flex items-center relative justify-center py-2 px-5 bg-primary rounded-full text-white flexa-medium hover:opacity-90">
+                                        Start Developing <img class="absolute -top-2.5 -right-2.5"
+                                            src="../../assets/images/icons/beta-sticker.svg" alt="Beta" />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <p
-                            class="flexa-medium mt-5 md:mt-7 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
-                            Appblocks combines composable architecture and efficient coding to build enterprise-grade
-                            applications.
-                        </p>
-                        <div class="relative float-left mt-6 flex w-full md-lt:justify-center">
-                            <a href="https://spaces.appblocks.com/" target="_blank" class="flex items-center relative justify-center py-2 px-5 bg-primary rounded-full text-white flexa-medium hover:opacity-90">
-                                Start Developing <img class="absolute -top-2.5 -right-2.5" src="../../assets/images/icons/beta-sticker.svg" alt="Beta"/>
-                            </a>
-                        </div>
-                        {# <div class="relative float-left mt-6 flex w-full">
-                            <input type="text" onkeyup="handleEmailValidation()" id="email_input" placeholder="Email ID"
-                                class="zirkon-regular h-11 flex-grow overflow-hidden rounded-l-md border border-ab-gray-medium border-r-transparent bg-white px-4 focus:outline-none md:h-[52px] md-lt:text-sm" />
-                            <button type="button" onclick="submitForm()"
-                                class="flexa-medium flex flex-shrink-0 items-center justify-center rounded-tr-md rounded-br-md bg-primary px-3.5 text-sm text-white hover:opacity-90 focus:outline-none md:text-lg">
-                                Request Demo
-                                <img class="ml-2 hidden max-w-[16px]" id="loader" src="../../assets/images/loading.gif"
-                                    alt="Loader" />
-                            </button>
-                        </div>
-                        <div class="float-left flex w-full">
-                            <!-- <img class="max-w-[32px] mt-4 hidden" id="loader" src="../../assets/images/loading.gif"
-                                alt="Loader" /> -->
-                            <p id="error-msg" class="zirkon-medium mt-2 w-full text-center text-red-500 md:text-left hidden">Please Enter valid Email ID</p>
-                            <p id="succes-msg"
-                                class="zirkon-medium mt-4 w-full text-center text-primary md:text-left hidden">
-                                Thank you for contacting us<br />
-                                We will get back to you as soon as possible
-                            </p>
-                        </div> #}
-                        <!-- <div class="w-full float-left mt-5">
-                            <a class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
-                        </div> -->
                     </div>
-                    <!-- <div class="w-full float-left">
-                        <div class="w-full float-left h-[550px] bg-ab-gray-light">
-                            <img class="w-full h-full object-cover" src="assets/images/icons/blocks-right-img.jpeg"
-                                alt="" />
-                        </div>
-                    </div> -->
                 </div>
-            </div>
+            </section>
+            <section class="swiper-slide float-left flex md:min-h-[calc(100vh-80px)] w-full justify-center bg-white">
+                <div class="clearfix mx-auto flex w-full max-w-7xl items-center px-4 md:px-6">
+                    <div
+                        class="bg-banner hacktoberfest-bg float-left flex w-full justify-center py-8 md:min-h-[80%] md:items-center">
+                        <div class="float-left grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
+                            <div class="relative float-left w-full max-w-[480px] py-6 md-lt:mx-auto">
+                                <div
+                                    class="flexa-bold text-3xl text-ab-black md:text-[56px] md:leading-[58px] md-lt:text-center">
+                                    Hey!! <br />
+                                    <span class="text-secondary">Appblocks</span>
+                                    joins <br />Hacktober Fest!
+                                </div>
+                                <p
+                                    class="flexa-medium mt-5 md:mt-7 w-full max-w-[400px] text-base text-ab-black/70 md:float-left md:text-lg md-lt:mx-auto md-lt:text-center">
+                                    Join the biggest dev-fest of 2023!  Code and win exciting prizes! Work on promising
+                                    open-source projects!
+                                </p>
+                                <div class="relative float-left mt-6 flex w-full md-lt:justify-center">
+                                    <a href="https://hacktoberfest.appblocks.com/" target="_blank"
+                                        class="flex items-center relative justify-center py-2 px-8 bg-primary rounded-full text-white flexa-medium hover:opacity-90">
+                                        Visit Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+        <div class="swiper-pagination banner-pagination"></div>
+    </div>
+
     <section class="w-full float-left py-8 md:py-24" id="discover-section">
         <div class="max-w-7xl w-full mx-auto px-4 md:px-6 clearfix">
             <div class="w-full float-left text-center">
                 <h4 class="flexa-bold text-2xl md:text-[48px] md:leading-[58px] text-ab-black mb-5">Stay ahead with
-                <span class="primary-gradient-text">Appblocks</span></h4>
-                <p class="mb-5 text-base md:text-lg zirkon-medium text-ab-black/80 leading-tight">Simplify app development with the widest range of tools and <br />services custom-built for and by efficient coders.</p>
+                    <span class="primary-gradient-text">Appblocks</span></h4>
+                <p class="mb-5 text-base md:text-lg zirkon-medium text-ab-black/80 leading-tight">Simplify app
+                    development with the widest range of tools and <br />services custom-built for and by efficient
+                    coders.</p>
             </div>
             <div class="w-full float-left grid grid-cols-1 md:grid-cols-2 items-center gap-4">
                 <div class="w-full float-left md:max-w-[480px] py-5 md:order-1 order-2">
@@ -86,7 +97,9 @@ site_title: Appblocks
                         reusable code
                         suited for your specific business use case from an ever-expanding Blocks Marketplace.</p>
                     <div class="w-full float-left mt-4 md:mt-5">
-                        <a href="https://store.appblocks.com/" target="_blank" class="text-primary text-base flexa-medium cursor-pointer primary-gradient-text border-b border-transparent hover:border-secondary">Visit our store</a>
+                        <a href="https://store.appblocks.com/" target="_blank"
+                            class="text-primary text-base flexa-medium cursor-pointer primary-gradient-text border-b border-transparent hover:border-secondary">Visit
+                            our store</a>
                     </div>
                 </div>
                 <div class="w-full float-left relative pb-5 md:pr-10 mt-10 md:order-2 order-1">
@@ -139,7 +152,8 @@ site_title: Appblocks
                         automatically test and deploy every commit, pull request, and fork. Now that’s more time for
                         you.</p>
                     <div class="w-full float-left mt-4 md:mt-5">
-                        <a href="https://docs.appblocks.com/" target="_blank" class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                        <a href="https://docs.appblocks.com/" target="_blank"
+                            class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
                     </div>
                 </div>
             </div>
@@ -157,7 +171,8 @@ site_title: Appblocks
                         teammates to work alongside you on complex apps with seamless access management.
                     </p>
                     <div class="w-full float-left mt-4 md:mt-5">
-                        <a href="https://docs.appblocks.com/" target="_blank" class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                        <a href="https://docs.appblocks.com/" target="_blank"
+                            class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
                     </div>
                 </div>
                 <div class="w-full float-left relative md:order-2 order-1">
@@ -221,9 +236,12 @@ site_title: Appblocks
                     <h3 class="float-left text-xl md:text-[44px] md:leading-[66px] flexa-bold primary-gradient-text">
                         Deploy
                     </h3>
-                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">We support Terraform deployment, which enables developers to create their infrastructure and deploy these blocks to their on-prem cloud.</p>
+                    <p class="w-full float-left mt-4 flexa-medium md:text-xl text-sm text-ab-black/70">We support
+                        Terraform deployment, which enables developers to create their infrastructure and deploy these
+                        blocks to their on-prem cloud.</p>
                     <div class="w-full float-left mt-4 md:mt-5">
-                        <a href="https://docs.appblocks.com/" target="_blank" class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                        <a href="https://docs.appblocks.com/" target="_blank"
+                            class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
                     </div>
                 </div>
                 <div class="w-full float-left relative md:pb-5 md:pr-10 order-1 md:order-2">
@@ -294,7 +312,8 @@ site_title: Appblocks
                         data on Block
                         performance, log reports, and every mission-critical information with ease.</p>
                     <div class="w-full float-left mt-4 md:mt-5">
-                        <a href="https://docs.appblocks.com/" target="_blank" class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
+                        <a href="https://docs.appblocks.com/" target="_blank"
+                            class="text-primary text-base flexa-bold cursor-pointer hover:underline">Check Docs</a>
                     </div>
                 </div>
             </div>
@@ -312,7 +331,8 @@ site_title: Appblocks
                     <div
                         class="w-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
                         <div class="min-h-[36px] min-w-[36px] float-left mb-3">
-                            <img width="{{features.icon.width}}" height="{{features.icon.height}}" class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon.url}}" alt="" />
+                            <img width="{{features.icon.width}}" height="{{features.icon.height}}"
+                                class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon.url}}" alt="" />
                         </div>
                         <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">{{features.title}}
                         </h4>
@@ -324,11 +344,12 @@ site_title: Appblocks
                     {% endfor %}
                     <div
                         class="bg-primary w-full float-left flex flex-col items-start justify-between space-y-4 rounded px-6 py-8 group">
-                        <img width="64" height="64" src="./assets/images/icons/paper-file-white.svg" alt="file"/>
+                        <img width="64" height="64" src="./assets/images/icons/paper-file-white.svg" alt="file" />
                         <h4 class="text-2xl text-white flexa-medium">Read our <br />Documentation</h4>
                         <p class="text-base text-white zirkon-medium">Learn more about Appblocks</p>
                         <a href="https://docs.appblocks.com/" target="_blank"
-                            class="float-left bg-secondary rounded-full text-white flexa-medium text-base px-8 py-2.5 cursor-pointer mt-2">Check Docs</a>
+                            class="float-left bg-secondary rounded-full text-white flexa-medium text-base px-8 py-2.5 cursor-pointer mt-2">Check
+                            Docs</a>
                     </div>
                 </div>
                 <div class="w-full float-left swiper feature-swiper md:hidden mt-8">
@@ -337,7 +358,8 @@ site_title: Appblocks
                         <div
                             class="swiper-slide !w-64 h-full float-left flex flex-col items-start space-y-3 bg-white border outline outline-1 outline-transparent border-ab-gray-medium rounded px-4 py-6 group hover:border-primary hover:outline-primary transition-all duration-300">
                             <div class="min-h-[36px] min-w-[36px] float-left mb-3">
-                                <img width="{{features.icon.width}}" height="{{features.icon.height}}" class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon.url}}" alt="" />
+                                <img width="{{features.icon.width}}" height="{{features.icon.height}}"
+                                    class="max-w-[36px] max-h-[36px] float-left" src="{{features.icon.url}}" alt="" />
                             </div>
                             <h4 class="text-2xl text-ab-black/80 flexa-medium group-hover:text-primary">
                                 {{features.title}}
@@ -350,11 +372,12 @@ site_title: Appblocks
                         {% endfor %}
                         <div
                             class="swiper-slide !w-64 h-full float-left flex flex-col items-start justify-start space-y-4 bg-primary rounded p-6 group">
-                            <img width="64" height="64" src="./assets/images/icons/paper-file-white.svg" alt="file"/>
+                            <img width="64" height="64" src="./assets/images/icons/paper-file-white.svg" alt="file" />
                             <h4 class="text-2xl text-white flexa-medium">Read our Documentation</h4>
                             <p class="text-base text-white zirkon-medium">Learn more about Appblocks</p>
                             <a href="https://docs.appblocks.com/"
-                                class="float-left bg-secondary rounded-full text-white flexa-medium text-base px-8 py-2.5 cursor-pointer mt-2">Check Docs</a>
+                                class="float-left bg-secondary rounded-full text-white flexa-medium text-base px-8 py-2.5 cursor-pointer mt-2">Check
+                                Docs</a>
                         </div>
                     </div>
                     <!-- <div class="swiper-pagination"></div> -->
@@ -375,7 +398,7 @@ site_title: Appblocks
                         your business
                         need, there is a block to unblock your development roadblocks. If not, build your own,
                         hassle-free with Appblocks.</p>
-                    
+
                     {# <div class="w-full float-left mt-4">
                         <a href="https://store.appblocks.com/" target="_blank"
                             class="text-primary text-base flexa-medium cursor-pointer primary-gradient-text border-b border-transparent hover:border-secondary">Visit
@@ -383,7 +406,8 @@ site_title: Appblocks
                     </div> #}
                     <div class="w-full float-left mt-6">
                         <a href="/pages/blocks"
-                            class="inline-flex items-center justify-center zirkon-medium text-base md:text-xl pb-2.5 pt-3 px-6 bg-secondary rounded-full hover:opacity-90 cursor-pointer text-white">What the T#CH?!</a>
+                            class="inline-flex items-center justify-center zirkon-medium text-base md:text-xl pb-2.5 pt-3 px-6 bg-secondary rounded-full hover:opacity-90 cursor-pointer text-white">What
+                            the T#CH?!</a>
                     </div>
                 </div>
                 <div class="w-full float-left relative text-center flex justify-center">
